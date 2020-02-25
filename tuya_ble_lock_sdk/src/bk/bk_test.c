@@ -68,10 +68,10 @@ void bk_test(void)
 //    bk_timer_start_0(app_timer_id);
     
 //    bk_flash_erase(TUYA_TEST_ADDR, 1);
-    BK_PRINTF("bk_flash_read1");
-    for(uint16_t idx=0; idx<1000; idx++)
-    bk_flash_read(TUYA_TEST_ADDR, tmpBuf2, 8);
-    BK_PRINTF("bk_flash_read2");
+//    BK_PRINTF("bk_flash_read1");
+//    for(uint16_t idx=0; idx<1000; idx++)
+//    bk_flash_read(TUYA_TEST_ADDR, tmpBuf2, 8);
+//    BK_PRINTF("bk_flash_read2");
 //    BK_HEXDUMP("tmpBuf2-1", 20, tmpBuf2, 8);
 //    bk_flash_write(TUYA_TEST_ADDR, tmpBuf1, 8);
 //    bk_flash_read(TUYA_TEST_ADDR, tmpBuf2, 5);
