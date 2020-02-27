@@ -3,11 +3,11 @@
 <title>Static Call Graph - [.\obj\bk3435_ble_app.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\obj\bk3435_ble_app.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Tue Feb 25 17:55:59 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Thu Feb 27 11:44:36 2020
 <BR><P>
 <H3>Maximum Stack Usage =       1472 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-sys_Reset &rArr; rw_main &rArr; rw_app_enter &rArr; tuya_ble_main_tasks_exec &rArr; tuya_sched_execute &rArr; tuya_ble_event_process &rArr; tuya_ble_evt_process &rArr; tuya_ble_handle_ble_factory_test_req &rArr; tuya_ble_app_production_test_process &rArr; app_port_factory_test_process &rArr; factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+sys_Reset &rArr; rw_main &rArr; rw_app_enter &rArr; tuya_ble_main_tasks_exec &rArr; tuya_sched_execute &rArr; tuya_ble_event_process &rArr; tuya_ble_evt_process &rArr; tuya_ble_handle_ble_factory_test_req &rArr; tuya_ble_app_production_test_process &rArr; app_port_factory_test_process &rArr; factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 <P>
 <H3>
 Functions with no stack information
@@ -215,17 +215,17 @@ Global Symbols
 <LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;appm_disconnect
 <LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;appm_update_adv_data
 <LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;appm_start_advertising
-<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_fff0_add_fff0s
-<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_write_req_ind_handler
-<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_read_req_ind_handler
-<LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_att_info_req_ind_handler
-<LI><a href="#[1b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fff0s_notify_fff1_lvl
 <LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_device_ready_ind_handler
 <LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_cmp_evt_handler
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_set_dev_info_req_ind_handler
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_param_update_req_ind_handler
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_get_dev_info_req_ind_handler
 <LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_connection_req_ind_handler
+<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_fff0_add_fff0s
+<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_write_req_ind_handler
+<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_read_req_ind_handler
+<LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_att_info_req_ind_handler
+<LI><a href="#[1b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fff0s_notify_fff1_lvl
 </UL>
 
 <P><STRONG><a name="[e9]"></a>ke_msg_send</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, peripheral_stack_symbol.txt(ABSOLUTE))
@@ -234,17 +234,17 @@ Global Symbols
 <LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;appm_disconnect
 <LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;appm_update_adv_data
 <LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;appm_start_advertising
-<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_fff0_add_fff0s
-<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_write_req_ind_handler
-<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_read_req_ind_handler
-<LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_att_info_req_ind_handler
-<LI><a href="#[1b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fff0s_notify_fff1_lvl
 <LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_device_ready_ind_handler
 <LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_cmp_evt_handler
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_set_dev_info_req_ind_handler
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_param_update_req_ind_handler
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_get_dev_info_req_ind_handler
 <LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_connection_req_ind_handler
+<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_fff0_add_fff0s
+<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_write_req_ind_handler
+<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_read_req_ind_handler
+<LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_att_info_req_ind_handler
+<LI><a href="#[1b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fff0s_notify_fff1_lvl
 </UL>
 
 <P><STRONG><a name="[145]"></a>ke_task_create</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, peripheral_stack_symbol.txt(ABSOLUTE))
@@ -255,20 +255,20 @@ Global Symbols
 <P><STRONG><a name="[146]"></a>ke_state_set</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, peripheral_stack_symbol.txt(ABSOLUTE))
 <BR><BR>[Called By]<UL><LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;appm_start_advertising
 <LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;appm_init
-<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_cmp_evt_handler
-<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fff0s_fff1_level_upd_req_handler
-<LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fff0s_init
 <LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_cmp_evt_handler
 <LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_disconnect_ind_handler
 <LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_connection_req_ind_handler
+<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_cmp_evt_handler
+<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fff0s_fff1_level_upd_req_handler
+<LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fff0s_init
 </UL>
 
 <P><STRONG><a name="[14b]"></a>ke_state_get</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, peripheral_stack_symbol.txt(ABSOLUTE))
 <BR><BR>[Called By]<UL><LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;appm_update_adv_data
 <LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;appm_start_advertising
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_profile_added_ind_handler
 <LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_cmp_evt_handler
 <LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fff0s_fff1_level_upd_req_handler
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_profile_added_ind_handler
 </UL>
 
 <P><STRONG><a name="[227]"></a>ke_task_msg_flush</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, peripheral_stack_symbol.txt(ABSOLUTE))
@@ -399,8 +399,8 @@ Global Symbols
 
 <P><STRONG><a name="[148]"></a>rand</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, peripheral_stack_symbol.txt(ABSOLUTE))
 <BR><BR>[Called By]<UL><LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;appm_init
-<LI><a href="#[296]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_rand_generator
 <LI><a href="#[26d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_commData_send
+<LI><a href="#[296]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_rand_generator
 </UL>
 
 <P><STRONG><a name="[236]"></a>srand</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, peripheral_stack_symbol.txt(ABSOLUTE))
@@ -443,25 +443,10 @@ Global Symbols
 <LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;appm_start_advertising
 <LI><a href="#[1cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;flash_read_data
 <LI><a href="#[1ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;flash_write_data
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_cmp_evt_handler
 <LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;appm_get_dev_name
 <LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_write_req_ind_handler
 <LI><a href="#[1b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fff0s_notify_fff1_lvl
-<LI><a href="#[29c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_storage_init
-<LI><a href="#[262]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_adv_change
-<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;data_2_klvlist
-<LI><a href="#[2a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_uart_data_unpack
-<LI><a href="#[296]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_rand_generator
-<LI><a href="#[265]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_gap_advertising_scan_rsp_data_update
-<LI><a href="#[264]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_gap_advertising_adv_data_update
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_cmp_evt_handler
-<LI><a href="#[29a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_sched_event_put
-<LI><a href="#[278]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_key_generate
-<LI><a href="#[261]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_Add_Pkcs
-<LI><a href="#[2a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_storage_load_settings
-<LI><a href="#[299]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_sched_execute
-<LI><a href="#[263]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_id_encrypt
-<LI><a href="#[283]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_dp_data_with_time_reported_evt
-<LI><a href="#[280]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_device_info_update_evt
 <LI><a href="#[270]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_encryption
 <LI><a href="#[274]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_decryption
 <LI><a href="#[260]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;trsmitr_send_pkg_encode
@@ -477,6 +462,21 @@ Global Symbols
 <LI><a href="#[28b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_dp_query_req
 <LI><a href="#[28c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_dev_infor_req
 <LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_data_unpack
+<LI><a href="#[29c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_storage_init
+<LI><a href="#[262]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_adv_change
+<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;data_2_klvlist
+<LI><a href="#[2a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_uart_data_unpack
+<LI><a href="#[296]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_rand_generator
+<LI><a href="#[265]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_gap_advertising_scan_rsp_data_update
+<LI><a href="#[264]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_gap_advertising_adv_data_update
+<LI><a href="#[29a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_sched_event_put
+<LI><a href="#[278]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_key_generate
+<LI><a href="#[261]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_Add_Pkcs
+<LI><a href="#[2a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_storage_load_settings
+<LI><a href="#[299]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_sched_execute
+<LI><a href="#[263]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_id_encrypt
+<LI><a href="#[283]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_dp_data_with_time_reported_evt
+<LI><a href="#[280]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_device_info_update_evt
 </UL>
 
 <P><STRONG><a name="[13b]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, peripheral_stack_symbol.txt(ABSOLUTE))
@@ -484,10 +484,10 @@ Global Symbols
 <LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_test_process
 <LI><a href="#[1b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_test_process
 <LI><a href="#[235]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rw_main
+<LI><a href="#[27b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_storage_save_sys_settings
 <LI><a href="#[275]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_event_send
 <LI><a href="#[262]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_adv_change
 <LI><a href="#[2a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_storage_load_settings
-<LI><a href="#[27b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_storage_save_sys_settings
 </UL>
 
 <P><STRONG><a name="[fa]"></a>memcmp</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, peripheral_stack_symbol.txt(ABSOLUTE))
@@ -495,8 +495,8 @@ Global Symbols
 <LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_ota_file_offset_handler
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_ota_file_info_handler
 <LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bk_init_bt_mac_addr
-<LI><a href="#[278]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_key_generate
 <LI><a href="#[28d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_pair_req
+<LI><a href="#[278]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_key_generate
 </UL>
 
 <P><STRONG><a name="[90]"></a>__ARM_clz</STRONG> (ARM, 0 bytes, Stack size 0 bytes, peripheral_stack_symbol.txt(ABSOLUTE))
@@ -544,17 +544,17 @@ Global Symbols
 <LI><a href="#[c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_common_evt_process (via BLX)
 <LI><a href="#[2a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ty_string_op_int2hex (via BLX)
 <LI><a href="#[2a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ty_string_op_hex2int (via BLX)
+<LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_evt_process (via BLX)
+<LI><a href="#[28e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_ota_req (via BLX)
 <LI><a href="#[2a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_uart_data_unpack (via BLX)
 <LI><a href="#[26c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_inter_event_response (via BLX)
 <LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_event_process (via BLX)
 <LI><a href="#[282]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_ota_response_evt (via BLX)
-<LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_evt_process (via BLX)
-<LI><a href="#[28e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_ota_req (via BLX)
 </UL>
 
 <P><STRONG><a name="[6b]"></a>sys_Reset</STRONG> (ARM, 0 bytes, Stack size unknown bytes, boot_handlers.o(SYS_BOOT))
 <BR><BR>[Stack]<UL><LI>Max Depth = 1472 + Unknown Stack Size
-<LI>Call Chain = sys_Reset &rArr; rw_main &rArr; rw_app_enter &rArr; tuya_ble_main_tasks_exec &rArr; tuya_sched_execute &rArr; tuya_ble_event_process &rArr; tuya_ble_evt_process &rArr; tuya_ble_handle_ble_factory_test_req &rArr; tuya_ble_app_production_test_process &rArr; app_port_factory_test_process &rArr; factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<LI>Call Chain = sys_Reset &rArr; rw_main &rArr; rw_app_enter &rArr; tuya_ble_main_tasks_exec &rArr; tuya_sched_execute &rArr; tuya_ble_event_process &rArr; tuya_ble_evt_process &rArr; tuya_ble_handle_ble_factory_test_req &rArr; tuya_ble_app_production_test_process &rArr; app_port_factory_test_process &rArr; factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[235]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rw_main (via Veneer)
 </UL>
@@ -605,11 +605,11 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
 <LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_printf
+<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strncmp
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BT_singleWaveCfg
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fCheckValue
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BT_delayUs
-<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strncmp
-<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[235]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rw_main
 </UL>
@@ -668,10 +668,10 @@ Global Symbols
 
 <P><STRONG><a name="[83]"></a>__aeabi_memset</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, memseta.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;elog_output
-<LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;format_sector
 <LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;create_env_blob
 <LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;align_write
 <LI><a href="#[1cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_status
+<LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;format_sector
 <LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memset
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
@@ -692,12 +692,12 @@ Global Symbols
 <LI><a href="#[2a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_uart_receive_data
 <LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rw_fcc_enter
 <LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;appm_init
-<LI><a href="#[2a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_uart_data_unpack
-<LI><a href="#[278]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_key_generate
-<LI><a href="#[263]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_id_encrypt
 <LI><a href="#[27a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_unbond
 <LI><a href="#[273]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_commonData_rx_proc
 <LI><a href="#[288]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_net_config_info_req
+<LI><a href="#[2a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_uart_data_unpack
+<LI><a href="#[278]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_key_generate
+<LI><a href="#[263]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_id_encrypt
 </UL>
 
 <P><STRONG><a name="[9e]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text))
@@ -706,19 +706,19 @@ Global Symbols
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_ota_file_info_handler
 <LI><a href="#[1fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_settings_default
 <LI><a href="#[1b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_test_process
-<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
 <LI><a href="#[21d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbedtls_md5_init
 <LI><a href="#[21a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbedtls_md5_finish_ret
 <LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbedtls_aes_init
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
 <LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_clear_rxfifo
 <LI><a href="#[230]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rom_env_init
 <LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fff0s_init
-<LI><a href="#[2a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_storage_load_settings
-<LI><a href="#[283]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_dp_data_with_time_reported_evt
 <LI><a href="#[25f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;trsmitr_init
 <LI><a href="#[26d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_commData_send
 <LI><a href="#[28f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_device_reset_req
 <LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_data_unpack
+<LI><a href="#[2a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_storage_load_settings
+<LI><a href="#[283]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_dp_data_with_time_reported_evt
 </UL>
 
 <P><STRONG><a name="[2ae]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
@@ -740,8 +740,8 @@ Global Symbols
 <P><STRONG><a name="[1a2]"></a>strncpy</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, strncpy.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = strncpy
 </UL>
-<BR>[Called By]<UL><LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
-<LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;elog_hexdump
+<BR>[Called By]<UL><LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;elog_hexdump
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
 </UL>
 
 <P><STRONG><a name="[13e]"></a>strlen</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, strlen.o(.text))
@@ -762,8 +762,8 @@ Global Symbols
 <P><STRONG><a name="[75]"></a>strncmp</STRONG> (Thumb, 30 bytes, Stack size 12 bytes, strncmp.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = strncmp
 </UL>
-<BR>[Called By]<UL><LI><a href="#[1bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_env_from_cache
-<LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;find_env_cb
+<BR>[Called By]<UL><LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;find_env_cb
+<LI><a href="#[1bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_env_from_cache
 <LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rw_fcc_enter
 </UL>
 
@@ -860,11 +860,11 @@ Global Symbols
 <P><STRONG><a name="[82]"></a>__aeabi_llsl</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, llshl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_llsl
 </UL>
-<BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+<BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2ulz
 <LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_lmul
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 
 <P><STRONG><a name="[2b4]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, llshl.o(.text), UNUSED)
@@ -874,10 +874,10 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2iz
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2uiz
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsqrt
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2ulz
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 
 <P><STRONG><a name="[2b5]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, llushr.o(.text), UNUSED)
@@ -1048,10 +1048,10 @@ Global Symbols
 <P><STRONG><a name="[6f]"></a>IRQ_Exception</STRONG> (Thumb, 120 bytes, Stack size 24 bytes, intc.o(i.IRQ_Exception))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = IRQ_Exception &rArr; uart_isr &rArr; pn9_test_process &rArr; uart_send
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_isr
+<BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_isr
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_isr
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pwm_isr
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_isr
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_isr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SYSirq_IRQ_Handler (via BLX)
 </UL>
@@ -1290,7 +1290,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[d8]"></a>app_common_init</STRONG> (Thumb, 106 bytes, Stack size 24 bytes, app_common.o(i.app_common_init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1000<LI>Call Chain = app_common_init &rArr; lock_flash_init &rArr; lock_settings_default &rArr; lock_settings_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1000<LI>Call Chain = app_common_init &rArr; lock_flash_init &rArr; lock_settings_default &rArr; lock_settings_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_flash_init
@@ -1333,7 +1333,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[e7]"></a>app_ota_handler</STRONG> (Thumb, 130 bytes, Stack size 32 bytes, app_ota.o(i.app_ota_handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 976<LI>Call Chain = app_ota_handler &rArr; app_ota_file_offset_handler &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 976<LI>Call Chain = app_ota_handler &rArr; app_ota_file_offset_handler &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;elog_output
 <LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bk_log_hexdump
@@ -1462,7 +1462,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[113]"></a>app_port_factory_test_process</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, app_port.o(i.app_port_factory_test_process))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1272<LI>Call Chain = app_port_factory_test_process &rArr; factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1272<LI>Call Chain = app_port_factory_test_process &rArr; factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;factory_test_process
 </UL>
@@ -1541,7 +1541,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[11f]"></a>app_port_kv_init</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, app_port.o(i.app_port_kv_init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1032<LI>Call Chain = app_port_kv_init &rArr; easyflash_init &rArr; ef_env_init &rArr; ef_load_env &rArr; ef_env_set_default &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1032<LI>Call Chain = app_port_kv_init &rArr; easyflash_init &rArr; ef_env_init &rArr; ef_load_env &rArr; ef_env_set_default &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;easyflash_init
 <LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bk_flash_init
@@ -1550,7 +1550,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[f4]"></a>app_port_kv_set</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, app_port.o(i.app_port_kv_set))
-<BR><BR>[Stack]<UL><LI>Max Depth = 880<LI>Call Chain = app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 880<LI>Call Chain = app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_set_env_blob
 </UL>
@@ -1708,7 +1708,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[139]"></a>app_test_pre_process</STRONG> (Thumb, 58 bytes, Stack size 24 bytes, app_test.o(i.app_test_pre_process))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1128<LI>Call Chain = app_test_pre_process &rArr; app_test_process &rArr; app_test_write_auth_info_handler &rArr; lock_factory_handler &rArr; lock_flash_erease_all &rArr; lock_settings_delete_and_default &rArr; lock_settings_default &rArr; lock_settings_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1128<LI>Call Chain = app_test_pre_process &rArr; app_test_process &rArr; app_test_write_auth_info_handler &rArr; lock_factory_handler &rArr; lock_flash_erease_all &rArr; lock_settings_delete_and_default &rArr; lock_settings_default &rArr; lock_settings_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_test_process
 </UL>
@@ -1749,11 +1749,11 @@ Global Symbols
 <P><STRONG><a name="[144]"></a>appm_init</STRONG> (Thumb, 84 bytes, Stack size 24 bytes, app.o(i.appm_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = appm_init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvds_put
+<BR>[Calls]<UL><LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rand
+<LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvds_put
 <LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nvds_get
 <LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_state_set
 <LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_task_create
-<LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rand
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[23f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rwip_init
@@ -1977,11 +1977,11 @@ Global Symbols
 <P><STRONG><a name="[26f]"></a>bk_log_hexdump_empty</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, bk_common.o(i.bk_log_hexdump_empty))
 <BR><BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_sdk_init
 <LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_ota_response
-<LI><a href="#[263]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_id_encrypt
-<LI><a href="#[284]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_uart_cmd_evt
 <LI><a href="#[273]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_commonData_rx_proc
 <LI><a href="#[26d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_commData_send
 <LI><a href="#[28a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_dp_write_req
+<LI><a href="#[263]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_id_encrypt
+<LI><a href="#[284]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_uart_cmd_evt
 </UL>
 
 <P><STRONG><a name="[166]"></a>bk_log_init</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, bk_common.o(i.bk_log_init))
@@ -2136,7 +2136,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[cd]"></a>bonding_conn_outtime_cb_handler</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, lock_timer.o(i.bonding_conn_outtime_cb_handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 920<LI>Call Chain = bonding_conn_outtime_cb_handler &rArr; lock_offline_evt_report &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 920<LI>Call Chain = bonding_conn_outtime_cb_handler &rArr; lock_offline_evt_report &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_offline_evt_report
 </UL>
@@ -2146,8 +2146,8 @@ Global Symbols
 <P><STRONG><a name="[292]"></a>check_sum</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, tuya_ble_utils.o(i.check_sum))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = check_sum
 </UL>
-<BR>[Called By]<UL><LI><a href="#[284]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_uart_cmd_evt
-<LI><a href="#[290]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_ble_factory_test_req
+<BR>[Called By]<UL><LI><a href="#[290]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_ble_factory_test_req
+<LI><a href="#[284]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_uart_cmd_evt
 </UL>
 
 <P><STRONG><a name="[1cd]"></a>clr_flash_qwfr</STRONG> (Thumb, 74 bytes, Stack size 0 bytes, flash.o(i.clr_flash_qwfr))
@@ -2210,7 +2210,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[cc]"></a>delay_report_outtime_cb_handler</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, lock_timer.o(i.delay_report_outtime_cb_handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1232<LI>Call Chain = delay_report_outtime_cb_handler &rArr; delay_report_outtime_handler &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1232<LI>Call Chain = delay_report_outtime_cb_handler &rArr; delay_report_outtime_handler &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_report_outtime_handler
 </UL>
@@ -2218,7 +2218,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[18f]"></a>delay_report_outtime_handler</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, lock_dp_report.o(i.delay_report_outtime_handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1224<LI>Call Chain = delay_report_outtime_handler &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1224<LI>Call Chain = delay_report_outtime_handler &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[190]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_open_record_report
 <LI><a href="#[191]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_hard_creat_sub_report
@@ -2227,7 +2227,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[121]"></a>easyflash_init</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, easyflash.o(i.easyflash_init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1024<LI>Call Chain = easyflash_init &rArr; ef_env_init &rArr; ef_load_env &rArr; ef_env_set_default &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1024<LI>Call Chain = easyflash_init &rArr; ef_env_init &rArr; ef_load_env &rArr; ef_env_set_default &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[194]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_port_init
 <LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_log_info
@@ -2239,10 +2239,10 @@ Global Symbols
 <P><STRONG><a name="[187]"></a>ef_calc_crc32</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, ef_utils.o(i.ef_calc_crc32))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = ef_calc_crc32
 </UL>
-<BR>[Called By]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_env
-<LI><a href="#[1bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_env_from_cache
-<LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;create_env_blob
+<BR>[Called By]<UL><LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;create_env_blob
 <LI><a href="#[189]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update_env_cache
+<LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_env
+<LI><a href="#[1bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_env_from_cache
 </UL>
 
 <P><STRONG><a name="[11d]"></a>ef_del_env</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, ef_env.o(i.ef_del_env))
@@ -2257,7 +2257,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[195]"></a>ef_env_init</STRONG> (Thumb, 112 bytes, Stack size 24 bytes, ef_env.o(i.ef_env_init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1008<LI>Call Chain = ef_env_init &rArr; ef_load_env &rArr; ef_env_set_default &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1008<LI>Call Chain = ef_env_init &rArr; ef_load_env &rArr; ef_env_set_default &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_log_debug
 <LI><a href="#[198]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_load_env
@@ -2266,13 +2266,13 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[199]"></a>ef_env_set_default</STRONG> (Thumb, 162 bytes, Stack size 48 bytes, ef_env.o(i.ef_env_set_default))
-<BR><BR>[Stack]<UL><LI>Max Depth = 872<LI>Call Chain = ef_env_set_default &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 872<LI>Call Chain = ef_env_set_default &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;format_sector
-<LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;create_env_blob
+<BR>[Calls]<UL><LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;create_env_blob
 <LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_port_env_unlock
 <LI><a href="#[196]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_port_env_lock
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_log_debug
+<LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;format_sector
 <LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 </UL>
 <BR>[Called By]<UL><LI><a href="#[198]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_load_env
@@ -2291,15 +2291,15 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[198]"></a>ef_load_env</STRONG> (Thumb, 108 bytes, Stack size 112 bytes, ef_env.o(i.ef_load_env))
-<BR><BR>[Stack]<UL><LI>Max Depth = 984<LI>Call Chain = ef_load_env &rArr; ef_env_set_default &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 984<LI>Call Chain = ef_load_env &rArr; ef_env_set_default &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_collect
-<LI><a href="#[19b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;env_iterator
+<BR>[Calls]<UL><LI><a href="#[19b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;env_iterator
 <LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_log_info
 <LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_port_env_unlock
 <LI><a href="#[196]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_port_env_lock
 <LI><a href="#[199]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_env_set_default
 <LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sector_iterator
+<LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_collect
 </UL>
 <BR>[Called By]<UL><LI><a href="#[195]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_env_init
 </UL>
@@ -2310,12 +2310,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;elog_output
 <LI><a href="#[19c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vsprintf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_env
-<LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;new_env
-<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
-<LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_collect
-<LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;format_sector
-<LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_gc
+<BR>[Called By]<UL><LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_gc
 <LI><a href="#[18c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_env
 <LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;create_env_blob
 <LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_and_recovery_env_cb
@@ -2327,6 +2322,11 @@ Global Symbols
 <LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_status
 <LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_status
 <LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_sector_meta_data
+<LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_env
+<LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;new_env
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
+<LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_collect
+<LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;format_sector
 </UL>
 
 <P><STRONG><a name="[17f]"></a>ef_log_info</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, ef_port.o(i.ef_log_info))
@@ -2376,12 +2376,12 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_nv_read
 </UL>
 <BR>[Called By]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_get_env_blob
-<LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_env
-<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
-<LI><a href="#[1bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_env_from_cache
 <LI><a href="#[1be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;find_next_env_addr
 <LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_status
 <LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_sector_meta_data
+<LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_env
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
+<LI><a href="#[1bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_env_from_cache
 </UL>
 
 <P><STRONG><a name="[bd]"></a>ef_port_write</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, ef_port.o(i.ef_port_write))
@@ -2390,15 +2390,15 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_nv_write
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_log_debug
 </UL>
-<BR>[Called By]<UL><LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
-<LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;format_sector
-<LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;create_env_blob
+<BR>[Called By]<UL><LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;create_env_blob
 <LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;align_write
 <LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_status
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
+<LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;format_sector
 </UL>
 
 <P><STRONG><a name="[122]"></a>ef_set_env_blob</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, ef_env.o(i.ef_set_env_blob))
-<BR><BR>[Stack]<UL><LI>Max Depth = 872<LI>Call Chain = ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 872<LI>Call Chain = ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_log_info
 <LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_port_env_unlock
@@ -2415,9 +2415,9 @@ Global Symbols
 <LI><a href="#[1a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;elog_port_output
 <LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;elog_output_unlock
 <LI><a href="#[1a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;elog_output_lock
-<LI><a href="#[1a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2snprintf
 <LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strncpy
 <LI><a href="#[19f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strstr
+<LI><a href="#[1a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2snprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bk_log_hexdump
 </UL>
@@ -2445,12 +2445,12 @@ Global Symbols
 <LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;elog_output_unlock
 <LI><a href="#[1a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;elog_output_lock
 <LI><a href="#[1a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_fmt_enabled
-<LI><a href="#[1ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vsnprintf
-<LI><a href="#[1a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2snprintf
 <LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 <LI><a href="#[19f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strstr
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
+<LI><a href="#[1ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vsnprintf
+<LI><a href="#[1a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2snprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;verify_dynamic_pwd_token
 <LI><a href="#[1d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_timer_string
@@ -2611,7 +2611,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[114]"></a>factory_test_process</STRONG> (Thumb, 144 bytes, Stack size 16 bytes, app_test.o(i.factory_test_process))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1264<LI>Call Chain = factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1264<LI>Call Chain = factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_hard_uart_simulate
 <LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bk_log_hexdump
@@ -2788,8 +2788,8 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_dp_data_with_time_report
 <LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_dp_data_report
-<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;data_2_klvlist
 <LI><a href="#[28a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_dp_write_req
+<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;data_2_klvlist
 </UL>
 
 <P><STRONG><a name="[1c1]"></a>get_flash_ID</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, flash.o(i.get_flash_ID))
@@ -2856,7 +2856,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1de]"></a>lock_alarm_record_report</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, lock_dp_report.o(i.lock_alarm_record_report))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1208<LI>Call Chain = lock_alarm_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1208<LI>Call Chain = lock_alarm_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_evt_save
 <LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_port_get_timestamp
@@ -2866,7 +2866,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1d5]"></a>lock_common_init</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, lock_common.o(i.lock_common_init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1040<LI>Call Chain = lock_common_init &rArr; app_port_kv_init &rArr; easyflash_init &rArr; ef_env_init &rArr; ef_load_env &rArr; ef_env_set_default &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1040<LI>Call Chain = lock_common_init &rArr; app_port_kv_init &rArr; easyflash_init &rArr; ef_env_init &rArr; ef_load_env &rArr; ef_env_set_default &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_timer_creat
 <LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bk_log_hexdump
@@ -2878,7 +2878,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[e2]"></a>lock_dp_parser_handler</STRONG> (Thumb, 1704 bytes, Stack size 32 bytes, lock_dp_parser.o(i.lock_dp_parser_handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1040<LI>Call Chain = lock_dp_parser_handler &rArr; open_meth_modify_handler &rArr; lock_hard_modify_all_by_memberid &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1040<LI>Call Chain = lock_dp_parser_handler &rArr; open_meth_modify_handler &rArr; lock_hard_modify_all_by_memberid &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_settings_save
 <LI><a href="#[1e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_open_record_report_with_delay
@@ -2923,7 +2923,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1f2]"></a>lock_evt_delete_all</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, app_flash.o(i.lock_evt_delete_all))
-<BR><BR>[Stack]<UL><LI>Max Depth = 896<LI>Call Chain = lock_evt_delete_all &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 896<LI>Call Chain = lock_evt_delete_all &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_evtid_save
 <LI><a href="#[1f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_evt_delete
@@ -2941,7 +2941,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1df]"></a>lock_evt_save</STRONG> (Thumb, 98 bytes, Stack size 304 bytes, app_flash.o(i.lock_evt_save))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1192<LI>Call Chain = lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1192<LI>Call Chain = lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_evtid_save
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
@@ -2964,7 +2964,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1f3]"></a>lock_evtid_save</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, app_flash.o(i.lock_evtid_save))
-<BR><BR>[Stack]<UL><LI>Max Depth = 888<LI>Call Chain = lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 888<LI>Call Chain = lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_port_kv_set
 </UL>
@@ -2974,7 +2974,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[e6]"></a>lock_factory_handler</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, lock_common.o(i.lock_factory_handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 960<LI>Call Chain = lock_factory_handler &rArr; lock_flash_erease_all &rArr; lock_settings_delete_and_default &rArr; lock_settings_default &rArr; lock_settings_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 960<LI>Call Chain = lock_factory_handler &rArr; lock_flash_erease_all &rArr; lock_settings_delete_and_default &rArr; lock_settings_default &rArr; lock_settings_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_flash_erease_all
 <LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_port_tuya_ble_device_factory_reset
@@ -2985,7 +2985,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1f6]"></a>lock_flash_erease_all</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, app_flash.o(i.lock_flash_erease_all))
-<BR><BR>[Stack]<UL><LI>Max Depth = 952<LI>Call Chain = lock_flash_erease_all &rArr; lock_settings_delete_and_default &rArr; lock_settings_default &rArr; lock_settings_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 952<LI>Call Chain = lock_flash_erease_all &rArr; lock_settings_delete_and_default &rArr; lock_settings_default &rArr; lock_settings_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_port_kv_del
 <LI><a href="#[1f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_settings_delete_and_default
@@ -2996,7 +2996,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[d9]"></a>lock_flash_init</STRONG> (Thumb, 86 bytes, Stack size 56 bytes, app_flash.o(i.lock_flash_init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 976<LI>Call Chain = lock_flash_init &rArr; lock_settings_default &rArr; lock_settings_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 976<LI>Call Chain = lock_flash_init &rArr; lock_settings_default &rArr; lock_settings_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_evtid_load
 <LI><a href="#[1f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_hard_load
@@ -3104,7 +3104,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[203]"></a>lock_hard_freezeorunfreeze</STRONG> (Thumb, 30 bytes, Stack size 48 bytes, app_flash.o(i.lock_hard_freezeorunfreeze))
-<BR><BR>[Stack]<UL><LI>Max Depth = 960<LI>Call Chain = lock_hard_freezeorunfreeze &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 960<LI>Call Chain = lock_hard_freezeorunfreeze &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_hard_load
 <LI><a href="#[204]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_hard_save
@@ -3113,7 +3113,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[205]"></a>lock_hard_freezeorunfreeze_all_by_memberid</STRONG> (Thumb, 72 bytes, Stack size 64 bytes, app_flash.o(i.lock_hard_freezeorunfreeze_all_by_memberid))
-<BR><BR>[Stack]<UL><LI>Max Depth = 976<LI>Call Chain = lock_hard_freezeorunfreeze_all_by_memberid &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 976<LI>Call Chain = lock_hard_freezeorunfreeze_all_by_memberid &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_hard_load
 <LI><a href="#[1ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_hardid_load_by_memberid
@@ -3139,7 +3139,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[206]"></a>lock_hard_modify_all_by_memberid</STRONG> (Thumb, 78 bytes, Stack size 72 bytes, app_flash.o(i.lock_hard_modify_all_by_memberid))
-<BR><BR>[Stack]<UL><LI>Max Depth = 984<LI>Call Chain = lock_hard_modify_all_by_memberid &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 984<LI>Call Chain = lock_hard_modify_all_by_memberid &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_hard_load
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
@@ -3150,7 +3150,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[207]"></a>lock_hard_modify_in_local_flash</STRONG> (Thumb, 144 bytes, Stack size 56 bytes, app_flash.o(i.lock_hard_modify_in_local_flash))
-<BR><BR>[Stack]<UL><LI>Max Depth = 968<LI>Call Chain = lock_hard_modify_in_local_flash &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 968<LI>Call Chain = lock_hard_modify_in_local_flash &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_hard_load
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
@@ -3161,7 +3161,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[204]"></a>lock_hard_save</STRONG> (Thumb, 62 bytes, Stack size 32 bytes, app_flash.o(i.lock_hard_save))
-<BR><BR>[Stack]<UL><LI>Max Depth = 912<LI>Call Chain = lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 912<LI>Call Chain = lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_port_kv_set
 <LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
@@ -3174,7 +3174,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[208]"></a>lock_hard_save_in_local_flash</STRONG> (Thumb, 160 bytes, Stack size 64 bytes, app_flash.o(i.lock_hard_save_in_local_flash))
-<BR><BR>[Stack]<UL><LI>Max Depth = 976<LI>Call Chain = lock_hard_save_in_local_flash &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 976<LI>Call Chain = lock_hard_save_in_local_flash &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_get_hardid
@@ -3187,7 +3187,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1b3]"></a>lock_hard_uart_simulate</STRONG> (Thumb, 576 bytes, Stack size 32 bytes, lock_hard.o(i.lock_hard_uart_simulate))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1248<LI>Call Chain = lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1248<LI>Call Chain = lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_timer_start
 <LI><a href="#[20b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_state_sync_report
@@ -3220,7 +3220,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[e4]"></a>lock_offline_evt_report</STRONG> (Thumb, 114 bytes, Stack size 24 bytes, lock_dp_report.o(i.lock_offline_evt_report))
-<BR><BR>[Stack]<UL><LI>Max Depth = 912<LI>Call Chain = lock_offline_evt_report &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 912<LI>Call Chain = lock_offline_evt_report &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[20c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_last_evtid
 <LI><a href="#[1f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_evtid_save
@@ -3248,7 +3248,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[20a]"></a>lock_open_record_combine_report</STRONG> (Thumb, 84 bytes, Stack size 24 bytes, lock_dp_report.o(i.lock_open_record_combine_report))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1216<LI>Call Chain = lock_open_record_combine_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1216<LI>Call Chain = lock_open_record_combine_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_evt_save
 <LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_port_get_timestamp
@@ -3258,7 +3258,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[190]"></a>lock_open_record_report</STRONG> (Thumb, 62 bytes, Stack size 24 bytes, lock_dp_report.o(i.lock_open_record_report))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1216<LI>Call Chain = lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1216<LI>Call Chain = lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_evt_save
 <LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_port_get_timestamp
@@ -3293,7 +3293,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1fb]"></a>lock_settings_default</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, app_flash.o(i.lock_settings_default))
-<BR><BR>[Stack]<UL><LI>Max Depth = 920<LI>Call Chain = lock_settings_default &rArr; lock_settings_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 920<LI>Call Chain = lock_settings_default &rArr; lock_settings_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_settings_save
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
@@ -3303,7 +3303,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1f8]"></a>lock_settings_delete_and_default</STRONG> (Thumb, 34 bytes, Stack size 24 bytes, app_flash.o(i.lock_settings_delete_and_default))
-<BR><BR>[Stack]<UL><LI>Max Depth = 944<LI>Call Chain = lock_settings_delete_and_default &rArr; lock_settings_default &rArr; lock_settings_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 944<LI>Call Chain = lock_settings_delete_and_default &rArr; lock_settings_default &rArr; lock_settings_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_port_kv_del
 <LI><a href="#[1fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_settings_default
@@ -3322,7 +3322,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1eb]"></a>lock_settings_save</STRONG> (Thumb, 24 bytes, Stack size 24 bytes, app_flash.o(i.lock_settings_save))
-<BR><BR>[Stack]<UL><LI>Max Depth = 904<LI>Call Chain = lock_settings_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 904<LI>Call Chain = lock_settings_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_port_kv_set
 <LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
@@ -3350,9 +3350,9 @@ Global Symbols
 <LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 <LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_test_rsp
 <LI><a href="#[20d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_test_mode_exit
-<LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 <LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;factory_test_process
 </UL>
@@ -3540,10 +3540,10 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = platform_reset &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;elog_output
-<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wdt_enable
-<LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_finish_transfers
 <LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_disable_irq (via BLX)
 <LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_disable_fiq (via BLX)
+<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wdt_enable
+<LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_finish_transfers
 </UL>
 <BR>[Called By]<UL><LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bk_system_reset
 </UL>
@@ -3552,9 +3552,9 @@ Global Symbols
 <P><STRONG><a name="[ab]"></a>pow</STRONG> (ARM, 3764 bytes, Stack size 112 bytes, pow.o(i.pow))
 <BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = pow &rArr; __kernel_poly &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; __aeabi_llsr
 </UL>
-<BR>[Calls]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv (via Veneer)
+<BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul (via Veneer)
+<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv (via Veneer)
 <LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_scalbn (via BLX)
-<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul (via Veneer)
 <LI><a href="#[224]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrt
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub (via BLX)
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdrcmple (via BLX)
@@ -3636,10 +3636,10 @@ Global Symbols
 <P><STRONG><a name="[229]"></a>pvTuyaPortMalloc</STRONG> (Thumb, 148 bytes, Stack size 24 bytes, tuya_ble_heap.o(i.pvTuyaPortMalloc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = pvTuyaPortMalloc &rArr; tuya_ble_device_exit_critical &rArr; bk_exit_critical
 </UL>
-<BR>[Calls]<UL><LI><a href="#[22d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_exit_critical
-<LI><a href="#[22a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_enter_critical
-<LI><a href="#[22c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInsertBlockIntoFreeList
+<BR>[Calls]<UL><LI><a href="#[22c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInsertBlockIntoFreeList
 <LI><a href="#[22b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvHeapInit
+<LI><a href="#[22d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_exit_critical
+<LI><a href="#[22a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_enter_critical
 </UL>
 <BR>[Called By]<UL><LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_malloc
 </UL>
@@ -3687,23 +3687,23 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[231]"></a>rw_app_enter</STRONG> (Thumb, 54 bytes, Stack size 0 bytes, arch_main.o(i.rw_app_enter))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1408<LI>Call Chain = rw_app_enter &rArr; tuya_ble_main_tasks_exec &rArr; tuya_sched_execute &rArr; tuya_ble_event_process &rArr; tuya_ble_evt_process &rArr; tuya_ble_handle_ble_factory_test_req &rArr; tuya_ble_app_production_test_process &rArr; app_port_factory_test_process &rArr; factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1408<LI>Call Chain = rw_app_enter &rArr; tuya_ble_main_tasks_exec &rArr; tuya_sched_execute &rArr; tuya_ble_event_process &rArr; tuya_ble_evt_process &rArr; tuya_ble_handle_ble_factory_test_req &rArr; tuya_ble_app_production_test_process &rArr; app_port_factory_test_process &rArr; factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[154]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bk_ble_notify_handler
-<LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wdt_feed
-<LI><a href="#[233]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_main_tasks_exec
-<LI><a href="#[232]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rwip_schedule
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Stack_Integrity_Check
 <LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_enable_irq (via BLX)
 <LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_enable_fiq (via BLX)
 <LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_disable_irq (via BLX)
 <LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_disable_fiq (via BLX)
+<LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wdt_feed
+<LI><a href="#[233]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_main_tasks_exec
+<LI><a href="#[232]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rwip_schedule
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Stack_Integrity_Check
 </UL>
 <BR>[Called By]<UL><LI><a href="#[235]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rw_main
 </UL>
 
 <P><STRONG><a name="[235]"></a>rw_main</STRONG> (Thumb, 266 bytes, Stack size 64 bytes, arch_main.o(i.rw_main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1472<LI>Call Chain = rw_main &rArr; rw_app_enter &rArr; tuya_ble_main_tasks_exec &rArr; tuya_sched_execute &rArr; tuya_ble_event_process &rArr; tuya_ble_evt_process &rArr; tuya_ble_handle_ble_factory_test_req &rArr; tuya_ble_app_production_test_process &rArr; app_port_factory_test_process &rArr; factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1472<LI>Call Chain = rw_main &rArr; rw_app_enter &rArr; tuya_ble_main_tasks_exec &rArr; tuya_sched_execute &rArr; tuya_ble_event_process &rArr; tuya_ble_evt_process &rArr; tuya_ble_handle_ble_factory_test_req &rArr; tuya_ble_app_production_test_process &rArr; app_port_factory_test_process &rArr; factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;elog_output
 <LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
@@ -3711,6 +3711,8 @@ Global Symbols
 <LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bk_uart1_init
 <LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bk_init_bt_mac_addr
 <LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bk_log_init
+<LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_enable_irq (via BLX)
+<LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_enable_fiq (via BLX)
 <LI><a href="#[23d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_stack_register
 <LI><a href="#[23a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_init
 <LI><a href="#[238]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;system_sleep_init
@@ -3729,8 +3731,6 @@ Global Symbols
 <LI><a href="#[23b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rwip_eif_api_init
 <LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rw_app_enter
 <LI><a href="#[230]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rom_env_init
-<LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_enable_irq (via BLX)
-<LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_enable_fiq (via BLX)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sys_Reset (via Veneer)
 </UL>
@@ -3738,10 +3738,10 @@ Global Symbols
 <P><STRONG><a name="[240]"></a>rwble_hl_init</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, rwble_hl.o(i.rwble_hl_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = rwble_hl_init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attm_init
+<BR>[Calls]<UL><LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cm_init
+<LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attm_init
 <LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattm_init
 <LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_init
-<LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cm_init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[23f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rwip_init
 </UL>
@@ -3749,10 +3749,10 @@ Global Symbols
 <P><STRONG><a name="[2b]"></a>rwble_hl_reset</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, rwble_hl.o(i.rwble_hl_reset))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = rwble_hl_reset
 </UL>
-<BR>[Calls]<UL><LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attm_init
+<BR>[Calls]<UL><LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cm_init
+<LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attm_init
 <LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattm_init
 <LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_init
-<LI><a href="#[244]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cm_init
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> arch_main.o(i.rom_env_init)
 </UL>
@@ -3784,16 +3784,16 @@ Global Symbols
 <P><STRONG><a name="[251]"></a>rwble_reset</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, rwble.o(i.rwble_reset))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = rwble_reset
 </UL>
-<BR>[Calls]<UL><LI><a href="#[249]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;llm_init
+<BR>[Calls]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_enable_irq (via BLX)
+<LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_enable_fiq (via BLX)
+<LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_disable_irq (via BLX)
+<LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_disable_fiq (via BLX)
+<LI><a href="#[249]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;llm_init
 <LI><a href="#[252]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lld_core_reset
 <LI><a href="#[247]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lld_init
 <LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;llc_reset
 <LI><a href="#[246]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;em_buf_init
 <LI><a href="#[236]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;srand
-<LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_enable_irq (via BLX)
-<LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_enable_fiq (via BLX)
-<LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_disable_irq (via BLX)
-<LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_disable_fiq (via BLX)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rwip_reset
 </UL>
@@ -3809,7 +3809,10 @@ Global Symbols
 <P><STRONG><a name="[23f]"></a>rwip_init</STRONG> (Thumb, 112 bytes, Stack size 8 bytes, rwip.o(i.rwip_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = rwip_init &rArr; rf_init &rArr; initial_xver_BK3435V2_openLoop &rArr; kmod_calibration &rArr; Delay_ms
 </UL>
-<BR>[Calls]<UL><LI><a href="#[25a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ea_init
+<BR>[Calls]<UL><LI><a href="#[259]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ahi_init
+<LI><a href="#[257]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;h4tl_init
+<LI><a href="#[258]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hci_init
+<LI><a href="#[25a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ea_init
 <LI><a href="#[255]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_mem_init
 <LI><a href="#[254]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_init
 <LI><a href="#[256]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rwip_eif_get
@@ -3817,9 +3820,6 @@ Global Symbols
 <LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;appm_init
 <LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rwble_hl_init
 <LI><a href="#[245]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rwble_init
-<LI><a href="#[259]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ahi_init
-<LI><a href="#[257]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;h4tl_init
-<LI><a href="#[258]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hci_init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[235]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rw_main
 </UL>
@@ -3827,14 +3827,14 @@ Global Symbols
 <P><STRONG><a name="[2c]"></a>rwip_reset</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, rwip.o(i.rwip_reset))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = rwip_reset &rArr; rwble_reset
 </UL>
-<BR>[Calls]<UL><LI><a href="#[25a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ea_init
-<LI><a href="#[25b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_flush
-<LI><a href="#[251]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rwble_reset
-<LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_enable_irq (via BLX)
+<BR>[Calls]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_enable_irq (via BLX)
 <LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_enable_fiq (via BLX)
 <LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_disable_irq (via BLX)
 <LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_disable_fiq (via BLX)
 <LI><a href="#[25c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hci_reset
+<LI><a href="#[25a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ea_init
+<LI><a href="#[25b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_flush
+<LI><a href="#[251]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rwble_reset
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> arch_main.o(i.rom_env_init)
 </UL>
@@ -3913,10 +3913,10 @@ Global Symbols
 <LI><a href="#[263]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_id_encrypt
 </UL>
 <BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_sdk_init
-<LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_event_process
-<LI><a href="#[280]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_device_info_update_evt
 <LI><a href="#[27a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_unbond
 <LI><a href="#[28d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_pair_req
+<LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_event_process
+<LI><a href="#[280]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_device_info_update_evt
 </UL>
 
 <P><STRONG><a name="[267]"></a>tuya_ble_aes128_cbc_decrypt</STRONG> (Thumb, 66 bytes, Stack size 312 bytes, tuya_ble_port_bk3431q.o(i.tuya_ble_aes128_cbc_decrypt))
@@ -3938,9 +3938,9 @@ Global Symbols
 <LI><a href="#[214]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbedtls_aes_free
 <LI><a href="#[210]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbedtls_aes_crypt_cbc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[278]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_key_generate
+<BR>[Called By]<UL><LI><a href="#[270]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_encryption
+<LI><a href="#[278]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_key_generate
 <LI><a href="#[263]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_id_encrypt
-<LI><a href="#[270]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_encryption
 </UL>
 
 <P><STRONG><a name="[269]"></a>tuya_ble_aes128_ecb_encrypt</STRONG> (Thumb, 76 bytes, Stack size 304 bytes, tuya_ble_port_bk3431q.o(i.tuya_ble_aes128_ecb_encrypt))
@@ -3955,12 +3955,12 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[26a]"></a>tuya_ble_app_production_test_process</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, tuya_ble_port_bk3431q.o(i.tuya_ble_app_production_test_process))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1280<LI>Call Chain = tuya_ble_app_production_test_process &rArr; app_port_factory_test_process &rArr; factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1280<LI>Call Chain = tuya_ble_app_production_test_process &rArr; app_port_factory_test_process &rArr; factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_port_factory_test_process
 </UL>
-<BR>[Called By]<UL><LI><a href="#[284]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_uart_cmd_evt
-<LI><a href="#[290]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_ble_factory_test_req
+<BR>[Called By]<UL><LI><a href="#[290]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_ble_factory_test_req
+<LI><a href="#[284]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_uart_cmd_evt
 </UL>
 
 <P><STRONG><a name="[102]"></a>tuya_ble_callback_queue_register</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, tuya_ble_api.o(i.tuya_ble_callback_queue_register))
@@ -3977,8 +3977,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[26c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_inter_event_response
 </UL>
-<BR>[Called By]<UL><LI><a href="#[286]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_connect_change_evt
-<LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_evt_process
+<BR>[Called By]<UL><LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_evt_process
 <LI><a href="#[289]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_unix_time_char_ms_resp
 <LI><a href="#[28d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_pair_req
 <LI><a href="#[28e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_ota_req
@@ -3986,6 +3985,7 @@ Global Symbols
 <LI><a href="#[28a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_dp_write_req
 <LI><a href="#[28b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_dp_query_req
 <LI><a href="#[28f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_device_reset_req
+<LI><a href="#[286]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_connect_change_evt
 </UL>
 
 <P><STRONG><a name="[26d]"></a>tuya_ble_commData_send</STRONG> (Thumb, 408 bytes, Stack size 88 bytes, tuya_ble_data_handler.o(i.tuya_ble_commData_send))
@@ -3995,22 +3995,19 @@ Global Symbols
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[26f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bk_log_hexdump_empty
 <LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rand
-<LI><a href="#[272]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_gatt_send_data
-<LI><a href="#[22d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_exit_critical
-<LI><a href="#[22a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_enter_critical
-<LI><a href="#[271]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_delay_ms
 <LI><a href="#[270]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_encryption
 <LI><a href="#[26e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_crc16_compute
 <LI><a href="#[260]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;trsmitr_send_pkg_encode
 <LI><a href="#[25f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;trsmitr_init
 <LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_trsmitr_subpkg_len
 <LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_trsmitr_subpkg
+<LI><a href="#[272]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_gatt_send_data
+<LI><a href="#[22d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_exit_critical
+<LI><a href="#[22a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_enter_critical
+<LI><a href="#[271]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_delay_ms
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[20f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_lock_test_rsp
-<LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_event_process
-<LI><a href="#[282]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_ota_response_evt
-<LI><a href="#[283]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_dp_data_with_time_reported_evt
 <LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_evt_process
 <LI><a href="#[28d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_pair_req
 <LI><a href="#[288]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_net_config_info_req
@@ -4019,6 +4016,9 @@ Global Symbols
 <LI><a href="#[28f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_device_reset_req
 <LI><a href="#[28c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_dev_infor_req
 <LI><a href="#[290]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_ble_factory_test_req
+<LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_event_process
+<LI><a href="#[282]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_ota_response_evt
+<LI><a href="#[283]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_dp_data_with_time_reported_evt
 </UL>
 
 <P><STRONG><a name="[273]"></a>tuya_ble_commonData_rx_proc</STRONG> (Thumb, 310 bytes, Stack size 88 bytes, tuya_ble_data_handler.o(i.tuya_ble_commonData_rx_proc))
@@ -4030,12 +4030,12 @@ Global Symbols
 <LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_gap_disconnect
 <LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_free
 <LI><a href="#[26f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bk_log_hexdump_empty
-<LI><a href="#[275]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_event_send
-<LI><a href="#[22d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_exit_critical
-<LI><a href="#[22a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_enter_critical
 <LI><a href="#[274]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_decryption
 <LI><a href="#[26e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_crc16_compute
 <LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_data_unpack
+<LI><a href="#[275]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_event_send
+<LI><a href="#[22d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_exit_critical
+<LI><a href="#[22a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_enter_critical
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_event_process
@@ -4071,9 +4071,9 @@ Global Symbols
 <LI><a href="#[22a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_enter_critical
 </UL>
 <BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_sdk_init
-<LI><a href="#[286]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_connect_change_evt
 <LI><a href="#[27a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_unbond
 <LI><a href="#[28d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_pair_req
+<LI><a href="#[286]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_connect_change_evt
 </UL>
 
 <P><STRONG><a name="[1d0]"></a>tuya_ble_connected_handler</STRONG> (Thumb, 22 bytes, Stack size 48 bytes, tuya_ble_api.o(i.tuya_ble_connected_handler))
@@ -4095,9 +4095,9 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = tuya_ble_crc32_compute
 </UL>
 <BR>[Called By]<UL><LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_storage_save_auth_settings
+<LI><a href="#[27b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_storage_save_sys_settings
 <LI><a href="#[25e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sys_settings_crc_ok
 <LI><a href="#[14f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;auth_settings_crc_ok
-<LI><a href="#[27b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_storage_save_sys_settings
 </UL>
 
 <P><STRONG><a name="[103]"></a>tuya_ble_custom_event_send</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, tuya_ble_main.o(i.tuya_ble_custom_event_send))
@@ -4137,11 +4137,11 @@ Global Symbols
 <LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_callback_queue_register
 <LI><a href="#[291]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTuyaPortFree
 <LI><a href="#[229]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvTuyaPortMalloc
-<LI><a href="#[276]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_connect_status_set
 <LI><a href="#[293]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_reset_ble_sn
 <LI><a href="#[295]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_pair_rand_clear
 <LI><a href="#[273]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_commonData_rx_proc
 <LI><a href="#[26d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_commData_send
+<LI><a href="#[276]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_connect_status_set
 </UL>
 
 <P><STRONG><a name="[22d]"></a>tuya_ble_device_exit_critical</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, tuya_ble_port_bk3431q.o(i.tuya_ble_device_exit_critical))
@@ -4153,11 +4153,11 @@ Global Symbols
 <LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_callback_queue_register
 <LI><a href="#[291]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTuyaPortFree
 <LI><a href="#[229]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvTuyaPortMalloc
-<LI><a href="#[276]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_connect_status_set
 <LI><a href="#[293]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_reset_ble_sn
 <LI><a href="#[295]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_pair_rand_clear
 <LI><a href="#[273]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_commonData_rx_proc
 <LI><a href="#[26d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_commData_send
+<LI><a href="#[276]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_connect_status_set
 </UL>
 
 <P><STRONG><a name="[135]"></a>tuya_ble_device_factory_reset</STRONG> (Thumb, 26 bytes, Stack size 48 bytes, tuya_ble_api.o(i.tuya_ble_device_factory_reset))
@@ -4192,9 +4192,9 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 588<LI>Call Chain = tuya_ble_device_unbond &rArr; tuya_ble_adv_change &rArr; tuya_ble_device_id_encrypt &rArr; tuya_ble_aes128_cbc_encrypt &rArr; mbedtls_aes_crypt_cbc &rArr; mbedtls_aes_crypt_ecb &rArr; mbedtls_internal_aes_encrypt
 </UL>
 <BR>[Calls]<UL><LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_gap_disconnect
+<LI><a href="#[27b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_storage_save_sys_settings
 <LI><a href="#[276]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_connect_status_set
 <LI><a href="#[262]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_adv_change
-<LI><a href="#[27b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_storage_save_sys_settings
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_evt_process
@@ -4267,21 +4267,21 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[27f]"></a>tuya_ble_event_process</STRONG> (Thumb, 244 bytes, Stack size 16 bytes, tuya_ble_main.o(i.tuya_ble_event_process))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1384<LI>Call Chain = tuya_ble_event_process &rArr; tuya_ble_evt_process &rArr; tuya_ble_handle_ble_factory_test_req &rArr; tuya_ble_app_production_test_process &rArr; app_port_factory_test_process &rArr; factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1384<LI>Call Chain = tuya_ble_event_process &rArr; tuya_ble_evt_process &rArr; tuya_ble_handle_ble_factory_test_req &rArr; tuya_ble_app_production_test_process &rArr; app_port_factory_test_process &rArr; factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_free
 <LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_switch8 (via BLX)
+<LI><a href="#[27b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_storage_save_sys_settings
+<LI><a href="#[281]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_pair_rand_valid_get
+<LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_evt_process
+<LI><a href="#[273]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_commonData_rx_proc
+<LI><a href="#[26d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_commData_send
 <LI><a href="#[262]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_adv_change
 <LI><a href="#[284]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_uart_cmd_evt
 <LI><a href="#[282]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_ota_response_evt
 <LI><a href="#[283]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_dp_data_with_time_reported_evt
 <LI><a href="#[280]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_device_info_update_evt
 <LI><a href="#[286]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_connect_change_evt
-<LI><a href="#[27b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_storage_save_sys_settings
-<LI><a href="#[281]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_pair_rand_valid_get
-<LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_evt_process
-<LI><a href="#[273]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_commonData_rx_proc
-<LI><a href="#[26d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_commData_send
 </UL>
 <BR>[Called By]<UL><LI><a href="#[299]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_sched_execute
 </UL>
@@ -4312,7 +4312,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[285]"></a>tuya_ble_evt_process</STRONG> (Thumb, 362 bytes, Stack size 48 bytes, tuya_ble_data_handler.o(i.tuya_ble_evt_process))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1368<LI>Call Chain = tuya_ble_evt_process &rArr; tuya_ble_handle_ble_factory_test_req &rArr; tuya_ble_app_production_test_process &rArr; app_port_factory_test_process &rArr; factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1368<LI>Call Chain = tuya_ble_evt_process &rArr; tuya_ble_handle_ble_factory_test_req &rArr; tuya_ble_app_production_test_process &rArr; app_port_factory_test_process &rArr; factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_connect_status_get
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
@@ -4345,13 +4345,6 @@ Global Symbols
 <LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_dp_data_report
 <LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_port_free
 <LI><a href="#[2a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_uart_receive_data
-<LI><a href="#[18b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free_klv_list
-<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;data_2_klvlist
-<LI><a href="#[26c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_inter_event_response
-<LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_event_process
-<LI><a href="#[284]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_uart_cmd_evt
-<LI><a href="#[282]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_ota_response_evt
-<LI><a href="#[283]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_dp_data_with_time_reported_evt
 <LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_evt_process
 <LI><a href="#[273]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_commonData_rx_proc
 <LI><a href="#[28e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_ota_req
@@ -4359,6 +4352,13 @@ Global Symbols
 <LI><a href="#[28a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_dp_write_req
 <LI><a href="#[28b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_dp_query_req
 <LI><a href="#[290]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_ble_factory_test_req
+<LI><a href="#[18b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free_klv_list
+<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;data_2_klvlist
+<LI><a href="#[26c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_inter_event_response
+<LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_event_process
+<LI><a href="#[284]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_uart_cmd_evt
+<LI><a href="#[282]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_ota_response_evt
+<LI><a href="#[283]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_dp_data_with_time_reported_evt
 </UL>
 
 <P><STRONG><a name="[264]"></a>tuya_ble_gap_advertising_adv_data_update</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, tuya_ble_port_bk3431q.o(i.tuya_ble_gap_advertising_adv_data_update))
@@ -4435,7 +4435,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[233]"></a>tuya_ble_main_tasks_exec</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, tuya_ble_main.o(i.tuya_ble_main_tasks_exec))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1408<LI>Call Chain = tuya_ble_main_tasks_exec &rArr; tuya_sched_execute &rArr; tuya_ble_event_process &rArr; tuya_ble_evt_process &rArr; tuya_ble_handle_ble_factory_test_req &rArr; tuya_ble_app_production_test_process &rArr; app_port_factory_test_process &rArr; factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1408<LI>Call Chain = tuya_ble_main_tasks_exec &rArr; tuya_sched_execute &rArr; tuya_ble_event_process &rArr; tuya_ble_evt_process &rArr; tuya_ble_handle_ble_factory_test_req &rArr; tuya_ble_app_production_test_process &rArr; app_port_factory_test_process &rArr; factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[299]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_sched_execute
 </UL>
@@ -4453,8 +4453,6 @@ Global Symbols
 <LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_dp_data_report
 <LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_port_malloc
 <LI><a href="#[2a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_uart_receive_data
-<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;data_2_klvlist
-<LI><a href="#[284]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_uart_cmd_evt
 <LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_evt_process
 <LI><a href="#[273]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_commonData_rx_proc
 <LI><a href="#[28e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_ota_req
@@ -4462,6 +4460,8 @@ Global Symbols
 <LI><a href="#[28a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_dp_write_req
 <LI><a href="#[28b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_dp_query_req
 <LI><a href="#[290]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_ble_factory_test_req
+<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;data_2_klvlist
+<LI><a href="#[284]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_uart_cmd_evt
 </UL>
 
 <P><STRONG><a name="[279]"></a>tuya_ble_md5_crypt</STRONG> (Thumb, 52 bytes, Stack size 104 bytes, tuya_ble_port_bk3431q.o(i.tuya_ble_md5_crypt))
@@ -4541,8 +4541,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[22d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_exit_critical
 <LI><a href="#[22a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_enter_critical
 </UL>
-<BR>[Called By]<UL><LI><a href="#[286]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_connect_change_evt
-<LI><a href="#[28c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_dev_infor_req
+<BR>[Called By]<UL><LI><a href="#[28c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_dev_infor_req
+<LI><a href="#[286]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_connect_change_evt
 </UL>
 
 <P><STRONG><a name="[281]"></a>tuya_ble_pair_rand_valid_get</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, tuya_ble_data_handler.o(i.tuya_ble_pair_rand_valid_get))
@@ -4613,9 +4613,9 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_nv_read
 <LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 <LI><a href="#[25e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sys_settings_crc_ok
 <LI><a href="#[14f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;auth_settings_crc_ok
-<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[29c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_storage_init
 </UL>
@@ -4640,10 +4640,10 @@ Global Symbols
 <LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 <LI><a href="#[150]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_crc32_compute
 </UL>
-<BR>[Called By]<UL><LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_event_process
-<LI><a href="#[27a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_unbond
+<BR>[Called By]<UL><LI><a href="#[27a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_unbond
 <LI><a href="#[28d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_pair_req
 <LI><a href="#[28f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_handle_device_reset_req
+<LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_event_process
 </UL>
 
 <P><STRONG><a name="[12f]"></a>tuya_ble_timer_create</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, tuya_ble_port_bk3431q.o(i.tuya_ble_timer_create))
@@ -4701,7 +4701,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[299]"></a>tuya_sched_execute</STRONG> (Thumb, 60 bytes, Stack size 16 bytes, tuya_ble_event.o(i.tuya_sched_execute))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1400<LI>Call Chain = tuya_sched_execute &rArr; tuya_ble_event_process &rArr; tuya_ble_evt_process &rArr; tuya_ble_handle_ble_factory_test_req &rArr; tuya_ble_app_production_test_process &rArr; app_port_factory_test_process &rArr; factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1400<LI>Call Chain = tuya_sched_execute &rArr; tuya_ble_event_process &rArr; tuya_ble_evt_process &rArr; tuya_ble_handle_ble_factory_test_req &rArr; tuya_ble_app_production_test_process &rArr; app_port_factory_test_process &rArr; factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_event_process
@@ -4865,9 +4865,9 @@ Global Symbols
 <P><STRONG><a name="[291]"></a>vTuyaPortFree</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, tuya_ble_heap.o(i.vTuyaPortFree))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = vTuyaPortFree &rArr; tuya_ble_device_exit_critical &rArr; bk_exit_critical
 </UL>
-<BR>[Calls]<UL><LI><a href="#[22d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_exit_critical
+<BR>[Calls]<UL><LI><a href="#[22c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInsertBlockIntoFreeList
+<LI><a href="#[22d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_exit_critical
 <LI><a href="#[22a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_device_enter_critical
-<LI><a href="#[22c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInsertBlockIntoFreeList
 </UL>
 <BR>[Called By]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_free
 </UL>
@@ -4889,7 +4889,7 @@ Global Symbols
 Local Symbols
 </H3>
 <P><STRONG><a name="[1e1]"></a>open_meth_creat_handler</STRONG> (Thumb, 430 bytes, Stack size 32 bytes, lock_dp_parser.o(i.open_meth_creat_handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1008<LI>Call Chain = open_meth_creat_handler &rArr; lock_hard_save_in_local_flash &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1008<LI>Call Chain = open_meth_creat_handler &rArr; lock_hard_save_in_local_flash &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_hard_creat_sub_report_with_delay
 <LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_common_evt_send_with_data
@@ -4916,7 +4916,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[1e4]"></a>open_meth_freeze_or_unfreeze_handler</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, lock_dp_parser.o(i.open_meth_freeze_or_unfreeze_handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 968<LI>Call Chain = open_meth_freeze_or_unfreeze_handler &rArr; lock_hard_freezeorunfreeze &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 968<LI>Call Chain = open_meth_freeze_or_unfreeze_handler &rArr; lock_hard_freezeorunfreeze &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[203]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_hard_freezeorunfreeze
 </UL>
@@ -4924,7 +4924,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[1e3]"></a>open_meth_modify_handler</STRONG> (Thumb, 154 bytes, Stack size 24 bytes, lock_dp_parser.o(i.open_meth_modify_handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1008<LI>Call Chain = open_meth_modify_handler &rArr; lock_hard_modify_all_by_memberid &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1008<LI>Call Chain = open_meth_modify_handler &rArr; lock_hard_modify_all_by_memberid &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_hard_modify_in_local_flash
 <LI><a href="#[206]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_hard_modify_all_by_memberid
@@ -4953,7 +4953,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[1ec]"></a>temp_pw_creat_handler</STRONG> (Thumb, 94 bytes, Stack size 24 bytes, lock_dp_parser.o(i.temp_pw_creat_handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1000<LI>Call Chain = temp_pw_creat_handler &rArr; lock_hard_save_in_local_flash &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1000<LI>Call Chain = temp_pw_creat_handler &rArr; lock_hard_save_in_local_flash &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_hard_save_in_local_flash
 <LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_get_hardid
@@ -4972,7 +4972,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[1ee]"></a>temp_pw_modify_handler</STRONG> (Thumb, 80 bytes, Stack size 24 bytes, lock_dp_parser.o(i.temp_pw_modify_handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 992<LI>Call Chain = temp_pw_modify_handler &rArr; lock_hard_modify_in_local_flash &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 992<LI>Call Chain = temp_pw_modify_handler &rArr; lock_hard_modify_in_local_flash &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_hard_modify_in_local_flash
 <LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;elog_output
@@ -4981,7 +4981,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[1e5]"></a>user_freeze_or_unfreeze_handler</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, lock_dp_parser.o(i.user_freeze_or_unfreeze_handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 984<LI>Call Chain = user_freeze_or_unfreeze_handler &rArr; lock_hard_freezeorunfreeze_all_by_memberid &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 984<LI>Call Chain = user_freeze_or_unfreeze_handler &rArr; lock_hard_freezeorunfreeze_all_by_memberid &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[205]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_hard_freezeorunfreeze_all_by_memberid
 </UL>
@@ -5053,8 +5053,8 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = get_timer_string &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;elog_output
-<LI><a href="#[1a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2snprintf
 <LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<LI><a href="#[1a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2snprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;verify_dynamic_pwd_token
 </UL>
@@ -5090,7 +5090,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[c]"></a>app_common_evt_process</STRONG> (Thumb, 152 bytes, Stack size 8 bytes, app_common.o(i.app_common_evt_process))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1240<LI>Call Chain = app_common_evt_process &rArr; delay_report_outtime_cb_handler &rArr; delay_report_outtime_handler &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1240<LI>Call Chain = app_common_evt_process &rArr; delay_report_outtime_cb_handler &rArr; delay_report_outtime_handler &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_with_disconn_outtime_cb_handler
 <LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_timer_stop
@@ -5114,7 +5114,7 @@ Local Symbols
 <BR>[Address Reference Count : 1]<UL><LI> app_common.o(i.app_common_evt_send)
 </UL>
 <P><STRONG><a name="[d]"></a>app_common_tuya_ble_sdk_callback</STRONG> (Thumb, 192 bytes, Stack size 24 bytes, app_common.o(i.app_common_tuya_ble_sdk_callback))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1064<LI>Call Chain = app_common_tuya_ble_sdk_callback &rArr; lock_dp_parser_handler &rArr; open_meth_modify_handler &rArr; lock_hard_modify_all_by_memberid &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1064<LI>Call Chain = app_common_tuya_ble_sdk_callback &rArr; lock_dp_parser_handler &rArr; open_meth_modify_handler &rArr; lock_hard_modify_all_by_memberid &rArr; lock_hard_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_timer_stop
 <LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_offline_evt_report
@@ -5130,7 +5130,7 @@ Local Symbols
 <BR>[Address Reference Count : 1]<UL><LI> app_common.o(i.app_common_init)
 </UL>
 <P><STRONG><a name="[eb]"></a>app_ota_data_handler</STRONG> (Thumb, 492 bytes, Stack size 48 bytes, app_ota.o(i.app_ota_data_handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 928<LI>Call Chain = app_ota_data_handler &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 928<LI>Call Chain = app_ota_data_handler &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_port_crc16_compute
 <LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;elog_output
@@ -5182,16 +5182,16 @@ Local Symbols
 <LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_port_kv_get
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_port_reverse_byte
-<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uwrite4
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uread4
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uwrite4
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uread4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_ota_handler
 </UL>
 
 <P><STRONG><a name="[fb]"></a>app_ota_file_offset_handler</STRONG> (Thumb, 224 bytes, Stack size 64 bytes, app_ota.o(i.app_ota_file_offset_handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 944<LI>Call Chain = app_ota_file_offset_handler &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 944<LI>Call Chain = app_ota_file_offset_handler &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;elog_output
 <LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_ota_rsp
@@ -5227,8 +5227,8 @@ Local Symbols
 <LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_ota_rsp
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_ota_exit
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_port_reverse_byte
-<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uwrite4
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uwrite4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_ota_handler
 </UL>
@@ -5246,7 +5246,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[13a]"></a>app_test_process</STRONG> (Thumb, 198 bytes, Stack size 112 bytes, app_test.o(i.app_test_process))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1104<LI>Call Chain = app_test_process &rArr; app_test_write_auth_info_handler &rArr; lock_factory_handler &rArr; lock_flash_erease_all &rArr; lock_settings_delete_and_default &rArr; lock_settings_default &rArr; lock_settings_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1104<LI>Call Chain = app_test_process &rArr; app_test_write_auth_info_handler &rArr; lock_factory_handler &rArr; lock_flash_erease_all &rArr; lock_settings_delete_and_default &rArr; lock_settings_default &rArr; lock_settings_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_timer_start
 <LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;elog_output
@@ -5256,14 +5256,14 @@ Local Symbols
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_port_kv_set
 <LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 <LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_switch8 (via BLX)
-<LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 <LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_test_pre_process
 </UL>
 
 <P><STRONG><a name="[13d]"></a>app_test_query_info_handler</STRONG> (Thumb, 436 bytes, Stack size 32 bytes, app_test.o(i.app_test_query_info_handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 912<LI>Call Chain = app_test_query_info_handler &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 912<LI>Call Chain = app_test_query_info_handler &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_test_rsp
@@ -5287,7 +5287,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[13c]"></a>app_test_write_auth_info_handler</STRONG> (Thumb, 116 bytes, Stack size 32 bytes, app_test.o(i.app_test_write_auth_info_handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 992<LI>Call Chain = app_test_write_auth_info_handler &rArr; lock_factory_handler &rArr; lock_flash_erease_all &rArr; lock_settings_delete_and_default &rArr; lock_settings_default &rArr; lock_settings_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 992<LI>Call Chain = app_test_write_auth_info_handler &rArr; lock_factory_handler &rArr; lock_flash_erease_all &rArr; lock_settings_delete_and_default &rArr; lock_settings_default &rArr; lock_settings_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lock_factory_handler
@@ -5327,10 +5327,10 @@ Local Symbols
 <P><STRONG><a name="[13]"></a>check_and_recovery_env_cb</STRONG> (Thumb, 94 bytes, Stack size 32 bytes, ef_env.o(i.check_and_recovery_env_cb))
 <BR><BR>[Stack]<UL><LI>Max Depth = 1008<LI>Call Chain = check_and_recovery_env_cb &rArr; move_env &rArr; del_env &rArr; find_env &rArr; find_env_no_cache &rArr; env_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
-<LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_log_info
+<BR>[Calls]<UL><LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_log_info
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_log_debug
 <LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_status
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> ef_env.o(i.ef_load_env)
 </UL>
@@ -5344,16 +5344,15 @@ Local Symbols
 <P><STRONG><a name="[11]"></a>check_sec_hdr_cb</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, ef_env.o(i.check_sec_hdr_cb))
 <BR><BR>[Stack]<UL><LI>Max Depth = 376<LI>Call Chain = check_sec_hdr_cb &rArr; format_sector &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;format_sector
-<LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_log_info
+<BR>[Calls]<UL><LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_log_info
+<LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;format_sector
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> ef_env.o(i.ef_load_env)
 </UL>
 <P><STRONG><a name="[184]"></a>create_env_blob</STRONG> (Thumb, 424 bytes, Stack size 104 bytes, ef_env.o(i.create_env_blob))
-<BR><BR>[Stack]<UL><LI>Max Depth = 824<LI>Call Chain = create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 824<LI>Call Chain = create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;new_env
-<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;align_write
+<BR>[Calls]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;align_write
 <LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_log_info
 <LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_port_write
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_log_debug
@@ -5362,6 +5361,7 @@ Local Symbols
 <LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update_sector_cache
 <LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update_sec_status
 <LI><a href="#[189]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update_env_cache
+<LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;new_env
 <LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
@@ -5380,29 +5380,29 @@ Local Symbols
 <LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 </UL>
 <BR>[Called By]<UL><LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_del_env
-<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
 <LI><a href="#[19e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_env
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
 </UL>
 
 <P><STRONG><a name="[16]"></a>do_gc</STRONG> (Thumb, 142 bytes, Stack size 96 bytes, ef_env.o(i.do_gc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 1072<LI>Call Chain = do_gc &rArr; move_env &rArr; del_env &rArr; find_env &rArr; find_env_no_cache &rArr; env_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_env
+<BR>[Calls]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_log_debug
+<LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_status
+<LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_env
 <LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
 <LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_next_env_addr
 <LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;format_sector
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_log_debug
-<LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_status
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> ef_env.o(i.gc_collect)
 </UL>
 <P><STRONG><a name="[19b]"></a>env_iterator</STRONG> (Thumb, 96 bytes, Stack size 64 bytes, ef_env.o(i.env_iterator))
 <BR><BR>[Stack]<UL><LI>Max Depth = 664<LI>Call Chain = env_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_env
+<BR>[Calls]<UL><LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_sector_meta_data
+<LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_env
 <LI><a href="#[1b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_next_sector_addr
 <LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_next_env_addr
-<LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_sector_meta_data
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;find_env_no_cache
 <LI><a href="#[198]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_load_env
@@ -5411,10 +5411,10 @@ Local Symbols
 <P><STRONG><a name="[18d]"></a>find_env</STRONG> (Thumb, 64 bytes, Stack size 24 bytes, ef_env.o(i.find_env))
 <BR><BR>[Stack]<UL><LI>Max Depth = 704<LI>Call Chain = find_env &rArr; find_env_no_cache &rArr; env_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_env
-<LI><a href="#[1bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_env_from_cache
-<LI><a href="#[1bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;find_env_no_cache
+<BR>[Calls]<UL><LI><a href="#[1bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;find_env_no_cache
 <LI><a href="#[189]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update_env_cache
+<LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_env
+<LI><a href="#[1bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_env_from_cache
 <LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 </UL>
 <BR>[Called By]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_get_env_blob
@@ -5435,15 +5435,15 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[19b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;env_iterator
 </UL>
-<BR>[Called By]<UL><LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
-<LI><a href="#[18d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;find_env
+<BR>[Called By]<UL><LI><a href="#[18d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;find_env
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
 </UL>
 
 <P><STRONG><a name="[1be]"></a>find_next_env_addr</STRONG> (Thumb, 114 bytes, Stack size 56 bytes, ef_env.o(i.find_next_env_addr))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = find_next_env_addr &rArr; ef_port_read &rArr; tuya_ble_nv_read &rArr; bk_flash_read &rArr; flash_read &rArr; flash_read_data
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_sector_from_cache
-<LI><a href="#[19a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_port_read
+<BR>[Calls]<UL><LI><a href="#[19a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_port_read
+<LI><a href="#[1bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_sector_from_cache
 </UL>
 <BR>[Called By]<UL><LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_next_env_addr
 </UL>
@@ -5472,10 +5472,10 @@ Local Symbols
 <BR>[Calls]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_log_debug
 <LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sector_iterator
 </UL>
-<BR>[Called By]<UL><LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;new_env
-<LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_and_recovery_gc_cb
+<BR>[Called By]<UL><LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_and_recovery_gc_cb
 <LI><a href="#[198]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_load_env
 <LI><a href="#[19e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_env
+<LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;new_env
 </UL>
 
 <P><STRONG><a name="[1bc]"></a>get_env_from_cache</STRONG> (Thumb, 104 bytes, Stack size 64 bytes, ef_env.o(i.get_env_from_cache))
@@ -5513,9 +5513,9 @@ Local Symbols
 <P><STRONG><a name="[22e]"></a>get_status</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, ef_env.o(i.get_status))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = get_status
 </UL>
-<BR>[Called By]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_env
-<LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_status
+<BR>[Called By]<UL><LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_status
 <LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_sector_meta_data
+<LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_env
 </UL>
 
 <P><STRONG><a name="[180]"></a>move_env</STRONG> (Thumb, 266 bytes, Stack size 176 bytes, ef_env.o(i.move_env))
@@ -5539,11 +5539,11 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[185]"></a>new_env</STRONG> (Thumb, 56 bytes, Stack size 32 bytes, ef_env.o(i.new_env))
-<BR><BR>[Stack]<UL><LI>Max Depth = 720<LI>Call Chain = new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 720<LI>Call Chain = new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_collect
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;alloc_env
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;alloc_env
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_log_debug
+<LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_collect
 </UL>
 <BR>[Called By]<UL><LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;create_env_blob
 <LI><a href="#[19e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_env
@@ -5552,11 +5552,11 @@ Local Symbols
 <P><STRONG><a name="[192]"></a>read_env</STRONG> (Thumb, 260 bytes, Stack size 104 bytes, ef_env.o(i.read_env))
 <BR><BR>[Stack]<UL><LI>Max Depth = 424<LI>Call Chain = read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[22e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_status
-<LI><a href="#[19a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_port_read
+<BR>[Calls]<UL><LI><a href="#[19a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_port_read
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_log_debug
 <LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_calc_crc32
 <LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_status
+<LI><a href="#[22e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_status
 </UL>
 <BR>[Called By]<UL><LI><a href="#[18d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;find_env
 <LI><a href="#[19b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;env_iterator
@@ -5567,14 +5567,14 @@ Local Symbols
 <P><STRONG><a name="[1b0]"></a>read_sector_meta_data</STRONG> (Thumb, 368 bytes, Stack size 176 bytes, ef_env.o(i.read_sector_meta_data))
 <BR><BR>[Stack]<UL><LI>Max Depth = 600<LI>Call Chain = read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_env
-<LI><a href="#[22e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_status
-<LI><a href="#[1bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_sector_from_cache
-<LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_next_env_addr
-<LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_log_info
+<BR>[Calls]<UL><LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_log_info
 <LI><a href="#[19a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_port_read
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_log_debug
 <LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update_sector_cache
+<LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_env
+<LI><a href="#[22e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_status
+<LI><a href="#[1bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_sector_from_cache
+<LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_next_env_addr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[19b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;env_iterator
 <LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sector_iterator
@@ -5583,9 +5583,9 @@ Local Symbols
 <P><STRONG><a name="[18e]"></a>read_status</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, ef_env.o(i.read_status))
 <BR><BR>[Stack]<UL><LI>Max Depth = 296<LI>Call Chain = read_status &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[22e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_status
-<LI><a href="#[19a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_port_read
+<BR>[Calls]<UL><LI><a href="#[19a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_port_read
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_log_debug
+<LI><a href="#[22e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_status
 </UL>
 <BR>[Called By]<UL><LI><a href="#[18c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_env
 </UL>
@@ -5593,25 +5593,25 @@ Local Symbols
 <P><STRONG><a name="[bf]"></a>sector_iterator</STRONG> (Thumb, 86 bytes, Stack size 40 bytes, ef_env.o(i.sector_iterator))
 <BR><BR>[Stack]<UL><LI>Max Depth = 640<LI>Call Chain = sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_next_sector_addr
-<LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_sector_meta_data
+<BR>[Calls]<UL><LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_sector_meta_data
+<LI><a href="#[1b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_next_sector_addr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_collect
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;alloc_env
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;alloc_env
 <LI><a href="#[198]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_load_env
+<LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_collect
 </UL>
 
 <P><STRONG><a name="[a]"></a>sector_statistics_cb</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, ef_env.o(i.sector_statistics_cb))
 <BR>[Address Reference Count : 1]<UL><LI> ef_env.o(i.alloc_env)
 </UL>
 <P><STRONG><a name="[19e]"></a>set_env</STRONG> (Thumb, 144 bytes, Stack size 32 bytes, ef_env.o(i.set_env))
-<BR><BR>[Stack]<UL><LI>Max Depth = 856<LI>Call Chain = set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 856<LI>Call Chain = set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;new_env
-<LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_collect
-<LI><a href="#[18d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;find_env
+<BR>[Calls]<UL><LI><a href="#[18d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;find_env
 <LI><a href="#[18c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_env
 <LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;create_env_blob
+<LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;new_env
+<LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_collect
 <LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 </UL>
 <BR>[Called By]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_set_env_blob
@@ -5622,8 +5622,8 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
-<BR>[Called By]<UL><LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;format_sector
-<LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_status
+<BR>[Called By]<UL><LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_status
+<LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;format_sector
 </UL>
 
 <P><STRONG><a name="[189]"></a>update_env_cache</STRONG> (Thumb, 144 bytes, Stack size 24 bytes, ef_env.o(i.update_env_cache))
@@ -5631,10 +5631,10 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_calc_crc32
 </UL>
-<BR>[Called By]<UL><LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
-<LI><a href="#[18d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;find_env
+<BR>[Called By]<UL><LI><a href="#[18d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;find_env
 <LI><a href="#[18c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_env
 <LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;create_env_blob
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
 </UL>
 
 <P><STRONG><a name="[186]"></a>update_sec_status</STRONG> (Thumb, 96 bytes, Stack size 32 bytes, ef_env.o(i.update_sec_status))
@@ -5643,18 +5643,18 @@ Local Symbols
 <BR>[Calls]<UL><LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_status
 <LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update_sector_cache
 </UL>
-<BR>[Called By]<UL><LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
-<LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;create_env_blob
+<BR>[Called By]<UL><LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;create_env_blob
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
 </UL>
 
 <P><STRONG><a name="[188]"></a>update_sector_cache</STRONG> (Thumb, 86 bytes, Stack size 20 bytes, ef_env.o(i.update_sector_cache))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = update_sector_cache
 </UL>
-<BR>[Called By]<UL><LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
-<LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;format_sector
-<LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;create_env_blob
+<BR>[Called By]<UL><LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;create_env_blob
 <LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update_sec_status
 <LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_sector_meta_data
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
+<LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;format_sector
 </UL>
 
 <P><STRONG><a name="[181]"></a>write_status</STRONG> (Thumb, 84 bytes, Stack size 24 bytes, ef_env.o(i.write_status))
@@ -5664,13 +5664,13 @@ Local Symbols
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ef_log_debug
 <LI><a href="#[1cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_status
 </UL>
-<BR>[Called By]<UL><LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_env
-<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
-<LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_gc
+<BR>[Called By]<UL><LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_gc
 <LI><a href="#[18c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;del_env
 <LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;create_env_blob
 <LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_and_recovery_env_cb
 <LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update_sec_status
+<LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_env
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;move_env
 </UL>
 
 <P><STRONG><a name="[1a9]"></a>get_fmt_enabled</STRONG> (Thumb, 70 bytes, Stack size 32 bytes, elog.o(i.get_fmt_enabled))
@@ -5914,7 +5914,7 @@ Local Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> app_task.o(.constdata)
 </UL>
-<P><STRONG><a name="[65]"></a>bk_timer15_handler</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, app_task.o(i.bk_timer15_handler))
+<P><STRONG><a name="[65]"></a>bk_timer15_handler</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, app_task.o(i.bk_timer15_handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = bk_timer15_handler &rArr; bk_timer_handler
 </UL>
 <BR>[Calls]<UL><LI><a href="#[16d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bk_timer_handler
@@ -6038,8 +6038,8 @@ Local Symbols
 <LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;elog_output
 <LI><a href="#[151]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bk_adv_start
 <LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_state_set
-<LI><a href="#[1d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wdt_disable
 <LI><a href="#[1d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_disconnected_handler
+<LI><a href="#[1d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wdt_disable
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> app_task.o(.constdata)
 </UL>
@@ -6073,8 +6073,8 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
 <LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;elog_output
-<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2uiz
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2uiz
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> app_task.o(.constdata)
 </UL>
@@ -6087,7 +6087,7 @@ Local Symbols
 <BR>[Address Reference Count : 1]<UL><LI> app_task.o(.constdata)
 </UL>
 <P><STRONG><a name="[4b]"></a>gapm_cmp_evt_handler</STRONG> (Thumb, 274 bytes, Stack size 32 bytes, app_task.o(i.gapm_cmp_evt_handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1072<LI>Call Chain = gapm_cmp_evt_handler &rArr; lock_common_init &rArr; app_port_kv_init &rArr; easyflash_init &rArr; ef_env_init &rArr; ef_load_env &rArr; ef_env_set_default &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1072<LI>Call Chain = gapm_cmp_evt_handler &rArr; lock_common_init &rArr; app_port_kv_init &rArr; easyflash_init &rArr; ef_env_init &rArr; ef_load_env &rArr; ef_env_set_default &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;elog_output
@@ -6147,13 +6147,13 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[290]"></a>tuya_ble_handle_ble_factory_test_req</STRONG> (Thumb, 150 bytes, Stack size 40 bytes, tuya_ble_data_handler.o(i.tuya_ble_handle_ble_factory_test_req))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1320<LI>Call Chain = tuya_ble_handle_ble_factory_test_req &rArr; tuya_ble_app_production_test_process &rArr; app_port_factory_test_process &rArr; factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1320<LI>Call Chain = tuya_ble_handle_ble_factory_test_req &rArr; tuya_ble_app_production_test_process &rArr; app_port_factory_test_process &rArr; factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_malloc
 <LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_free
-<LI><a href="#[26a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_app_production_test_process
 <LI><a href="#[292]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_sum
 <LI><a href="#[26d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_commData_send
+<LI><a href="#[26a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_app_production_test_process
 </UL>
 <BR>[Called By]<UL><LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_evt_process
 </UL>
@@ -6162,9 +6162,9 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 708<LI>Call Chain = tuya_ble_handle_dev_infor_req &rArr; tuya_ble_commData_send &rArr; tuya_ble_encryption &rArr; tuya_ble_key_generate &rArr; tuya_ble_aes128_cbc_encrypt &rArr; mbedtls_aes_crypt_cbc &rArr; mbedtls_aes_crypt_ecb &rArr; mbedtls_internal_aes_encrypt
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
-<LI><a href="#[296]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_rand_generator
 <LI><a href="#[295]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_pair_rand_clear
 <LI><a href="#[26d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_commData_send
+<LI><a href="#[296]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_rand_generator
 </UL>
 <BR>[Called By]<UL><LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_evt_process
 </UL>
@@ -6201,10 +6201,10 @@ Local Symbols
 <LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_malloc
 <LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_free
 <LI><a href="#[26f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bk_log_hexdump_empty
-<LI><a href="#[18b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free_klv_list
-<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;data_2_klvlist
 <LI><a href="#[26b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_cb_event_send
 <LI><a href="#[26d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_commData_send
+<LI><a href="#[18b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free_klv_list
+<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;data_2_klvlist
 </UL>
 <BR>[Called By]<UL><LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_evt_process
 </UL>
@@ -6241,12 +6241,12 @@ Local Symbols
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_gap_disconnect
 <LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
-<LI><a href="#[276]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_connect_status_set
-<LI><a href="#[262]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_adv_change
-<LI><a href="#[297]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_connect_monitor_timer_stop
 <LI><a href="#[27b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_storage_save_sys_settings
 <LI><a href="#[26b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_cb_event_send
 <LI><a href="#[26d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_commData_send
+<LI><a href="#[276]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_connect_status_set
+<LI><a href="#[262]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_adv_change
+<LI><a href="#[297]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_connect_monitor_timer_stop
 </UL>
 <BR>[Called By]<UL><LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_evt_process
 </UL>
@@ -6256,8 +6256,8 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[26b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_cb_event_send
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atoll
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
+<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atoll
 </UL>
 <BR>[Called By]<UL><LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_evt_process
 </UL>
@@ -6276,11 +6276,11 @@ Local Symbols
 <P><STRONG><a name="[286]"></a>tuya_ble_handle_connect_change_evt</STRONG> (Thumb, 86 bytes, Stack size 24 bytes, tuya_ble_main.o(i.tuya_ble_handle_connect_change_evt))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = tuya_ble_handle_connect_change_evt &rArr; tuya_ble_cb_event_send &rArr; tuya_ble_inter_event_response &rArr; tuya_ble_free &rArr; vTuyaPortFree &rArr; tuya_ble_device_exit_critical &rArr; bk_exit_critical
 </UL>
-<BR>[Calls]<UL><LI><a href="#[276]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_connect_status_set
-<LI><a href="#[294]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_connect_monitor_timer_start
-<LI><a href="#[26b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_cb_event_send
+<BR>[Calls]<UL><LI><a href="#[26b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_cb_event_send
 <LI><a href="#[293]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_reset_ble_sn
 <LI><a href="#[295]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_pair_rand_clear
+<LI><a href="#[276]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_connect_status_set
+<LI><a href="#[294]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_connect_monitor_timer_start
 </UL>
 <BR>[Called By]<UL><LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_event_process
 </UL>
@@ -6318,15 +6318,15 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[284]"></a>tuya_ble_handle_uart_cmd_evt</STRONG> (Thumb, 140 bytes, Stack size 16 bytes, tuya_ble_main.o(i.tuya_ble_handle_uart_cmd_evt))
-<BR><BR>[Stack]<UL><LI>Max Depth = 1296<LI>Call Chain = tuya_ble_handle_uart_cmd_evt &rArr; tuya_ble_app_production_test_process &rArr; app_port_factory_test_process &rArr; factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; gc_collect &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
+<BR><BR>[Stack]<UL><LI>Max Depth = 1296<LI>Call Chain = tuya_ble_handle_uart_cmd_evt &rArr; tuya_ble_app_production_test_process &rArr; app_port_factory_test_process &rArr; factory_test_process &rArr; lock_hard_uart_simulate &rArr; lock_open_record_report &rArr; lock_evt_save &rArr; lock_evtid_save &rArr; app_port_kv_set &rArr; ef_set_env_blob &rArr; set_env &rArr; create_env_blob &rArr; new_env &rArr; alloc_env &rArr; sector_iterator &rArr; read_sector_meta_data &rArr; read_env &rArr; write_status &rArr; ef_port_write &rArr; ef_log_debug &rArr; elog_output &rArr;  elog_output (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_uart_send_data
 <LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_malloc
 <LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_free
 <LI><a href="#[26f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bk_log_hexdump_empty
+<LI><a href="#[292]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_sum
 <LI><a href="#[26a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_app_production_test_process
 <LI><a href="#[298]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_uart_common_process
-<LI><a href="#[292]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_sum
 </UL>
 <BR>[Called By]<UL><LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_event_process
 </UL>
@@ -6352,8 +6352,8 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
-<BR>[Called By]<UL><LI><a href="#[266]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_encrypt_old_with_key
-<LI><a href="#[270]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_encryption
+<BR>[Called By]<UL><LI><a href="#[270]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_encryption
+<LI><a href="#[266]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tuya_ble_encrypt_old_with_key
 </UL>
 
 <P><STRONG><a name="[278]"></a>tuya_ble_key_generate</STRONG> (Thumb, 318 bytes, Stack size 64 bytes, tuya_ble_cryption_api.o(i.tuya_ble_key_generate))
@@ -6378,22 +6378,22 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[b8]"></a>_fp_digits</STRONG> (Thumb, 344 bytes, Stack size 64 bytes, printfa.o(i._fp_digits), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
-<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<BR><BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdrcmple
 <LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2ulz
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
 <P><STRONG><a name="[ad]"></a>_printf_core</STRONG> (Thumb, 1764 bytes, Stack size 128 bytes, printfa.o(i._printf_core), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 <LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding
 <LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0vsprintf
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0vsnprintf

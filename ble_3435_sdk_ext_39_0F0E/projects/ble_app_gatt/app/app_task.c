@@ -90,77 +90,77 @@ static int bk_timer4_handler(ke_msg_id_t const msgid, void *param, ke_task_id_t 
 }
 // Timer 5
 static int bk_timer5_handler(ke_msg_id_t const msgid, void *param, ke_task_id_t const dest_id, ke_task_id_t const src_id) {
-    bk_timer_handler(BK_TIMER4);
+    bk_timer_handler(BK_TIMER5);
     return KE_MSG_CONSUMED;
 }
 // Timer 6
 static int bk_timer6_handler(ke_msg_id_t const msgid, void *param, ke_task_id_t const dest_id, ke_task_id_t const src_id) {
-    bk_timer_handler(BK_TIMER4);
+    bk_timer_handler(BK_TIMER6);
     return KE_MSG_CONSUMED;
 }
 // Timer 7
 static int bk_timer7_handler(ke_msg_id_t const msgid, void *param, ke_task_id_t const dest_id, ke_task_id_t const src_id) {
-    bk_timer_handler(BK_TIMER4);
+    bk_timer_handler(BK_TIMER7);
     return KE_MSG_CONSUMED;
 }
 // Timer 8
 static int bk_timer8_handler(ke_msg_id_t const msgid, void *param, ke_task_id_t const dest_id, ke_task_id_t const src_id) {
-    bk_timer_handler(BK_TIMER4);
+    bk_timer_handler(BK_TIMER8);
     return KE_MSG_CONSUMED;
 }
 // Timer 9
 static int bk_timer9_handler(ke_msg_id_t const msgid, void *param, ke_task_id_t const dest_id, ke_task_id_t const src_id) {
-    bk_timer_handler(BK_TIMER4);
+    bk_timer_handler(BK_TIMER9);
     return KE_MSG_CONSUMED;
 }
 // Timer 10
 static int bk_timer10_handler(ke_msg_id_t const msgid, void *param, ke_task_id_t const dest_id, ke_task_id_t const src_id) {
-    bk_timer_handler(BK_TIMER4);
+    bk_timer_handler(BK_TIMER10);
     return KE_MSG_CONSUMED;
 }
 // Timer 11
 static int bk_timer11_handler(ke_msg_id_t const msgid, void *param, ke_task_id_t const dest_id, ke_task_id_t const src_id) {
-    bk_timer_handler(BK_TIMER4);
+    bk_timer_handler(BK_TIMER11);
     return KE_MSG_CONSUMED;
 }
 // Timer 12
 static int bk_timer12_handler(ke_msg_id_t const msgid, void *param, ke_task_id_t const dest_id, ke_task_id_t const src_id) {
-    bk_timer_handler(BK_TIMER4);
+    bk_timer_handler(BK_TIMER12);
     return KE_MSG_CONSUMED;
 }
 // Timer 13
 static int bk_timer13_handler(ke_msg_id_t const msgid, void *param, ke_task_id_t const dest_id, ke_task_id_t const src_id) {
-    bk_timer_handler(BK_TIMER4);
+    bk_timer_handler(BK_TIMER13);
     return KE_MSG_CONSUMED;
 }
 // Timer 14
 static int bk_timer14_handler(ke_msg_id_t const msgid, void *param, ke_task_id_t const dest_id, ke_task_id_t const src_id) {
-    bk_timer_handler(BK_TIMER4);
+    bk_timer_handler(BK_TIMER14);
     return KE_MSG_CONSUMED;
 }
 // Timer 15
 static int bk_timer15_handler(ke_msg_id_t const msgid, void *param, ke_task_id_t const dest_id, ke_task_id_t const src_id) {
-    bk_timer_handler(BK_TIMER4);
+    bk_timer_handler(BK_TIMER15);
     return KE_MSG_CONSUMED;
 }
 // Timer 16
 static int bk_timer16_handler(ke_msg_id_t const msgid, void *param, ke_task_id_t const dest_id, ke_task_id_t const src_id) {
-    bk_timer_handler(BK_TIMER4);
+    bk_timer_handler(BK_TIMER16);
     return KE_MSG_CONSUMED;
 }
 // Timer 17
 static int bk_timer17_handler(ke_msg_id_t const msgid, void *param, ke_task_id_t const dest_id, ke_task_id_t const src_id) {
-    bk_timer_handler(BK_TIMER4);
+    bk_timer_handler(BK_TIMER17);
     return KE_MSG_CONSUMED;
 }
 // Timer 18
 static int bk_timer18_handler(ke_msg_id_t const msgid, void *param, ke_task_id_t const dest_id, ke_task_id_t const src_id) {
-    bk_timer_handler(BK_TIMER4);
+    bk_timer_handler(BK_TIMER18);
     return KE_MSG_CONSUMED;
 }
 // Timer 19
 static int bk_timer19_handler(ke_msg_id_t const msgid, void *param, ke_task_id_t const dest_id, ke_task_id_t const src_id) {
-    bk_timer_handler(BK_TIMER4);
+    bk_timer_handler(BK_TIMER19);
     return KE_MSG_CONSUMED;
 }
 
