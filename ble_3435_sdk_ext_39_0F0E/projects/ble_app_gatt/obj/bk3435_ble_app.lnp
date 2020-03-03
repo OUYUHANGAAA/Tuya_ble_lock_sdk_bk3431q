@@ -12,6 +12,8 @@
 ".\obj\app_ota.o"
 ".\obj\app_test.o"
 ".\obj\app_port.o"
+".\obj\tuya_ble_storage.o"
+".\obj\tuya_ble_port_bk3431q.o"
 "..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\tuya_ble_sdk_bk3431q.lib"
 ".\obj\cpt_math.o"
 ".\obj\cpt_string_op.o"
