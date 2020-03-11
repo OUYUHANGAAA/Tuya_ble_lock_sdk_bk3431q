@@ -27,9 +27,6 @@ Project File Date:  03/03/2020
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'BK3435_app'
-compiling app_ota.c...
-linking...
-Program Size: Code=68136 RO-data=12748 RW-data=748 ZI-data=22180  
 After Build - User command #1: fromelf --bin --output .\output\app\bk3435_ble_app.bin .\obj\bk3435_ble_app.axf
 After Build - User command #2: .\output\encrypt_app.bat
 D:\office\workspace\Bk\Tuya_ble_lock_sdk_bk3431q\ble_3435_sdk_ext_39_0F0E\projects\ble_app_gatt>.\output\BinConvert_3435_OAD  -oad .\output\bim\bk3435_ble_bim.bin  .\output\stack\bk3435_ble_stack.bin  .\output\app\bk3435_ble_app.bin -m 0x1F00 -l 0x1E200 -v 0x000F -rom_v 0x000E -e 00000000 00000000 00000000 00000000 
@@ -43,14 +40,14 @@ add stack bin start
         File Size: 0x35398
 oad_stack_app_bin_len=33300
 oad_app_bin_len=153d0
-28 c0 a7 48 0f 00 f4 54 42 42 42 42 ff ff 0e 00 /**< @CREATE_FILE_SUCCESS */
+17 03 46 c7 0f 00 f4 54 42 42 42 42 ff ff 0e 00 /**< @CREATE_FILE_SUCCESS */
 /**< @Download flash file:.\output\app\bk3435_ble_app_merge_crc.bin
-/**< @OAD file :.\output\app\bk3435_ble_app_stack_oad.bin,CRC = 0x80ea21a3
-/**< @OAD file :.\output\app\bk3435_ble_app_oad.bin,CRC = 0x48a7c028
+/**< @OAD file :.\output\app\bk3435_ble_app_stack_oad.bin,CRC = 0xfb512094
+/**< @OAD file :.\output\app\bk3435_ble_app_oad.bin,CRC = 0xc7460317
 /**< @author <gang.cheng@bekencorp.com> */
 /**< @version v0.3 */
 ".\obj\bk3435_ble_app.axf" - 0 Error(s), 0 Warning(s).
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

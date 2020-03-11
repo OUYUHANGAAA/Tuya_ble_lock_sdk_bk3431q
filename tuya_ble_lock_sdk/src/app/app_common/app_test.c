@@ -213,8 +213,8 @@ static void app_test_write_auth_info_handler(uint8_t cmd, uint8_t* buf, uint16_t
         memcpy(tuya_ble_current_para.auth_settings.device_id, &buf[53], DEVICE_ID_LEN);
         tuya_ble_storage_save_auth_settings();
         
-//        memset(tuya_ble_current_para.sys_settings.device_virtual_id, 0, DEVICE_VIRTUAL_ID_LEN);
-//        tuya_ble_storage_save_sys_settings();
+        memset(tuya_ble_current_para.sys_settings.device_virtual_id, 0, DEVICE_VIRTUAL_ID_LEN);
+        tuya_ble_storage_save_sys_settings();
     }
     
     uint8_t mac[APP_PORT_BLE_ADDR_LEN];

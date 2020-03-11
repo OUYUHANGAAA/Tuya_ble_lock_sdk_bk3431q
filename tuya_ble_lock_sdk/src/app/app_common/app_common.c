@@ -71,7 +71,6 @@ static void app_common_tuya_ble_sdk_callback(tuya_ble_cb_evt_param_t* param)
         case TUYA_BLE_CB_EVT_CONNECTE_STATUS: {
             if(param->connect_status == BONDING_CONN) {
                 APP_DEBUG_PRINTF("bonding and connecting");
-                lock_timer_start(LOCK_TIMER_BONDING_CONN);
                 lock_timer_stop(LOCK_TIMER_CONN_MONITOR);
             }
         } break;
@@ -105,6 +104,7 @@ static void app_common_tuya_ble_sdk_callback(tuya_ble_cb_evt_param_t* param)
             APP_DEBUG_PRINTF("TUYA_BLE_CB_EVT_TIME_STAMP - time_zone: %d", param->timestamp_data.time_zone);
             APP_DEBUG_PRINTF("TUYA_BLE_CB_EVT_TIME_STAMP - timestamp: %d", param->timestamp_data.timestamp);
             app_port_update_timestamp(param->timestamp_data.timestamp);
+            lock_timer_start(LOCK_TIMER_BONDING_CONN);
         } break;
         
         //unbond
