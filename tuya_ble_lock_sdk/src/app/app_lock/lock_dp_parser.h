@@ -88,10 +88,11 @@ extern "C"
 #define  OR_LOG_OPEN_WITH_TMP_PWD                 55  //开锁记录-临时密码
 #define  OR_LOG_OPEN_WITH_OFFLINE_PWD             56  //开锁记录-离线密码
 #define  OR_LOG_OPEN_WITH_COMBINE                 57  //开锁记录-组合开锁
-#define  OR_LOG_OPEN_WITH_NOPWD_REMOTE            58  //开锁记录-免密远程开锁
+#define  OR_LOG_OPEN_WITH_REMOTE_PHONE            58  //开锁记录-远程手机开门
 #define  WR_SET_MOTOR_TORQUE                      59  //锁的设置-电机扭力
 #define  WR_BSC_OPEN_WITH_NOPWD_REMOTE_SETKEY     60  //基础功能-设置免密远程开锁密钥
 #define  WR_BSC_OPEN_WITH_NOPWD_REMOTE            61  //基础功能-免密远程开锁
+#define  OR_LOG_OPEN_WITH_REMOTE_VOICE            71  //开锁记录-远程音箱开门
 
 
 //open method
@@ -165,9 +166,12 @@ typedef enum
     FREEZE_OFF = 1,
 } lock_freeze_t;
 
+#define OPEN_WITH_NOPWD_REMOTE_KEY "nopwd_remote"
+
 /*********************************************************************
  * STRUCT
  */
+#pragma pack(1)
 //create open method
 typedef struct
 {
@@ -301,6 +305,7 @@ typedef struct
     uint8_t  open;
     uint16_t memberid;
     uint8_t  password[8];
+    uint8_t  type;
 } open_with_nopwd_remote_t;
 typedef struct
 {
@@ -394,6 +399,7 @@ typedef struct
         open_meth_with_bt_result_t open_meth_with_bt_result;
     };
 } lock_dp_t;
+#pragma pack()
 
 /*********************************************************************
  * EXTERNAL VARIABLES

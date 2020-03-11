@@ -30,6 +30,7 @@ extern "C"
  * CONSTANTS
  */
 #define BK_BT_ADDR_LEN                    BD_ADDR_LEN
+#define BK_BT_ADDR_STR_LEN                (BK_BT_ADDR_LEN*2)
 
 #define BK_CONN_INTERVAL_MIN               180 //最小可接受的连接间隔
 #define BK_CONN_INTERVAL_MAX               200

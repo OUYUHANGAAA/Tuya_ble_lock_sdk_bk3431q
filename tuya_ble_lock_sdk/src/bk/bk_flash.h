@@ -35,7 +35,7 @@ extern "C"
 #define BK_FLASH_OTA_START_ADDR    BK_FLASH_START_ADDR
 #define BK_FLASH_OTA_END_ADDR      0x64000
 
-#define BK_FLASH_BLE_MAC_ADDR      0x400e3
+#define BK_FLASH_BLE_MAC_ADDR      0x7F000
 
 /*********************************************************************
  * STRUCT

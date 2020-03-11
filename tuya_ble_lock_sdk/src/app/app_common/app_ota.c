@@ -110,6 +110,10 @@ static uint32_t app_ota_enter(void)
     app_port_conn_param_update(20, 24, 0, 5000);
     app_port_ble_conn_evt_ext();
     
+    tuya_ble_device_enter_critical();
+    app_port_nv_erase(APP_OTA_START_ADDR, APP_OTA_FILE_MAX_LEN);
+    tuya_ble_device_exit_critical();
+    
     return APP_PORT_SUCCESS;
 }
 
@@ -424,15 +428,15 @@ static uint32_t app_ota_data_handler(uint8_t* cmd, uint16_t cmd_size, tuya_ble_o
             ota_data_rsp.state = 0x00;
             
             //erase
-            bool flag_4k = false;
-            if((s_data_len == 0) || ((s_data_len + ota_data->len) >= (((s_data_len/TUYA_NV_ERASE_MIN_SIZE) + 1)*TUYA_NV_ERASE_MIN_SIZE)))
-            {
-                if(s_data_len == 0)
-                {
-                    app_port_nv_erase(APP_OTA_START_ADDR, TUYA_NV_ERASE_MIN_SIZE);
-                }
-                uint32_t erase_addr = APP_OTA_START_ADDR + (((s_data_len/TUYA_NV_ERASE_MIN_SIZE) + 1)*TUYA_NV_ERASE_MIN_SIZE);
-                app_port_nv_erase(erase_addr, TUYA_NV_ERASE_MIN_SIZE);
+//            bool flag_4k = false;
+//            if((s_data_len == 0) || ((s_data_len + ota_data->len) >= (((s_data_len/TUYA_NV_ERASE_MIN_SIZE) + 1)*TUYA_NV_ERASE_MIN_SIZE)))
+//            {
+//                if(s_data_len == 0)
+//                {
+//                    app_port_nv_erase(APP_OTA_START_ADDR, TUYA_NV_ERASE_MIN_SIZE);
+//                }
+//                uint32_t erase_addr = APP_OTA_START_ADDR + (((s_data_len/TUYA_NV_ERASE_MIN_SIZE) + 1)*TUYA_NV_ERASE_MIN_SIZE);
+//                app_port_nv_erase(erase_addr, TUYA_NV_ERASE_MIN_SIZE);
 //                if(s_data_len + ota_data->len == s_file.len)
 //                {
 //                    for(uint32_t idx=0; idx<(APP_OTA_END_ADDR - erase_addr)/TUYA_NV_ERASE_MIN_SIZE; idx++)
@@ -440,9 +444,9 @@ static uint32_t app_ota_data_handler(uint8_t* cmd, uint16_t cmd_size, tuya_ble_o
 //                        app_port_nv_erase(erase_addr + idx*TUYA_NV_ERASE_MIN_SIZE, TUYA_NV_ERASE_MIN_SIZE);
 //                    }
 //                }
-                
-                flag_4k = true;
-            }
+//                
+//                flag_4k = true;
+//            }
             
             if(APP_PORT_SUCCESS != app_port_nv_write(APP_OTA_START_ADDR + s_data_len, ota_data->data, ota_data->len))
             {
@@ -467,11 +471,11 @@ static uint32_t app_ota_data_handler(uint8_t* cmd, uint16_t cmd_size, tuya_ble_o
                 s_pkg_id++;
                 
                 s_data_crc = app_port_crc32_compute(ota_data->data, ota_data->len, &s_data_crc);
-                if(flag_4k)
-                {
-                    app_port_kv_set("s_data_len", &s_data_len, sizeof(uint32_t));
-                    app_port_kv_set("s_data_crc", &s_data_crc, sizeof(uint32_t));
-                }
+//                if(flag_4k)
+//                {
+//                    app_port_kv_set("s_data_len", &s_data_len, sizeof(uint32_t));
+//                    app_port_kv_set("s_data_crc", &s_data_crc, sizeof(uint32_t));
+//                }
             }
         }
         app_ota_rsp(rsp, &ota_data_rsp, sizeof(app_ota_data_rsp_t));
@@ -537,6 +541,15 @@ static uint32_t app_ota_end_handler(uint8_t* cmd, uint16_t cmd_size, tuya_ble_ot
         else
         {
             {
+                uint16_t image_len; //该值在bk的固件中标识固件长度（单位：4k），在这里做检查，防止越界
+                app_port_nv_read(APP_OTA_START_ADDR+6, (void*)&image_len, sizeof(uint16_t));
+                APP_DEBUG_PRINTF("image_len: %dk", image_len*4);
+                if(image_len > (APP_OTA_FILE_MAX_LEN/TUYA_NV_ERASE_MIN_SIZE))
+                {
+                    tuya_ble_device_enter_critical();
+                    app_port_nv_erase(APP_OTA_START_ADDR, APP_OTA_FILE_MAX_LEN);
+                    tuya_ble_device_exit_critical();
+                }
             }
             
             end_rsp.state = 0x00;
@@ -544,6 +557,8 @@ static uint32_t app_ota_end_handler(uint8_t* cmd, uint16_t cmd_size, tuya_ble_ot
             APP_DEBUG_PRINTF("ota success");
         }
         app_ota_rsp(rsp, &end_rsp, sizeof(app_ota_end_rsp_t));
+        
+        app_ota_exit();
         
         if(end_rsp.state != 0x00) {
             APP_DEBUG_PRINTF("Error: TUYA_BLE_OTA_END- errorid: %d", end_rsp.state);

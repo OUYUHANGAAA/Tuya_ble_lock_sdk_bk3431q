@@ -88,6 +88,14 @@ uint32_t app_port_nv_write(uint32_t addr, const uint8_t* p_data, uint32_t size)
 /*********************************************************
 FN: 
 */
+uint32_t app_port_nv_read(uint32_t addr, uint8_t* p_data, uint32_t size)
+{
+    return tuya_ble_nv_read(addr, p_data, size);
+}
+
+/*********************************************************
+FN: 
+*/
 uint32_t app_port_nv_erase(uint32_t addr, uint32_t size)
 {
     return tuya_ble_nv_erase(addr, size);

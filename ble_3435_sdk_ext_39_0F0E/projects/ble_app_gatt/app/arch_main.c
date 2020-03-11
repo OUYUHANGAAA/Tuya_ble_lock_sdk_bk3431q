@@ -201,21 +201,6 @@ void power_up_rc_cali_path(void)
 /*********************************************************
 FN: 
 */
-void bdaddr_env_init(void)
-{
-	struct bd_addr co_bdaddr;
-	flash_read_data(&co_bdaddr.addr[0], 0x400e3, 6);
-	if(co_bdaddr.addr[0]!=0xff ||co_bdaddr.addr[1]!=0xff||
-	        co_bdaddr.addr[2]!=0xff||co_bdaddr.addr[3]!=0xff||
-	        co_bdaddr.addr[4]!=0xff||co_bdaddr.addr[5]!=0xff )
-	{
-		memcpy(&co_default_bdaddr, &co_bdaddr, 6);
-	}
-}
-
-/*********************************************************
-FN: 
-*/
 void rw_dut_enter(void)
 {
 	while(1)

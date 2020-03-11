@@ -123,7 +123,7 @@ uint32_t lock_hard_creat_sub_report_with_delay(uint8_t meth, uint8_t stage, uint
 /*********************************************************
 FN: open lock event record and report
 PM: dp_id - defined in "lock_dp_parser.h"
-    hardid - if dp_id=OR_LOG_OPEN_WITH_BT/OR_LOG_OPEN_WITH_NOPWD_REMOTE, then hardid=memberid
+    hardid - if dp_id=OR_LOG_OPEN_WITH_BT/OR_LOG_OPEN_WITH_REMOTE_PHONE/OR_LOG_OPEN_WITH_REMOTE_VOICE, then hardid=memberid
            - if dp_id=OR_LOG_OPEN_INSIDE,  then hardid=0x00
            - if dp_id=OR_LOG_DOOR_STATE,   then hardid=0x00-close,0x01-open
 */
@@ -132,12 +132,24 @@ uint32_t lock_open_record_report(uint8_t dp_id, uint32_t hardid)
 	uint32_t timestamp = app_port_get_timestamp();
     
     g_rsp.dp_id = dp_id;
-    g_rsp.dp_type = APP_PORT_DT_VALUE;
-    g_rsp.dp_data_len = APP_PORT_DT_VALUE_LEN;
-    g_rsp.dp_data[0] = hardid>>24;
-    g_rsp.dp_data[1] = hardid>>16;
-    g_rsp.dp_data[2] = hardid>>8;
-    g_rsp.dp_data[3] = hardid;
+    
+    switch(dp_id)
+    {
+        case OR_LOG_OPEN_INSIDE: {
+            g_rsp.dp_type = APP_PORT_DT_BOOL;
+            g_rsp.dp_data_len = APP_PORT_DT_BOOL_LEN;
+            g_rsp.dp_data[0] = hardid;
+        } break;
+        
+        default: {
+            g_rsp.dp_type = APP_PORT_DT_VALUE;
+            g_rsp.dp_data_len = APP_PORT_DT_VALUE_LEN;
+            g_rsp.dp_data[0] = hardid>>24;
+            g_rsp.dp_data[1] = hardid>>16;
+            g_rsp.dp_data[2] = hardid>>8;
+            g_rsp.dp_data[3] = hardid;
+        } break;
+    }
     
     lock_evt_save(timestamp, (void*)&g_rsp, (3 + g_rsp.dp_data_len));
     

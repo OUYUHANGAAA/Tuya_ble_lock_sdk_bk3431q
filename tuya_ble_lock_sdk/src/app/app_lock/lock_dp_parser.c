@@ -850,7 +850,6 @@ static uint32_t temp_pw_modify_handler(void* cmd_dp_data, void* rsp_dp_data, uin
 /*********************************************************
 FN: 
 */
-#define OPEN_WITH_NOPWD_REMOTE_KEY "nopwd_remote"
 static uint32_t open_with_nopwd_remote_setkey_handler(void* cmd_dp_data, void* rsp_dp_data, uint8_t* rsp_dp_data_len)
 {
     open_with_nopwd_remote_setkey_t* cmd = cmd_dp_data;
@@ -905,14 +904,22 @@ static uint32_t open_with_nopwd_remote_handler(void* cmd_dp_data, void* rsp_dp_d
         APP_DEBUG_PRINTF("OPEN_WITH_NOPWD_REMOTE fail id: %d", rsp->result);
     }
     else {
-        APP_DEBUG_PRINTF("OPEN_WITH_NOPWD_REMOTE success");
-        
-        lock_open_record_report(OR_LOG_OPEN_WITH_NOPWD_REMOTE, set_cmd.memberid);
-        
-        set_cmd.valid_num--;
-        app_port_kv_set(OPEN_WITH_NOPWD_REMOTE_KEY, &set_cmd, sizeof(open_with_nopwd_remote_setkey_t));
-        
-        rsp->result = 0x00;
+        if(lock_open_with_nopwd_remote() == APP_PORT_SUCCESS) {
+            if(cmd->type == 0x01) {
+                lock_open_record_report_with_delay(OR_LOG_OPEN_WITH_REMOTE_PHONE, cmd->memberid);
+            } else if(cmd->type == 0x02){
+                lock_open_record_report_with_delay(OR_LOG_OPEN_WITH_REMOTE_VOICE, cmd->memberid);
+            }
+            
+            APP_DEBUG_PRINTF("OPEN_WITH_NOPWD_REMOTE success");
+            
+            set_cmd.valid_num--;
+            app_port_kv_set(OPEN_WITH_NOPWD_REMOTE_KEY, &set_cmd, sizeof(open_with_nopwd_remote_setkey_t));
+            
+            rsp->result = 0x00; //open success
+        } else {
+            rsp->result = 0x01; //open fail
+        }
     }
     
     *rsp_len = sizeof(open_with_nopwd_remote_result_t);

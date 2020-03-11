@@ -32,7 +32,7 @@ FN:
 static void uart1_rx_handler(uint8_t *buf, uint8_t len)
 {
 //    BK_HEXDUMP("uart1", 20, buf, len);
-//    tuya_ble_uart_receive_data(buf, len); //产测打开这个，和烧录用同一个串口
+    tuya_ble_uart_receive_data(buf, len); //产测打开这个，和烧录用同一个串口
 }
 
 /*********************************************************

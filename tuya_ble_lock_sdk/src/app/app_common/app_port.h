@@ -45,14 +45,14 @@ extern "C"
  * CONSTANTS
  */
 /*********************************************************  tuya  *********************************************************/
-#define TUYA_DEVICE_PID         "eq1ebzwt"
+#define TUYA_DEVICE_PID         "za3uv0db"
 #define TUYA_DEVICE_DID         "tuya3c9983a10a0a"                 //16Byte
 #define TUYA_DEVICE_AUTH_KEY    "fYUftqd2K2mq1BuMs9dYr7tGWg4zloy5" //32Byte
 
 #define TUYA_DEVICE_FIR_NAME    "tuya_ble_lock_common_nRF52832"    //固件标识名
-#define TUYA_DEVICE_FVER_NUM    0x00000102                         //固件版本
+#define TUYA_DEVICE_FVER_NUM    0x00000101                         //固件版本
 #define TUYA_DEVICE_HVER_NUM    0x00000100                         //硬件版本
-#define TUYA_DEVICE_FVER_STR    "1.2"                              //固件版本str
+#define TUYA_DEVICE_FVER_STR    "1.1"                              //固件版本str
 #define TUYA_DEVICE_HVER_STR    "1.0"                              //硬件版本str
 
 /*********************************************************  ble  *********************************************************/
@@ -129,6 +129,7 @@ uint32_t app_port_kv_set(const char *key, const void *buf, size_t size);
 uint32_t app_port_kv_get(const char *key, void *buf, size_t size);
 uint32_t app_port_kv_del(const char *key);
 uint32_t app_port_nv_write(uint32_t addr, const uint8_t* p_data, uint32_t size);
+uint32_t app_port_nv_read(uint32_t addr, uint8_t* p_data, uint32_t size);
 uint32_t app_port_nv_erase(uint32_t addr, uint32_t size);
 
 /*********************************************************  timer  *********************************************************/

@@ -44,6 +44,7 @@ extern uint8_t g_open_with_bt_flag;
  */
 void lock_common_init(void);
 uint32_t lock_open_with_bt(void);
+uint32_t lock_open_with_nopwd_remote(void);
 uint32_t lock_remote_anti_lock(bool anti_lock);
 void lock_factory_handler(bool is_delete_app_test_data);
 

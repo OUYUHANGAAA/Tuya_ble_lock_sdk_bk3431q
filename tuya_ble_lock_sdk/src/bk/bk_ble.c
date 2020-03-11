@@ -1,4 +1,5 @@
 #include "bk_ble.h"
+#include "app_port.h"
 
 
 
@@ -54,6 +55,9 @@ FN:
 */
 void bk_init_bt_mac_addr(void)
 {
+    uint8_t tmp_mac_str[BK_BT_ADDR_STR_LEN] = APP_PORT_DEFAULT_MAC_ADDR_STR;
+    app_port_string_op_hexstr2hex(tmp_mac_str, BK_BT_ADDR_STR_LEN, s_bk_bt_addr_default);
+    app_port_reverse_byte(s_bk_bt_addr_default, BK_BT_ADDR_LEN);
     memcpy(&co_default_bdaddr.addr, s_bk_bt_addr_default, BK_BT_ADDR_LEN);
     
     uint8_t tmp_addr[BK_BT_ADDR_LEN];

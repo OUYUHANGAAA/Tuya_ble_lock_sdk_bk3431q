@@ -75,6 +75,20 @@ uint32_t lock_open_with_bt(void)
 /*********************************************************
 FN: 
 */
+uint32_t lock_open_with_nopwd_remote(void)
+{
+    //open success
+    if(g_open_with_bt_flag)
+    {
+        APP_DEBUG_PRINTF("lock_open_with_nopwd_remote");
+        return APP_PORT_SUCCESS;
+    }
+    return APP_PORT_ERROR_COMMON;
+}
+
+/*********************************************************
+FN: 
+*/
 uint32_t lock_remote_anti_lock(bool anti_lock)
 {
     if(anti_lock)
