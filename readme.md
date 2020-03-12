@@ -1,4 +1,4 @@
-[中文版](https://github.com/TuyaInc/Tuya_ble_lock_sdk_bk3431q/blob/master/readme-zh.md) | [English](https://github.com/TuyaInc/Tuya_ble_lock_sdk_bk3431q)
+[中文版](https://github.com/TuyaInc/Tuya_ble_lock_sdk_bk3431q) | [English](https://github.com/TuyaInc/Tuya_ble_lock_sdk_bk3431q/blob/master/readme-en.md)
 
 
 # 1 概述
