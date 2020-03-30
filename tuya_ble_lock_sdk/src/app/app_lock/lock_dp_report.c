@@ -197,6 +197,23 @@ uint32_t lock_open_record_combine_report(uint8_t combine_enum, uint8_t size, uin
 }
 
 /*********************************************************
+FN: 
+*/
+uint32_t lock_open_record_report_offline_pwd(uint8_t dp_id, uint8_t* pwd)
+{
+	uint32_t timestamp = app_port_get_timestamp();
+    
+    g_rsp.dp_id = dp_id;
+    g_rsp.dp_type = APP_PORT_DT_RAW;
+    g_rsp.dp_data_len = OFFLINE_PWD_LEN+6;
+    memcpy(&g_rsp.dp_data[0], pwd, OFFLINE_PWD_MAX_NUM);
+    
+    lock_evt_save(timestamp, (void*)&g_rsp, (3 + g_rsp.dp_data_len));
+    
+    return app_port_dp_data_with_time_report(timestamp, (void*)&g_rsp, (3 + g_rsp.dp_data_len));
+}
+
+/*********************************************************
 FN: alarm event record and report
 */
 uint32_t lock_alarm_record_report(uint8_t alarm_reason)

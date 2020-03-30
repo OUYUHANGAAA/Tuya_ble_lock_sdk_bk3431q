@@ -393,6 +393,9 @@ void uart_init(uint32_t baudrate)
 	case 115200:
 		baud_divisor = 0x89;
 		break;
+	case 460800:
+		baud_divisor = 0x22;
+		break;
 	case 921600:
 		baud_divisor = 0x10;
 		break;
@@ -442,6 +445,9 @@ void uart2_init(uint32_t baudrate)
 		break;
 	case 115200:
 		baud_divisor = 0x89;
+		break;
+	case 460800:
+		baud_divisor = 0x22;
 		break;
 	case 921600:
 		baud_divisor = 0x10;

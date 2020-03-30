@@ -211,7 +211,7 @@ static int gapm_cmp_evt_handler(ke_msg_id_t const msgid,
                                 ke_task_id_t const dest_id,
                                 ke_task_id_t const src_id)
 {
-	BK_PRINTF("param->operation = 0x%x, param->status = 0x%x", param->operation, param->status);
+//	BK_PRINTF("param->operation = 0x%x, param->status = 0x%x", param->operation, param->status);
     switch(param->operation)
     {
         // Reset completed
@@ -411,7 +411,7 @@ static int gapc_connection_req_ind_handler(ke_msg_id_t const msgid,
     //检查连接句柄是否有效
     if (app_env.conidx != GAP_INVALID_CONIDX)
     {
-        BK_PRINTF("bk Connected");
+        BK_PRINTF("bk connected");
         {
             tuya_ble_connected_handler();
         }
@@ -552,7 +552,7 @@ static int gapm_profile_added_ind_handler(ke_msg_id_t const msgid,
     uint8_t state = ke_state_get(dest_id);
 
     if (state == APPM_CREATE_DB) {
-        BK_PRINTF("APPM_CREATE_DB: %d", param->prf_task_id);
+//        BK_PRINTF("APPM_CREATE_DB: %d", param->prf_task_id);
         switch (param->prf_task_id)
         {
             default: {
@@ -649,7 +649,7 @@ static int gapc_param_updated_ind_handler (ke_msg_id_t const msgid,
 									const struct gapc_param_updated_ind  *param,
                  					ke_task_id_t const dest_id, ke_task_id_t const src_id)
 {
-    BK_PRINTF("CONN_PARAM_UPDATE: min-%dms, max-%dms, latency-%d, timeout-%dms", \
+    BK_PRINTF("conn_param_update: min-%dms, max-%dms, latency-%d, timeout-%dms", \
         (uint16_t)(param->con_interval*1.25), \
         (uint16_t)(param->con_interval*1.25), \
         (uint16_t)(param->con_latency), \

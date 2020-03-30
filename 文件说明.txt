@@ -5,3 +5,4 @@ tuya_ble_lock_sdk        —— 涂鸦sdk（详情参考readme）
 bk3435.uvprojx           —— keil工程文件快捷方式（相对路径，下载后可直接双击打开）
 
 clear.bat                —— 工程清理脚本（打包转发给别人之前请先运行该脚本，删除编译生成的临时文件）
+

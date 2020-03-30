@@ -31,7 +31,7 @@
  * LOCAL VARIABLES
  */
 //max hard number = 8*32 = 256
-static uint8_t hardid_bitmap[32];
+static volatile uint8_t hardid_bitmap[32];
 
 static uint32_t s_evt_id = 0;
 
@@ -645,6 +645,7 @@ uint32_t lock_flash_erease_all(bool is_delete_app_test_data)
 	lock_hard_delete_all();
 	lock_evt_delete_all();
 	lock_settings_delete_and_default();
+    lock_offline_pwd_delete_all();
     
     app_port_kv_del("s_evt_id");
     if(is_delete_app_test_data)

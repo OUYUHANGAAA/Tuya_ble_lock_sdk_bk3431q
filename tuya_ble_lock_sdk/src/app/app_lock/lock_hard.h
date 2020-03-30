@@ -49,10 +49,12 @@ typedef enum
     UART_SIMULATE_REPORT_ALARM,
     UART_SIMULATE_STATE_SYNC,
     UART_SIMULATE_DYNAMIC_PWD,
+    UART_SIMULATE_OFFLINE_PWD,//0x10
     UART_SIMULATE_FACTORY_RESET = 0x20,
     UART_SIMULATE_COMMON_DP,
     UART_SIMULATE_COMMON_DP_WITH_TIMESTAMP,
     UART_SIMULATE_SET_FLAG,
+    UART_SIMULATE_DELETE_FLASH = 0x40,
 } uart_simulate_cmd_t;
 
 /*********************************************************************

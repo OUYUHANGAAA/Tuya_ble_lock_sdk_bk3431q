@@ -86,4 +86,5 @@
 .\obj\lock_common.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_timer.h
 .\obj\lock_common.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_hard.h
 .\obj\lock_common.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_dynamic_pwd.h
+.\obj\lock_common.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_offline_pwd.h
 .\obj\lock_common.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_test.h

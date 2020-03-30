@@ -1034,7 +1034,7 @@ static EfErrCode del_env(const char *key, env_meta_data_t old_env, bool complete
         if (find_env(key, &env)) {
             old_env = &env;
         } else {
-            EF_DEBUG("Not found '%s' in ENV.\n", key);
+//            EF_DEBUG("Not found '%s' in ENV.\n", key);
             return EF_ENV_NAME_ERR;
         }
     }

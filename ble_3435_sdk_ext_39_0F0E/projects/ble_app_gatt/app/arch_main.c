@@ -328,16 +328,16 @@ void rw_main(void)
 
 	/* ********** 程序入口选择 ********** */
 	if((system_mode & RW_DUT_MODE) == RW_DUT_MODE) {
-		BK_PRINTF("DUT Mode Start");
+		BK_PRINTF("dut mode start");
 		rw_dut_enter();
 	} else if((system_mode & RW_FCC_MODE) == RW_FCC_MODE) {
-		BK_PRINTF("FCC Mode Start");
+		BK_PRINTF("fcc mode start");
 		rw_fcc_enter();
 	} else if((system_mode & RW_PN9_MODE) == RW_PN9_MODE) {
-		BK_PRINTF("PN9 Mode Start");
+		BK_PRINTF("pn9 mode start");
 		rw_pn9_enter();
 	} else {
-		BK_PRINTF("NORMAL Mode Start");
+		BK_PRINTF("normal mode start");
 		rw_app_enter();
 	}
 }

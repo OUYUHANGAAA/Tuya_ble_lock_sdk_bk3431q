@@ -24,7 +24,7 @@ static uint32_t irq_tmp;
 /*********************************************************************
  * VARIABLES
  */
-bool g_system_sleep = true;
+volatile bool g_system_sleep = true;
 
 
 
@@ -49,7 +49,15 @@ void bk_log_init(void)
 /*********************************************************
 FN: 
 */
-void bk_log_hexdump(const char *name, uint8_t width, uint8_t *buf, uint16_t size)
+void bk_log_hexdump(const char *name, uint8_t *buf, uint16_t size)
+{
+    elog_hexdump(name, 8, buf, size);
+}
+
+/*********************************************************
+FN: 
+*/
+void bk_log_hexdump_for_tuya_ble_sdk(const char *name, uint8_t width, uint8_t *buf, uint16_t size)
 {
     elog_hexdump(name, width, buf, size);
 }

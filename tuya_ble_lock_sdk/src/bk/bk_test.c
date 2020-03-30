@@ -72,12 +72,12 @@ void bk_test(void)
 //    for(uint16_t idx=0; idx<1000; idx++)
 //    bk_flash_read(TUYA_TEST_ADDR, tmpBuf2, 8);
 //    BK_PRINTF("bk_flash_read2");
-//    BK_HEXDUMP("tmpBuf2-1", 20, tmpBuf2, 8);
+//    BK_HEXDUMP("tmpBuf2-1", tmpBuf2, 8);
 //    bk_flash_write(TUYA_TEST_ADDR, tmpBuf1, 8);
 //    bk_flash_read(TUYA_TEST_ADDR, tmpBuf2, 5);
-//    BK_HEXDUMP("tmpBuf2-2", 20, tmpBuf2, 8);
+//    BK_HEXDUMP("tmpBuf2-2", tmpBuf2, 8);
 //    bk_flash_read(TUYA_TEST_ADDR, tmpBuf2, 8);
-//    BK_HEXDUMP("tmpBuf2-3", 20, tmpBuf2, 8);
+//    BK_HEXDUMP("tmpBuf2-3", tmpBuf2, 8);
     
 //    test_env();
 //    ef_set_env_blob("test", tmpBuf1, 5);
@@ -98,7 +98,7 @@ void bk_test(void)
 //    {
 //        tmp[idx] = idx;
 //    }
-//    BK_HEXDUMP("tmp", 20, tmp, 200);
+//    BK_HEXDUMP("tmp", tmp, 200);
 }
 
 

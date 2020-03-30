@@ -86,4 +86,5 @@
 .\obj\app_ota.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_timer.h
 .\obj\app_ota.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_hard.h
 .\obj\app_ota.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_dynamic_pwd.h
+.\obj\app_ota.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_offline_pwd.h
 .\obj\app_ota.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_test.h

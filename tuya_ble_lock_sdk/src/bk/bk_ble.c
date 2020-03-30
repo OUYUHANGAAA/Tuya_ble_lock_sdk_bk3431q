@@ -66,6 +66,7 @@ void bk_init_bt_mac_addr(void)
     {
         memcpy(&co_default_bdaddr.addr, tmp_addr, BK_BT_ADDR_LEN);
     }
+    APP_DEBUG_HEXDUMP("tuya_mac", tmp_addr, BK_BT_ADDR_LEN);
 }
 
 /*********************************************************

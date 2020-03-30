@@ -176,9 +176,11 @@ void appm_start_advertising(void)
 
         //发送message
         ke_msg_send(cmd);
-	 	BK_PRINTF("appm start advertising");
+	 	BK_PRINTF("start advertising");
 
-        //启动看门狗，0x3FFF*250us = 4 095 750us = 4s
+        //启动看门狗
+        //0x3FFF*250us = 4 095 750us = 4s
+        //0x7FFF*250us = 8 191 750us = 8s
         wdt_enable(WATCH_DOG_COUNT);
 
         //设置任务状态

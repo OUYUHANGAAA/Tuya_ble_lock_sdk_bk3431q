@@ -79,20 +79,24 @@ extern "C"
 #define  WR_SET_HAND_LOCK                         46  //锁的设置-手动落锁
 #define  OR_STS_LOCK_STATE                        47  //状态同步-锁开合状态
 #define  WR_SET_MOTOR_DIRECTION                   48  //锁的设置-锁贴电机转动方向
-#define  WR_SET_USER_FREEZE                       49  //锁的设置-解冻用户
-#define  WR_SET_USER_UNFREEZE                     50  //锁的设置-冻结用户
+#define  WR_SET_USER_FREEZE                       49  //锁的设置-冻结用户
+#define  WR_SET_USER_UNFREEZE                     50  //锁的设置-解冻用户
 #define  WR_BSC_TEMP_PW_CREAT                     51  //基础功能-添加临时密码
 #define  WR_BSC_TEMP_PW_DELETE                    52  //基础功能-删除临时密码
 #define  WR_BSC_TEMP_PW_MODIFY                    53  //基础功能-修改临时密码
 #define  WR_BSC_OPEN_METH_SYNC_NEW                54  //基础功能-同步开锁方式（数据量大）
 #define  OR_LOG_OPEN_WITH_TMP_PWD                 55  //开锁记录-临时密码
-#define  OR_LOG_OPEN_WITH_OFFLINE_PWD             56  //开锁记录-离线密码
+#define  WR_SET_MOTOR_TORQUE                      56  //锁的设置-电机扭力
 #define  OR_LOG_OPEN_WITH_COMBINE                 57  //开锁记录-组合开锁
-#define  OR_LOG_OPEN_WITH_REMOTE_PHONE            58  //开锁记录-远程手机开门
-#define  WR_SET_MOTOR_TORQUE                      59  //锁的设置-电机扭力
-#define  WR_BSC_OPEN_WITH_NOPWD_REMOTE_SETKEY     60  //基础功能-设置免密远程开锁密钥
+#define  WR_SET_OPEN_WITH_REMOTE_PHONE            58  //锁的设置-离家布防
+#define  WR_BSC_OPEN_WITH_NOPWD_REMOTE_SETKEY     60  //基础功能-免密远程开锁配置
 #define  WR_BSC_OPEN_WITH_NOPWD_REMOTE            61  //基础功能-免密远程开锁
-#define  OR_LOG_OPEN_WITH_REMOTE_VOICE            71  //开锁记录-远程音箱开门
+#define  OR_LOG_OPEN_WITH_REMOTE_PHONE            62  //开锁记录-远程手机开锁
+#define  OR_LOG_OPEN_WITH_REMOTE_VOICE            63  //开锁记录-远程音箱开锁
+#define  WR_BSC_SET_T0                            64  //基础功能-离线密码-T0时间下发
+#define  OR_LOG_ALARM_OFFLINE_PWD_CLEAR_SINGLE    65  //警报记录-离线密码-清除单条密码
+#define  OR_LOG_ALARM_OFFLINE_PWD_CLEAR_ALL       66  //警报记录-离线密码-清除所有密码
+#define  OR_LOG_OPEN_WITH_OFFLINE_PWD             67  //开锁记录-离线密码
 
 
 //open method

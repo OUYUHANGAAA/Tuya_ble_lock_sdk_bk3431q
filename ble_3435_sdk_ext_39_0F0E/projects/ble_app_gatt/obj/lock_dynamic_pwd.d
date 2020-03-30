@@ -87,5 +87,6 @@
 .\obj\lock_dynamic_pwd.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_timer.h
 .\obj\lock_dynamic_pwd.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_hard.h
 .\obj\lock_dynamic_pwd.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_dynamic_pwd.h
+.\obj\lock_dynamic_pwd.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_offline_pwd.h
 .\obj\lock_dynamic_pwd.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_test.h
 .\obj\lock_dynamic_pwd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

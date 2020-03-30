@@ -36,7 +36,7 @@
 #ifdef TUYA_BLE_LOG_ENABLED
 
 #define TUYA_BLE_LOG(...)   log_d(__VA_ARGS__)
-#define TUYA_BLE_HEXDUMP    bk_log_hexdump
+#define TUYA_BLE_HEXDUMP    bk_log_hexdump_for_tuya_ble_sdk
 
 #else
 

@@ -31,6 +31,7 @@ static uint32_t temp_pw_delete_handler(void* cmd_dp_data, void* rsp_dp_data, uin
 static uint32_t temp_pw_modify_handler(void* cmd_dp_data, void* rsp_dp_data, uint8_t* rsp_dp_data_len);
 static uint32_t open_with_nopwd_remote_setkey_handler(void* cmd_dp_data, void* rsp_dp_data, uint8_t* rsp_dp_data_len);
 static uint32_t open_with_nopwd_remote_handler(void* cmd_dp_data, void* rsp_dp_data, uint8_t* rsp_dp_data_len);
+static uint32_t offline_pwd_set_T0_handler(void* cmd_dp_data, void* rsp_dp_data, uint8_t* rsp_dp_data_len);
 
 /*********************************************************************
  * VARIABLES
@@ -51,7 +52,7 @@ uint32_t lock_dp_parser_handler(void* dp_data)
     //init cmd and rsp
     memcpy(&g_cmd, dp_data, sizeof(lock_dp_t));
     memcpy(&g_rsp, dp_data, sizeof(lock_dp_t));
-    APP_DEBUG_HEXDUMP("dp_cmd", 20, (void*)&g_cmd, g_cmd.dp_data_len+3);
+    APP_DEBUG_HEXDUMP("dp_cmd", (void*)&g_cmd, g_cmd.dp_data_len+3);
     
     switch(g_cmd.dp_id)
     {
@@ -267,7 +268,7 @@ uint32_t lock_dp_parser_handler(void* dp_data)
             {
                 lock_settings.motor_torque = g_cmd.dp_data[0];
                 if(lock_settings_save() == APP_PORT_SUCCESS) {
-                    APP_DEBUG_PRINTF("WR_SET_MOTOR_DIRECTION SUCCESS");
+                    APP_DEBUG_PRINTF("WR_SET_MOTOR_TORQUE SUCCESS");
                 }
             }
         } break;
@@ -290,6 +291,10 @@ uint32_t lock_dp_parser_handler(void* dp_data)
         
         case WR_BSC_OPEN_WITH_NOPWD_REMOTE: {
             open_with_nopwd_remote_handler(g_cmd.dp_data, g_rsp.dp_data, &g_rsp.dp_data_len);
+        } break;
+        
+        case WR_BSC_SET_T0: {
+            offline_pwd_set_T0_handler(g_cmd.dp_data, g_rsp.dp_data, &g_rsp.dp_data_len);
         } break;
         
         default: {
@@ -859,6 +864,11 @@ static uint32_t open_with_nopwd_remote_setkey_handler(void* cmd_dp_data, void* r
     
     rsp->memberid = cmd->memberid;
     
+    app_port_reverse_byte(&cmd->memberid, sizeof(uint16_t));
+    app_port_reverse_byte(&cmd->time_begin, sizeof(uint32_t));
+    app_port_reverse_byte(&cmd->time_end, sizeof(uint32_t));
+    app_port_reverse_byte(&cmd->valid_num, sizeof(uint16_t));
+    
     ret = app_port_kv_set(OPEN_WITH_NOPWD_REMOTE_KEY, cmd, sizeof(open_with_nopwd_remote_setkey_t));
     if(ret == APP_PORT_SUCCESS) {
         rsp->result = 0x00;
@@ -927,7 +937,16 @@ static uint32_t open_with_nopwd_remote_handler(void* cmd_dp_data, void* rsp_dp_d
     return APP_PORT_SUCCESS;
 }
 
-
+/*********************************************************
+FN: 
+*/
+static uint32_t offline_pwd_set_T0_handler(void* cmd_dp_data, void* rsp_dp_data, uint8_t* rsp_dp_data_len)
+{
+    uint32_t T0_tmp = app_port_num_array_2_int(cmd_dp_data, 0, 8);
+    lock_offline_pwd_set_T0(T0_tmp);
+    
+    return APP_PORT_SUCCESS;
+}
 
 
 

@@ -19,7 +19,7 @@
 static volatile bool s_app_test_mode = false;
 volatile bool s_app_test_mode_enter_outtime_flag = false;
 //record last cmd
-static int16_t s_app_test_last_cmd;
+static volatile int16_t s_app_test_last_cmd;
 
 /*********************************************************************
  * LOCAL FUNCTION
@@ -391,7 +391,7 @@ FN:
 */
 void factory_test_process(uint8_t* p_in_data, uint16_t in_len, uint8_t* p_out_data, uint16_t* out_len)
 {
-    APP_DEBUG_HEXDUMP("RX", 20, p_in_data, in_len);
+//    APP_DEBUG_HEXDUMP("RX", p_in_data, in_len);
     app_test_cmd_t* cmd = (void*)p_in_data;
     app_port_reverse_byte(&p_in_data[4], 2);//reverse cmd->len
     

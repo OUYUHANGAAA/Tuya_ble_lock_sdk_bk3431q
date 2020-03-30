@@ -82,7 +82,7 @@
 #define EF_START_ADDR             (TUYA_NV_START_ADDR + TUYA_NV_AREA_SIZE)/* @note you must define it for a value */
 
 /* ENV area size. It's at least one empty sector for GC. So it's definition must more then or equal 2 flash sector size. */
-#define ENV_AREA_SIZE             (TUYA_NV_ERASE_MIN_SIZE*4)/* @note you must define it for a value if you used ENV */
+#define ENV_AREA_SIZE             (TUYA_NV_ERASE_MIN_SIZE*8)/* @note you must define it for a value if you used ENV */
 
 /* saved log area size */
 #define LOG_AREA_SIZE             /* @note you must define it for a value if you used log */

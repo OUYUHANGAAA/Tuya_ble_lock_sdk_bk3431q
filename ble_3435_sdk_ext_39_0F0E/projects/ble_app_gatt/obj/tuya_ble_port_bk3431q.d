@@ -91,4 +91,5 @@
 .\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_timer.h
 .\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_hard.h
 .\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_dynamic_pwd.h
+.\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_offline_pwd.h
 .\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_test.h

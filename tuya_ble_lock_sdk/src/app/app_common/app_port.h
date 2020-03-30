@@ -45,14 +45,14 @@ extern "C"
  * CONSTANTS
  */
 /*********************************************************  tuya  *********************************************************/
-#define TUYA_DEVICE_PID         "za3uv0db"
+#define TUYA_DEVICE_PID         "3bmxfsql"
 #define TUYA_DEVICE_DID         "tuya3c9983a10a0a"                 //16Byte
 #define TUYA_DEVICE_AUTH_KEY    "fYUftqd2K2mq1BuMs9dYr7tGWg4zloy5" //32Byte
 
 #define TUYA_DEVICE_FIR_NAME    "tuya_ble_lock_common_nRF52832"    //固件标识名
-#define TUYA_DEVICE_FVER_NUM    0x00000101                         //固件版本
+#define TUYA_DEVICE_FVER_NUM    0x00000102                         //固件版本
 #define TUYA_DEVICE_HVER_NUM    0x00000100                         //硬件版本
-#define TUYA_DEVICE_FVER_STR    "1.1"                              //固件版本str
+#define TUYA_DEVICE_FVER_STR    "1.2"                              //固件版本str
 #define TUYA_DEVICE_HVER_STR    "1.0"                              //硬件版本str
 
 /*********************************************************  ble  *********************************************************/
@@ -168,6 +168,8 @@ uint16_t app_port_check_sum_16(uint8_t *buf, uint32_t size);
 uint16_t app_port_crc16_compute(uint8_t* buf, uint16_t size, uint16_t* p_crc);
 uint32_t app_port_crc32_compute(uint8_t* buf, uint32_t size, uint32_t* p_crc);
 void app_port_reverse_byte(void* buf, uint32_t size);
+uint32_t app_port_num_array_2_int(uint8_t *num_array, uint32_t start_idx, uint32_t size);
+bool app_port_aes128_cbc_encrypt(uint8_t *key,uint8_t *iv,uint8_t *input,uint16_t input_len,uint8_t *output);
 
 /*********************************************************  string  *********************************************************/
 uint8_t app_port_string_op_hexstr2hex(uint8_t *hexstr, int len, uint8_t* hex);

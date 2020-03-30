@@ -171,10 +171,10 @@ uint32_t app_port_dp_data_report(uint8_t *buf, uint32_t size)
 {
     if(app_port_get_connect_status() == BONDING_CONN)
     {
-        APP_DEBUG_HEXDUMP("dp_rsp", 20, buf, size);
+        APP_DEBUG_HEXDUMP("dp_rsp", buf, size);
         return tuya_ble_dp_data_report(buf, size);
     } else {
-        APP_DEBUG_HEXDUMP("dp_rsp_unconn", 20, buf, size);
+        APP_DEBUG_HEXDUMP("dp_rsp_unconn", buf, size);
         return APP_PORT_ERROR_COMMON;
     }
 }
@@ -187,11 +187,11 @@ uint32_t app_port_dp_data_with_time_report(uint32_t timestamp, uint8_t *buf, uin
     if(app_port_get_connect_status() == BONDING_CONN)
     {
         APP_DEBUG_PRINTF("timestamp: %d", timestamp);
-        APP_DEBUG_HEXDUMP("dp_rsp_timestamp", 20, buf, size);
+        APP_DEBUG_HEXDUMP("dp_rsp_timestamp", buf, size);
         return tuya_ble_dp_data_with_time_report(timestamp, buf, size);
     } else {
         APP_DEBUG_PRINTF("timestamp: %d", timestamp);
-        APP_DEBUG_HEXDUMP("dp_rsp_timestamp_unconn", 20, buf, size);
+        APP_DEBUG_HEXDUMP("dp_rsp_timestamp_unconn", buf, size);
         return APP_PORT_ERROR_COMMON;
     }
 }
@@ -204,7 +204,7 @@ uint32_t app_port_ota_rsp(tuya_ble_ota_data_response_t *rsp)
     if(rsp->type != TUYA_BLE_OTA_DATA)
     {
         APP_DEBUG_PRINTF("ota_rsp_type: %d", rsp->type);
-        APP_DEBUG_HEXDUMP("ota_rsp_data", 20, rsp->p_data, rsp->data_len);
+        APP_DEBUG_HEXDUMP("ota_rsp_data", rsp->p_data, rsp->data_len);
     }
     return tuya_ble_ota_response(rsp);
 }
@@ -379,6 +379,24 @@ void app_port_reverse_byte(void* buf, uint32_t size)
 {
     cpt_reverse_byte(buf, size);
 }
+
+/*********************************************************
+FN: 
+*/
+uint32_t app_port_num_array_2_int(uint8_t *num_array, uint32_t start_idx, uint32_t size)
+{
+    return cpt_num_array_2_int(num_array, start_idx, size);
+}
+
+/*********************************************************
+FN: 
+*/
+bool app_port_aes128_cbc_encrypt(uint8_t *key,uint8_t *iv,uint8_t *input,uint16_t input_len,uint8_t *output)
+{
+    return tuya_ble_aes128_cbc_encrypt(key, iv, input, input_len, output);
+}
+
+
 
 
 /*********************************************************  string  *********************************************************/

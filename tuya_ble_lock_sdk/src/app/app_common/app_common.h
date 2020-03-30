@@ -41,6 +41,7 @@ extern "C"
 #include "lock_timer.h"
 #include "lock_hard.h"
 #include "lock_dynamic_pwd.h"
+#include "lock_offline_pwd.h"
 #include "lock_test.h"
 
 /*********************************************************************

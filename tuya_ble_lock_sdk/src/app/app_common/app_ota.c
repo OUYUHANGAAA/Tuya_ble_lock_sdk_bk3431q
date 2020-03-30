@@ -14,11 +14,11 @@
 /*********************************************************************
  * LOCAL VARIABLES
  */
-static uint8_t  s_ota_state = TUYA_BLE_OTA_REQ;
-static int32_t  s_pkg_id;
+static volatile uint8_t  s_ota_state = TUYA_BLE_OTA_REQ;
+static volatile int32_t  s_pkg_id;
 static uint32_t s_data_len;
 static uint32_t s_data_crc;
-static bool s_ota_success = false;
+static volatile bool s_ota_success = false;
 //file info
 static app_ota_file_info_storage_t s_file;
 static app_ota_file_info_storage_t s_old_file;
@@ -62,7 +62,7 @@ void app_ota_handler(tuya_ble_ota_data_t* ota)
     if(ota->type != TUYA_BLE_OTA_DATA)
     {
         APP_DEBUG_PRINTF("ota_cmd_type: %d", ota->type);
-        APP_DEBUG_HEXDUMP("ota_cmd_data", 20, ota->p_data, ota->data_len);
+        APP_DEBUG_HEXDUMP("ota_cmd_data", ota->p_data, ota->data_len);
     }
     
     switch(ota->type)

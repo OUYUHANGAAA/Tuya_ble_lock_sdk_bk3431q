@@ -22,7 +22,7 @@
 /*********************************************************************
  * VARIABLES
  */
-uint8_t g_open_with_bt_flag = 1;
+volatile uint8_t g_open_with_bt_flag = 1;
 
 
 
@@ -40,8 +40,8 @@ void lock_common_init(void)
     
     app_common_init();
     
-    APP_DEBUG_HEXDUMP("Auth key", 40, tuya_ble_current_para.auth_settings.auth_key, AUTH_KEY_LEN);
-    APP_DEBUG_HEXDUMP("Device id", 20, tuya_ble_current_para.auth_settings.device_id, DEVICE_ID_LEN);
+    APP_DEBUG_HEXDUMP("auth key", tuya_ble_current_para.auth_settings.auth_key, AUTH_KEY_LEN);
+    APP_DEBUG_HEXDUMP("device id", tuya_ble_current_para.auth_settings.device_id, DEVICE_ID_LEN);
 }
 
 /*********************************************************
