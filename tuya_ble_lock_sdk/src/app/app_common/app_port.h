@@ -58,7 +58,7 @@ extern "C"
 /*********************************************************  ble  *********************************************************/
 #define APP_PORT_DEFAULT_MAC_ADDR_STR    "DC234D08C8EF"
 
-#define APP_PORT_ADV_INTERVAL            152.5 //(1022.5) //ms
+#define APP_PORT_ADV_INTERVAL            1000 //(1022.5) //ms
 #define APP_PORT_MIN_CONN_INTERVAL       BK_CONN_INTERVAL_MIN
 #define APP_PORT_MAX_CONN_INTERVAL       BK_CONN_INTERVAL_MAX
 #define APP_PORT_SLAVE_LATENCY           BK_SLAVE_LATENCY

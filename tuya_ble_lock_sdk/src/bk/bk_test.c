@@ -39,6 +39,11 @@ FN:
 //    BK_PRINTF("Start!");
 //}
 
+void rtc_handler(void)
+{
+    BK_PRINTF("Start!");
+}
+
 //static void test_env(void)
 //{
 //    uint32_t i_boot_times = NULL;

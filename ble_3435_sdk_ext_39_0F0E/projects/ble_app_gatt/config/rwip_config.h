@@ -478,7 +478,7 @@
 
 /// DEEP SLEEP enable
 #if defined(CFG_SLEEP) && (BLE_EMB_PRESENT || BT_EMB_PRESENT) && (!BLE_DUT_TEST)
-    #define SYSTEM_SLEEP                              0
+    #define SYSTEM_SLEEP                              1
 #else
     #define SYSTEM_SLEEP                              0
 #endif /* CFG_SLEEP */

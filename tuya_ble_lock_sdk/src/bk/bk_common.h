@@ -41,6 +41,7 @@ extern "C"
 #include "flash.h"
 #include "gpio.h"
 #include "pwm.h"
+#include "rtc.h"
 #include "rf.h"
 //
 
@@ -61,6 +62,7 @@ extern "C"
 
 //tuya_ble_sdk
 #include "tuya_ble_api.h"
+#include "app_port.h"
 
 /*********************************************************************
  * CONSTANTS

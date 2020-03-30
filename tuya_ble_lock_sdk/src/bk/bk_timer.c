@@ -268,12 +268,9 @@ static uint32_t s_app_timestamp_when_update = 0;
 /*********************************************************
 FN: 启动本地时间戳
 */
-void bk_rtc_handler(unsigned char clkId)
+void bk_rtc_handler(void)
 {
-    if(clkId == 0)
-    {
-        s_local_timestamp++;
-    }
+    s_local_timestamp++;
 }
 
 /*********************************************************
@@ -281,16 +278,18 @@ FN: 启动本地时间戳
 */
 static void bk_rtc_start(void)
 {
-	PWM_DRV_DESC pwm;
-    memset(&pwm, 0, sizeof(PWM_DRV_DESC));
-	pwm.channel = 0x00;
-	pwm.mode = 0x06; //看注释
-	pwm.end_value = (uint16_t)(32.768*1000); //定时时间
-	pwm.duty_cycle = 0;
-    pwm.p_Int_Handler = bk_rtc_handler;
-	pwm_init(&pwm);
-	
-	pwm_enable(0x00);
+    rtc_alarm_init(0x01, NULL, 500, bk_rtc_handler);
+    
+//	PWM_DRV_DESC pwm;
+//    memset(&pwm, 0, sizeof(PWM_DRV_DESC));
+//	pwm.channel = 0x00;
+//	pwm.mode = 0x06; //看注释
+//	pwm.end_value = (uint16_t)(32.768*1000); //定时时间
+//	pwm.duty_cycle = 0;
+//    pwm.p_Int_Handler = bk_rtc_handler;
+//	pwm_init(&pwm);
+//	
+//	pwm_enable(0x00);
 }
 
 /*********************************************************

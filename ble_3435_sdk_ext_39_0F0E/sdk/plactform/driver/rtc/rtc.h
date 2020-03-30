@@ -33,7 +33,7 @@ typedef struct
 } RTC_DATE_DESC;
 
 
-#define ENABLE_RTC						0
+#define ENABLE_RTC						1
 
 #define ICU_RTC_CLK_PWD_CLEAR()        do {REG_AHB0_ICU_RTCCLKCON = 0x00;} while (0)
 #define ICU_RTC_CLK_PWD_SET()          do {REG_AHB0_ICU_RTCCLKCON = 0x01;} while (0)

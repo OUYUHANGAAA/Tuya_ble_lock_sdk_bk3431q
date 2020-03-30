@@ -47,6 +47,7 @@
 .\obj\tuya_ble_port_bk3431q.o: ..\..\sdk\plactform\arch\BK3435_reg.h
 .\obj\tuya_ble_port_bk3431q.o: ..\..\sdk\plactform\driver\gpio\gpio.h
 .\obj\tuya_ble_port_bk3431q.o: ..\..\sdk\plactform\driver\pwm\pwm.h
+.\obj\tuya_ble_port_bk3431q.o: ..\..\sdk\plactform\driver\rtc\rtc.h
 .\obj\tuya_ble_port_bk3431q.o: ..\..\sdk\ble_stack\peripheral\com\rf\api\rf.h
 .\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\bk\bk_scan_adv.h
 .\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\bk\bk_ble.h
@@ -66,11 +67,6 @@
 .\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\easylogger\inc\elog_cfg.h
 .\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_api.h
 .\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_internal_config.h
-.\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\mbedtls-2.16.1\include\mbedtls/aes.h
-.\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\mbedtls-2.16.1\include\mbedtls/config.h
-.\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\mbedtls-2.16.1\include\mbedtls/check_config.h
-.\obj\tuya_ble_port_bk3431q.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
-.\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\mbedtls-2.16.1\include\mbedtls/md5.h
 .\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_port.h
 .\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\hash\sha1.h
 .\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\hash\hmac-sha1.h
@@ -93,3 +89,8 @@
 .\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_dynamic_pwd.h
 .\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_offline_pwd.h
 .\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_test.h
+.\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\mbedtls-2.16.1\include\mbedtls/aes.h
+.\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\mbedtls-2.16.1\include\mbedtls/config.h
+.\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\mbedtls-2.16.1\include\mbedtls/check_config.h
+.\obj\tuya_ble_port_bk3431q.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+.\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\mbedtls-2.16.1\include\mbedtls/md5.h

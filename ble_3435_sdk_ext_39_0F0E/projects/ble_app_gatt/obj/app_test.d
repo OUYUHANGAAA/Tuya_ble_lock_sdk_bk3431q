@@ -54,6 +54,7 @@
 .\obj\app_test.o: ..\..\sdk\plactform\arch\BK3435_reg.h
 .\obj\app_test.o: ..\..\sdk\plactform\driver\gpio\gpio.h
 .\obj\app_test.o: ..\..\sdk\plactform\driver\pwm\pwm.h
+.\obj\app_test.o: ..\..\sdk\plactform\driver\rtc\rtc.h
 .\obj\app_test.o: ..\..\sdk\ble_stack\peripheral\com\rf\api\rf.h
 .\obj\app_test.o: ..\..\..\tuya_ble_lock_sdk\src\bk\bk_scan_adv.h
 .\obj\app_test.o: ..\..\..\tuya_ble_lock_sdk\src\bk\bk_ble.h
@@ -70,6 +71,7 @@
 .\obj\app_test.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_api.h
 .\obj\app_test.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_internal_config.h
 .\obj\app_test.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\port\tuya_ble_port.h
+.\obj\app_test.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_port.h
 .\obj\app_test.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\hash\sha1.h
 .\obj\app_test.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\hash\hmac-sha1.h
 .\obj\app_test.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_mem.h

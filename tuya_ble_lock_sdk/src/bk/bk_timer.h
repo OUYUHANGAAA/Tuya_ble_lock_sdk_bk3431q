@@ -68,7 +68,6 @@ uint32_t bk_timer_start(void* timer_id);
 uint32_t bk_timer_stop(void* timer_id);
 
 /*********************************************************  RTC 2  *********************************************************/
-void bk_rtc_handler(unsigned char clkId);
 void bk_local_timer_start(void);
 void bk_update_timestamp(uint32_t app_timestamp);
 uint32_t bk_get_app_timestamp_when_update(void);

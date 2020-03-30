@@ -43,6 +43,7 @@
 .\obj\bk_ble.o: ..\..\sdk\plactform\arch\BK3435_reg.h
 .\obj\bk_ble.o: ..\..\sdk\plactform\driver\gpio\gpio.h
 .\obj\bk_ble.o: ..\..\sdk\plactform\driver\pwm\pwm.h
+.\obj\bk_ble.o: ..\..\sdk\plactform\driver\rtc\rtc.h
 .\obj\bk_ble.o: ..\..\sdk\ble_stack\peripheral\com\rf\api\rf.h
 .\obj\bk_ble.o: ..\..\..\tuya_ble_lock_sdk\src\bk\bk_scan_adv.h
 .\obj\bk_ble.o: ..\..\..\tuya_ble_lock_sdk\src\bk\bk_ble.h

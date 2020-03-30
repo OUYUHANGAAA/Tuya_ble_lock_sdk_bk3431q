@@ -24,7 +24,7 @@ static uint32_t irq_tmp;
 /*********************************************************************
  * VARIABLES
  */
-volatile bool g_system_sleep = true;
+volatile bool g_system_sleep = false;
 
 
 

@@ -172,6 +172,13 @@ void IRQ_Exception(void)
 		gpio_isr();
 	}
 #endif
+#if (RTC_DRIVER)
+ if(IntStat & INT_STATUS_RTC_bit)
+ {
+  irq_status |= INT_STATUS_RTC_bit;
+  rtc_isr();
+ }
+#endif
 #if (PWM_DRIVER)
 	if(IntStat & INT_STATUS_PWM1_bit)
 	{

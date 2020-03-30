@@ -11,7 +11,7 @@
 
 #define REDUCE_VOL_SLEEP		0
 
-#define MCU_DEFAULT_CLK 	MCU_CLK_64M
+#define MCU_DEFAULT_CLK 	MCU_CLK_16M
 
 
 void system_sleep_init(void);

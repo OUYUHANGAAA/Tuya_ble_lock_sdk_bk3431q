@@ -33,8 +33,8 @@ extern "C"
 #define  DEFAULT_ADV_DATA_LEN    3
 #define  DEFAULT_SCAN_RSP_LEN    5
 
-#define  BK_ADV_INTERVAL_MIN     152.5//1022.5
-#define  BK_ADV_INTERVAL_MAX     152.5//1022.5
+#define  BK_ADV_INTERVAL_MIN     APP_PORT_ADV_INTERVAL
+#define  BK_ADV_INTERVAL_MAX     APP_PORT_ADV_INTERVAL
 
 /*********************************************************************
  * STRUCT
