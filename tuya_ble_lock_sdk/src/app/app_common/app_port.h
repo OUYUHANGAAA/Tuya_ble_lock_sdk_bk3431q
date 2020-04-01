@@ -50,15 +50,15 @@ extern "C"
 #define TUYA_DEVICE_AUTH_KEY    "fYUftqd2K2mq1BuMs9dYr7tGWg4zloy5" //32Byte
 
 #define TUYA_DEVICE_FIR_NAME    "tuya_ble_lock_common_nRF52832"    //固件标识名
-#define TUYA_DEVICE_FVER_NUM    0x00000102                         //固件版本
+#define TUYA_DEVICE_FVER_NUM    0x00000103                         //固件版本
 #define TUYA_DEVICE_HVER_NUM    0x00000100                         //硬件版本
-#define TUYA_DEVICE_FVER_STR    "1.2"                              //固件版本str
+#define TUYA_DEVICE_FVER_STR    "1.3"                              //固件版本str
 #define TUYA_DEVICE_HVER_STR    "1.0"                              //硬件版本str
 
 /*********************************************************  ble  *********************************************************/
 #define APP_PORT_DEFAULT_MAC_ADDR_STR    "DC234D08C8EF"
 
-#define APP_PORT_ADV_INTERVAL            1000 //(1022.5) //ms
+#define APP_PORT_ADV_INTERVAL            152.5 //152.5 //(1022.5) //取值范围：20~10240 ms
 #define APP_PORT_MIN_CONN_INTERVAL       BK_CONN_INTERVAL_MIN
 #define APP_PORT_MAX_CONN_INTERVAL       BK_CONN_INTERVAL_MAX
 #define APP_PORT_SLAVE_LATENCY           BK_SLAVE_LATENCY
@@ -140,6 +140,7 @@ uint32_t app_port_timer_stop(void* timer_id);
 uint32_t app_port_update_timestamp(uint32_t app_timestamp);
 uint32_t app_port_get_timestamp(void);
 uint32_t app_port_get_old_timestamp(uint32_t old_local_timestamp);
+uint32_t app_port_delay_ms(uint32_t ms);
 
 /*********************************************************  ble  *********************************************************/
 uint32_t app_port_dp_data_report(uint8_t *buf, uint32_t size);

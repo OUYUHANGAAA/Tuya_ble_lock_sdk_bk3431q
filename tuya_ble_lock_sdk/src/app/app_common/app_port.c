@@ -161,6 +161,15 @@ uint32_t app_port_get_old_timestamp(uint32_t old_local_timestamp)
     return bk_get_old_timestamp(old_local_timestamp);
 }
 
+/*********************************************************
+FN: 
+*/
+uint32_t app_port_delay_ms(uint32_t ms)
+{
+    bk_delay_ms(ms);
+    return APP_PORT_SUCCESS;
+}
+
 
 /*********************************************************  ble  *********************************************************/
 

@@ -100,7 +100,7 @@ uint32_t lock_offline_pwd_delete_all(void)
 {
     for (int32_t idx=0; idx<OFFLINE_PWD_MAX_NUM; idx++)
     {
-        lock_hard_delete(idx);
+        lock_offline_pwd_delete(idx);
     }
     return APP_PORT_SUCCESS;
 }

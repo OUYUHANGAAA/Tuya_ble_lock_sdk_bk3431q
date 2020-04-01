@@ -642,21 +642,22 @@ FN:
 */
 uint32_t lock_flash_erease_all(bool is_delete_app_test_data)
 {
-	lock_hard_delete_all();
-	lock_evt_delete_all();
-	lock_settings_delete_and_default();
-    lock_offline_pwd_delete_all();
-    
-    app_port_kv_del("s_evt_id");
-    if(is_delete_app_test_data)
-    {
-        app_port_kv_del("mac_str");
-//        app_port_kv_del("hid_str");
-        app_port_kv_del("NV_IF_AUTH");
-        app_port_kv_del("s_data_len");
-        app_port_kv_del("s_data_crc");
-        app_port_kv_del("s_file.md5");
-    }
+//	lock_hard_delete_all();
+//	lock_evt_delete_all();
+//	lock_settings_delete_and_default();
+//    lock_offline_pwd_delete_all();
+//    
+//    app_port_kv_del("s_evt_id");
+//    if(is_delete_app_test_data)
+//    {
+//        app_port_kv_del("mac_str");
+////        app_port_kv_del("hid_str");
+//        app_port_kv_del("NV_IF_AUTH");
+//        app_port_kv_del("s_data_len");
+//        app_port_kv_del("s_data_crc");
+//        app_port_kv_del("s_file.md5");
+//    }
+    app_port_nv_erase(EF_START_ADDR, ENV_AREA_SIZE);
     
     return 0;
 }

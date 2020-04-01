@@ -30,11 +30,11 @@ extern "C"
  * CONSTANTS
  */
 //define different hard's max num, default value is 10, user can change it when needed
-#define HARDID_MAX_PASSWORD    20
-#define HARDID_MAX_DOORCARD    20
-#define HARDID_MAX_FINGER      20
-#define HARDID_MAX_FACE        20
-#define HARDID_MAX_TEMP_PW     20
+#define HARDID_MAX_PASSWORD    30
+#define HARDID_MAX_DOORCARD    30
+#define HARDID_MAX_FINGER      30
+#define HARDID_MAX_FACE        30
+#define HARDID_MAX_TEMP_PW     30
 #define HARDID_MAX_TOTAL       (HARDID_MAX_PASSWORD+HARDID_MAX_DOORCARD+HARDID_MAX_FINGER+HARDID_MAX_FACE+HARDID_MAX_TEMP_PW) //this value can not bigger then 255
 
 #define HARD_ID_INVALID        0xFFFFFFFF
