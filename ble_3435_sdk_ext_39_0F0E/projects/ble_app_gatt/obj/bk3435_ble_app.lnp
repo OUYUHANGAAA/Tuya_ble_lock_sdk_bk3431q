@@ -10,6 +10,7 @@
 ".\obj\app_common.o"
 ".\obj\app_flash.o"
 ".\obj\app_ota.o"
+".\obj\app_active_report.o"
 ".\obj\app_test.o"
 ".\obj\app_port.o"
 ".\obj\tuya_ble_storage.o"

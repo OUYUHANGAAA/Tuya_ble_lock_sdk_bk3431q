@@ -313,6 +313,16 @@ void lock_hard_uart_simulate(uint8_t cmd, uint8_t* data, uint16_t len)
             }
         } break;
         
+		case UART_SIMULATE_ACTIVE_REPORT: {
+            if(data[0] == 0x01) {
+                app_active_report_start();
+            }
+            else if(data[0] == 0x02) {
+                app_active_report_finished_and_disconnect();
+            }
+            
+        } break;
+        
 		case UART_SIMULATE_DELETE_FLASH: {
             app_port_nv_erase(EF_START_ADDR, ENV_AREA_SIZE);
             APP_DEBUG_PRINTF("app_port_nv_erase EF_START_ADDR ENV_AREA_SIZE");

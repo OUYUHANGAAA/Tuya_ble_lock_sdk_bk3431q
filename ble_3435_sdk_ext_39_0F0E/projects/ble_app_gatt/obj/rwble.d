@@ -115,6 +115,7 @@
 .\obj\rwble.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_flash.h
 .\obj\rwble.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_common.h
 .\obj\rwble.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_ota.h
+.\obj\rwble.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_active_report.h
 .\obj\rwble.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_test.h
 .\obj\rwble.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_dp_parser.h
 .\obj\rwble.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_common.h

@@ -492,6 +492,11 @@
               <FilePath>..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_ota.c</FilePath>
             </File>
             <File>
+              <FileName>app_active_report.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_active_report.c</FilePath>
+            </File>
+            <File>
               <FileName>app_test.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_test.c</FilePath>

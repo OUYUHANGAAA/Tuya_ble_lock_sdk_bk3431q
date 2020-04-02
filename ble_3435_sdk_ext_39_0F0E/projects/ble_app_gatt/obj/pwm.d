@@ -105,6 +105,7 @@
 .\obj\pwm.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_flash.h
 .\obj\pwm.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_common.h
 .\obj\pwm.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_ota.h
+.\obj\pwm.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_active_report.h
 .\obj\pwm.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_test.h
 .\obj\pwm.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_dp_parser.h
 .\obj\pwm.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_common.h

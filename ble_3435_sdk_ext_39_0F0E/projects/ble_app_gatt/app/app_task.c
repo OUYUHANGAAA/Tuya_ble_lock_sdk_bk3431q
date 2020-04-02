@@ -282,7 +282,7 @@ static int gapm_cmp_evt_handler(ke_msg_id_t const msgid,
             }
 			else if (param->status == GAP_ERR_CANCELED)
 			{
-                BK_PRINTF("%s, GAP_ERR_CANCELED", __func__);
+//                BK_PRINTF("%s, GAP_ERR_CANCELED", __func__);
                 ke_state_set(TASK_APP, APPM_READY);
 
                 if(g_adv_restart_glag)

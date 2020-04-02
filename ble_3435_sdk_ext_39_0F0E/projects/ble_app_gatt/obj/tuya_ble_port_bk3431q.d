@@ -80,6 +80,7 @@
 .\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_flash.h
 .\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_common.h
 .\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_ota.h
+.\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_active_report.h
 .\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_test.h
 .\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_dp_parser.h
 .\obj\tuya_ble_port_bk3431q.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_common.h

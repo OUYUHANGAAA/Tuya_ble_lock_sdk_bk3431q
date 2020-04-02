@@ -102,7 +102,7 @@ void bk_timer_stop_0(ke_msg_id_t const timer_id)
 }
 
 /*********************************************************
-FN: Õ£÷π
+FN:  «∑Ò‘À––
 */
 uint8_t bk_timer_is_running(ke_msg_id_t const timer_id)
 {
@@ -130,16 +130,26 @@ typedef struct {
 } bk_timer_item_t;
 
 static bk_timer_item_t m_timer_pool[] = {
-    [0] = { .timer_id = BK_TIMER0},
-    [1] = { .timer_id = BK_TIMER1},
-    [2] = { .timer_id = BK_TIMER2},
-    [3] = { .timer_id = BK_TIMER3},
-    [4] = { .timer_id = BK_TIMER4},
-    [5] = { .timer_id = BK_TIMER5},
-    [6] = { .timer_id = BK_TIMER6},
-    [7] = { .timer_id = BK_TIMER7},
-    [8] = { .timer_id = BK_TIMER8},
-    [9] = { .timer_id = BK_TIMER9},
+    [0]  = { .timer_id = BK_TIMER0},
+    [1]  = { .timer_id = BK_TIMER1},
+    [2]  = { .timer_id = BK_TIMER2},
+    [3]  = { .timer_id = BK_TIMER3},
+    [4]  = { .timer_id = BK_TIMER4},
+    [5]  = { .timer_id = BK_TIMER5},
+    [6]  = { .timer_id = BK_TIMER6},
+    [7]  = { .timer_id = BK_TIMER7},
+    [8]  = { .timer_id = BK_TIMER8},
+    [9]  = { .timer_id = BK_TIMER9},
+    [10] = { .timer_id = BK_TIMER10},
+    [11] = { .timer_id = BK_TIMER11},
+    [12] = { .timer_id = BK_TIMER12},
+    [13] = { .timer_id = BK_TIMER13},
+    [14] = { .timer_id = BK_TIMER14},
+    [15] = { .timer_id = BK_TIMER15},
+    [16] = { .timer_id = BK_TIMER16},
+    [17] = { .timer_id = BK_TIMER17},
+    [18] = { .timer_id = BK_TIMER18},
+    [19] = { .timer_id = BK_TIMER19},
 };
 
 /*********************************************************

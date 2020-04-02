@@ -80,6 +80,7 @@
 .\obj\bk_svc.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_flash.h
 .\obj\bk_svc.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_common.h
 .\obj\bk_svc.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_ota.h
+.\obj\bk_svc.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_active_report.h
 .\obj\bk_svc.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_test.h
 .\obj\bk_svc.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_dp_parser.h
 .\obj\bk_svc.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_common.h

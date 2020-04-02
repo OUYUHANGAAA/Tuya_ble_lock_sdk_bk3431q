@@ -31,7 +31,7 @@ extern "C"
  */
 #define BK_TIMER_COUNT_ENDLESS      0xFFFFFFFF
 
-#define BK_TIMER_MAX_NUM            10
+#define BK_TIMER_MAX_NUM            20
 
 typedef enum {
     BK_TIMER_SINGLE_SHOT,

@@ -297,8 +297,8 @@ void appm_update_param(struct gapc_conn_param *conn_param)
     // not used by a slave device
     cmd->ce_len_min = 0xFFFF;
     cmd->ce_len_max = 0xFFFF;
-    BK_PRINTF("appm_update_param: intv_min = %d, intv_max = %d, latency = %d, time_out = %d",
-		cmd->intv_min,cmd->intv_max,cmd->latency,cmd->time_out);
+//    BK_PRINTF("appm_update_param: intv_min = %d, intv_max = %d, latency = %d, time_out = %d",
+//		cmd->intv_min,cmd->intv_max,cmd->latency,cmd->time_out);
     // Send the message
     ke_msg_send(cmd);
 }

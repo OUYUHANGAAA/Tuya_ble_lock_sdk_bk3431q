@@ -81,6 +81,7 @@
 .\obj\cpt_string_op.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_common.h
 .\obj\cpt_string_op.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_flash.h
 .\obj\cpt_string_op.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_ota.h
+.\obj\cpt_string_op.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_active_report.h
 .\obj\cpt_string_op.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_dp_parser.h
 .\obj\cpt_string_op.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_common.h
 .\obj\cpt_string_op.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_dp_report.h

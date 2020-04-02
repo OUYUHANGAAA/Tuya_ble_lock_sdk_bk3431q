@@ -82,6 +82,7 @@
 .\obj\app_flash.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_common.h
 .\obj\app_flash.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_flash.h
 .\obj\app_flash.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_ota.h
+.\obj\app_flash.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_active_report.h
 .\obj\app_flash.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_dp_parser.h
 .\obj\app_flash.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_common.h
 .\obj\app_flash.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_dp_report.h

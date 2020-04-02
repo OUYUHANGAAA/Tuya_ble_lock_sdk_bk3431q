@@ -72,6 +72,8 @@ static void app_common_tuya_ble_sdk_callback(tuya_ble_cb_evt_param_t* param)
             if(param->connect_status == BONDING_CONN) {
                 APP_DEBUG_PRINTF("bonding and connecting");
                 lock_timer_stop(LOCK_TIMER_CONN_MONITOR);
+                app_active_report_stop(ACTICE_REPORT_STOP_STATE_BONDING);
+                lock_timer_start(LOCK_TIMER_CONN_PARAM_UPDATE);
             }
         } break;
         
@@ -179,13 +181,13 @@ static void app_common_evt_process(void *p_param)
         } break;
         
         case APP_EVT_BLE_GAP_EVT_CONNECTED: {
-            lock_timer_start(LOCK_TIMER_CONN_PARAM_UPDATE);
             lock_timer_start(LOCK_TIMER_CONN_MONITOR);
         } break;
         
         case APP_EVT_BLE_GAP_EVT_DISCONNECTED: {
             app_ota_disconn_handler();
             lock_timer_stop(LOCK_TIMER_CONN_MONITOR);
+            app_active_report_finished_and_disconnect_handler();
         } break;
         
         case APP_EVT_TIMER_0: {
@@ -217,12 +219,43 @@ static void app_common_evt_process(void *p_param)
         } break;
         
         case APP_EVT_TIMER_7: {
+            app_active_report_outtime_cb_handler();
         } break;
         
         case APP_EVT_TIMER_8: {
         } break;
         
         case APP_EVT_TIMER_9: {
+        } break;
+        
+        case APP_EVT_TIMER_10: {
+        } break;
+        
+        case APP_EVT_TIMER_11: {
+        } break;
+        
+        case APP_EVT_TIMER_12: {
+        } break;
+        
+        case APP_EVT_TIMER_13: {
+        } break;
+        
+        case APP_EVT_TIMER_14: {
+        } break;
+        
+        case APP_EVT_TIMER_15: {
+        } break;
+        
+        case APP_EVT_TIMER_16: {
+        } break;
+        
+        case APP_EVT_TIMER_17: {
+        } break;
+        
+        case APP_EVT_TIMER_18: {
+        } break;
+        
+        case APP_EVT_TIMER_19: {
         } break;
         
         default: {
