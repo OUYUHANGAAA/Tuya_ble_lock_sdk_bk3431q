@@ -69,6 +69,7 @@
 .\obj\ef_env.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_port.h
 .\obj\ef_env.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\hash\sha1.h
 .\obj\ef_env.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\hash\hmac-sha1.h
+.\obj\ef_env.o: ..\..\sdk\plactform\driver\wdt\wdt.h
 .\obj\ef_env.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_mem.h
 .\obj\ef_env.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_mutli_tsf_protocol.h
 .\obj\ef_env.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_main.h

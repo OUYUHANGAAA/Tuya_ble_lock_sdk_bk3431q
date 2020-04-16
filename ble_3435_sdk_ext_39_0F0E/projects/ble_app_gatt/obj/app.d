@@ -74,6 +74,7 @@
 .\obj\app.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_port.h
 .\obj\app.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\hash\sha1.h
 .\obj\app.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\hash\hmac-sha1.h
+.\obj\app.o: ..\..\sdk\plactform\driver\wdt\wdt.h
 .\obj\app.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_mem.h
 .\obj\app.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_mutli_tsf_protocol.h
 .\obj\app.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_main.h
@@ -96,6 +97,5 @@
 .\obj\app.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_offline_pwd.h
 .\obj\app.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_test.h
 .\obj\app.o: ..\..\sdk\plactform\driver\adc\adc.h
-.\obj\app.o: ..\..\sdk\plactform\driver\wdt\wdt.h
 .\obj\app.o: ..\..\sdk\ble_stack\peripheral\inc\ble\hl\gatt\gattc\gattc_task.h
 .\obj\app.o: ..\..\sdk\ble_stack\peripheral\inc\ble\hl\gatt\att.h

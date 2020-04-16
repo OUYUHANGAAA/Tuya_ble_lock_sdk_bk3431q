@@ -383,13 +383,14 @@ uint32_t lock_state_sync_report(uint8_t dp_id, uint32_t data)
             g_rsp.dp_data[0] = (data > 66) ? 0x00 : ((data > 33) ? 0x01 : 0x02);
         } break;
         
+        //dp_type = enum
         case OR_STS_DOOR_STATE: {
             g_rsp.dp_type = APP_PORT_DT_ENUM;
             g_rsp.dp_data_len = APP_PORT_DT_ENUM_LEN;
             g_rsp.dp_data[0] = data;
         } break;
         
-        //dp_type = bool/enum
+        //dp_type = bool
         case OR_STS_CHILD_LOCK:
         case OR_STS_ANTI_LOCK:
         case WR_STS_REVERSE_LOCK:

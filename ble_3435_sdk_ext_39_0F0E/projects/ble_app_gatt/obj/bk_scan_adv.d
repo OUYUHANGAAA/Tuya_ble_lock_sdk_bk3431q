@@ -68,6 +68,7 @@
 .\obj\bk_scan_adv.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_port.h
 .\obj\bk_scan_adv.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\hash\sha1.h
 .\obj\bk_scan_adv.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\hash\hmac-sha1.h
+.\obj\bk_scan_adv.o: ..\..\sdk\plactform\driver\wdt\wdt.h
 .\obj\bk_scan_adv.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_mem.h
 .\obj\bk_scan_adv.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_mutli_tsf_protocol.h
 .\obj\bk_scan_adv.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_main.h

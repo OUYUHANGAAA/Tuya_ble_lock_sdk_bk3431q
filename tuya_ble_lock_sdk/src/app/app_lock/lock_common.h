@@ -37,7 +37,6 @@ extern "C"
 /*********************************************************************
  * EXTERNAL VARIABLES
  */
-extern volatile uint8_t g_open_with_bt_flag;
 
 /*********************************************************************
  * EXTERNAL FUNCTIONS

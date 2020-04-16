@@ -100,6 +100,9 @@ uint32_t lock_offline_pwd_delete_all(void)
 {
     for (int32_t idx=0; idx<OFFLINE_PWD_MAX_NUM; idx++)
     {
+        APP_DEBUG_PRINTF("idx-%d", idx);
+        wdt_feed(WATCH_DOG_COUNT);
+        
         lock_offline_pwd_delete(idx);
     }
     return APP_PORT_SUCCESS;
@@ -234,6 +237,9 @@ static int32_t lock_offline_pwd_find(uint32_t T_now)
     
     for (int32_t idx=0; idx<OFFLINE_PWD_MAX_NUM; idx++)
     {
+        APP_DEBUG_PRINTF("idx-%d", idx);
+        wdt_feed(WATCH_DOG_COUNT);
+        
 //        APP_DEBUG_PRINTF("find idx: %d", idx);
         lock_offline_pwd_storage_t pwd_storage = {0};
         lock_offline_pwd_load(idx, &pwd_storage);
@@ -322,6 +328,9 @@ static int32_t is_offline_pwd_exist(enum_offline_pwd_type_t type, uint32_t pwd_i
 	int32_t pwdid = -1;
 	for (int32_t idx=0; idx<OFFLINE_PWD_MAX_NUM; idx++)
     {
+        APP_DEBUG_PRINTF("idx-%d", idx);
+        wdt_feed(WATCH_DOG_COUNT);
+        
         lock_offline_pwd_storage_t pwd_storage = {0};
         lock_offline_pwd_load(idx, &pwd_storage);
         
@@ -348,6 +357,9 @@ static int32_t lock_offline_pwd_clear(enum_offline_pwd_type_t type, uint32_t pwd
     
     for (int32_t idx=0; idx<OFFLINE_PWD_MAX_NUM; idx++)
     {
+        APP_DEBUG_PRINTF("idx-%d", idx);
+        wdt_feed(WATCH_DOG_COUNT);
+        
         lock_offline_pwd_storage_t pwd_storage = {0};
         lock_offline_pwd_load(idx, &pwd_storage);
         
@@ -436,6 +448,7 @@ int32_t lock_offline_pwd_verify(uint8_t *key, uint8_t key_len,
     //时效/单次密码
     if (pwd->type == PWD_TYPE_TIMELINESS || pwd->type == PWD_TYPE_SINGLE)
     {
+        APP_DEBUG_PRINTF("1");
         //时效密码
         if(pwd->type == PWD_TYPE_TIMELINESS) {
             if (T2 > T_now) {
@@ -460,10 +473,14 @@ int32_t lock_offline_pwd_verify(uint8_t *key, uint8_t key_len,
             }
             active_period = PWD_ACTIVE_PERIOD_SINGLE;
         }
+        
+        APP_DEBUG_PRINTF("2");
 
         int32_t exist_pwdid = 0;
         lock_offline_pwd_storage_t pwd_storage = {0};
+        APP_DEBUG_PRINTF("3");
         exist_pwdid = is_offline_pwd_exist((enum_offline_pwd_type_t)pwd->type, num_1_9, &pwd_storage);
+        APP_DEBUG_PRINTF("4");
         APP_DEBUG_PRINTF("is_offline_pwd_exist, pwdid-->[%d]", exist_pwdid);
         //离线密码已经存在
         if (exist_pwdid >= 0) {

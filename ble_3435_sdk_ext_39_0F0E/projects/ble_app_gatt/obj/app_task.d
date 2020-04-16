@@ -81,6 +81,7 @@
 .\obj\app_task.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_port.h
 .\obj\app_task.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\hash\sha1.h
 .\obj\app_task.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\hash\hmac-sha1.h
+.\obj\app_task.o: ..\..\sdk\plactform\driver\wdt\wdt.h
 .\obj\app_task.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_mem.h
 .\obj\app_task.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_mutli_tsf_protocol.h
 .\obj\app_task.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_main.h
@@ -132,4 +133,3 @@
 .\obj\app_task.o: ..\..\sdk\plactform\reg\reg_blecore.h
 .\obj\app_task.o: ..\..\sdk\plactform\reg\_reg_blecore.h
 .\obj\app_task.o: ..\..\sdk\ble_stack\peripheral\inc\ble\ll\lld\lld_evt.h
-.\obj\app_task.o: ..\..\sdk\plactform\driver\wdt\wdt.h

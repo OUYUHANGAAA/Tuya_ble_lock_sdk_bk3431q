@@ -73,6 +73,7 @@
 .\obj\gpio.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_port.h
 .\obj\gpio.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\hash\sha1.h
 .\obj\gpio.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\hash\hmac-sha1.h
+.\obj\gpio.o: ..\..\sdk\plactform\driver\wdt\wdt.h
 .\obj\gpio.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_mem.h
 .\obj\gpio.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_mutli_tsf_protocol.h
 .\obj\gpio.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_main.h

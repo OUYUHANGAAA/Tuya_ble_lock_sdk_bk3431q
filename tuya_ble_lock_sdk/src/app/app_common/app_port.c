@@ -101,6 +101,14 @@ uint32_t app_port_nv_erase(uint32_t addr, uint32_t size)
     return tuya_ble_nv_erase(addr, size);
 }
 
+/*********************************************************
+FN: 
+*/
+uint32_t app_port_nv_set_default(void)
+{
+    return ef_env_set_default();
+}
+
 
 /*********************************************************  timer  *********************************************************/
 
@@ -421,6 +429,11 @@ uint8_t app_port_string_op_hexstr2hex(uint8_t *hexstr, int len, uint8_t* hex)
 uint8_t app_port_string_op_hex2hexstr(uint8_t *hex, int len, uint8_t* hexstr)
 {
 	return ty_string_op_hex2hexstr(hex, len, hexstr);
+}
+
+uint8_t app_port_string_op_intstr2int(uint8_t *hex, int len, int* sum)
+{
+	return ty_string_op_intstr2int(hex, len, sum);
 }
 
 

@@ -22,7 +22,6 @@
 /*********************************************************************
  * VARIABLES
  */
-volatile uint8_t g_open_with_bt_flag = 1;
 
 
 
@@ -64,7 +63,7 @@ FN:
 uint32_t lock_open_with_bt(void)
 {
     //open success
-    if(g_open_with_bt_flag)
+    if(!g_auto_switch.open_with_bt_flag)
     {
         APP_DEBUG_PRINTF("lock_open_with_bt");
         return APP_PORT_SUCCESS;
@@ -78,7 +77,7 @@ FN:
 uint32_t lock_open_with_nopwd_remote(void)
 {
     //open success
-    if(g_open_with_bt_flag)
+    if(!g_auto_switch.open_with_bt_flag)
     {
         APP_DEBUG_PRINTF("lock_open_with_nopwd_remote");
         return APP_PORT_SUCCESS;

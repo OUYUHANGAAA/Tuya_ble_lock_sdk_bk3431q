@@ -414,6 +414,7 @@ static int gapc_connection_req_ind_handler(ke_msg_id_t const msgid,
         BK_PRINTF("bk connected");
         {
             tuya_ble_connected_handler();
+            app_common_evt_send_only_evt(APP_EVT_BLE_GAP_EVT_CONNECTED);
         }
         
         //¼ÇÂ¼Á¬½Ó¾ä±ú

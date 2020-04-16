@@ -211,7 +211,7 @@ uint32_t lock_dp_parser_handler(void* dp_data)
             if(g_cmd.dp_data_len == 4)
             {
                 uint32_t value;
-                value = (g_cmd.dp_data[1]<<24) + (g_cmd.dp_data[2]<<16) + (g_cmd.dp_data[3]<<8) + g_cmd.dp_data[4];
+                value = (g_cmd.dp_data[0]<<24) + (g_cmd.dp_data[1]<<16) + (g_cmd.dp_data[2]<<8) + g_cmd.dp_data[3];
                 lock_settings.timer_lock = value;
                 if(lock_settings_save() == APP_PORT_SUCCESS) {
                     APP_DEBUG_PRINTF("WR_SET_TIMER_LOCK SUCCESS");
@@ -223,7 +223,7 @@ uint32_t lock_dp_parser_handler(void* dp_data)
             if(g_cmd.dp_data_len == 4)
             {
                 uint32_t value;
-                value = (g_cmd.dp_data[1]<<24) + (g_cmd.dp_data[2]<<16) + (g_cmd.dp_data[3]<<8) + g_cmd.dp_data[4];
+                value = (g_cmd.dp_data[0]<<24) + (g_cmd.dp_data[1]<<16) + (g_cmd.dp_data[2]<<8) + g_cmd.dp_data[3];
                 lock_settings.timer_auto_lock = value;
                 if(lock_settings_save() == APP_PORT_SUCCESS) {
                     APP_DEBUG_PRINTF("WR_SET_TIMER_AUTO_LOCK SUCCESS");
@@ -235,7 +235,7 @@ uint32_t lock_dp_parser_handler(void* dp_data)
             if(g_cmd.dp_data_len == 4)
             {
                 uint32_t value;
-                value = (g_cmd.dp_data[1]<<24) + (g_cmd.dp_data[2]<<16) + (g_cmd.dp_data[3]<<8) + g_cmd.dp_data[4];
+                value = (g_cmd.dp_data[0]<<24) + (g_cmd.dp_data[1]<<16) + (g_cmd.dp_data[2]<<8) + g_cmd.dp_data[3];
                 lock_settings.finger_number = value;
                 if(lock_settings_save() == APP_PORT_SUCCESS) {
                     APP_DEBUG_PRINTF("WR_SET_FINGER_NUM SUCCESS");
@@ -322,19 +322,29 @@ static uint32_t open_meth_creat_handler(void* cmd_dp_data, void* rsp_dp_data, ui
     switch(cmd->meth)
     {
         case OPEN_METH_PASSWORD: {
-            if(lock_get_hardid(cmd->meth) != HARD_ID_INVALID)
+            if(cmd->stage == REG_STAGE_STSRT)
             {
-                APP_DEBUG_PRINTF("OPEN_METH_PASSWORD creat start");
-                lock_hard_creat_sub_report_with_delay(cmd->meth, REG_STAGE_COMPLETE, lock_get_hardid(cmd->meth), REG_NOUSE_DEFAULT_VALUE, REG_NOUSE_DEFAULT_VALUE);
-                lock_hard_save_in_local_flash(cmd->meth);
+                if(lock_get_hardid(cmd->meth) != HARD_ID_INVALID)
+                {
+                    APP_DEBUG_PRINTF("OPEN_METH_PASSWORD creat start");
+                    if(g_auto_switch.creat_pw_flag == 0) {
+                        lock_hard_creat_sub_report_with_delay(cmd->meth, REG_STAGE_COMPLETE, lock_get_hardid(cmd->meth), REG_NOUSE_DEFAULT_VALUE, REG_NOUSE_DEFAULT_VALUE);
+                        lock_hard_save_in_local_flash(cmd->meth);
+                    }
+                }
+                else
+                {//hardid is used up
+                    APP_DEBUG_PRINTF("OPEN_METH_PASSWORD hardid is used up");
+                    lock_hard_creat_sub_report_with_delay(cmd->meth, REG_STAGE_FAILED, lock_get_hardid(cmd->meth), REG_STAGE_STSRT, REG_FAILD_NO_HARDID);
+                }
+                rsp->reg_num = 0x00; //password doesn't need this
             }
-            else
-            {//hardid is used up
-                APP_DEBUG_PRINTF("OPEN_METH_PASSWORD hardid is used up");
-                lock_hard_creat_sub_report_with_delay(cmd->meth, REG_STAGE_FAILED, lock_get_hardid(cmd->meth), REG_STAGE_STSRT, REG_FAILD_NO_HARDID);
+            else if(cmd->stage == REG_STAGE_CANCEL)
+            {
+                APP_DEBUG_PRINTF("OPEN_METH_PASSWORD REG_STAGE_CANCEL");
+//                app_common_evt_send_only_evt(APP_EVT_CANCEL_REG_CARD);
+                rsp->reg_num = REG_NOUSE_DEFAULT_VALUE;
             }
-
-            rsp->reg_num = 0x00; //password doesn't need this
             rsp->result = REG_NOUSE_DEFAULT_VALUE; //default, no sence
         } break;
         
@@ -343,6 +353,7 @@ static uint32_t open_meth_creat_handler(void* cmd_dp_data, void* rsp_dp_data, ui
             {
                 if(lock_get_hardid(cmd->meth) != HARD_ID_INVALID)
                 {
+                    APP_DEBUG_PRINTF("OPEN_METH_DOORCARD creat start");
                     app_common_evt_send_with_data(APP_EVT_START_REG_CARD, cmd, sizeof(open_meth_creat_t));
                 }
                 else
@@ -367,6 +378,7 @@ static uint32_t open_meth_creat_handler(void* cmd_dp_data, void* rsp_dp_data, ui
             {
                 if(lock_get_hardid(cmd->meth) != HARD_ID_INVALID)
                 {
+                    APP_DEBUG_PRINTF("OPEN_METH_FINGER creat start");
                     app_common_evt_send_with_data(APP_EVT_START_REG_FINGER, cmd, sizeof(open_meth_creat_t));
                 }
                 else
@@ -391,6 +403,7 @@ static uint32_t open_meth_creat_handler(void* cmd_dp_data, void* rsp_dp_data, ui
             {
                 if(lock_get_hardid(cmd->meth) != HARD_ID_INVALID)
                 {
+                    APP_DEBUG_PRINTF("OPEN_METH_FACE creat start");
                     app_common_evt_send_with_data(APP_EVT_START_REG_FACE, cmd, sizeof(open_meth_creat_t));
                 }
                 else
@@ -869,6 +882,7 @@ static uint32_t open_with_nopwd_remote_setkey_handler(void* cmd_dp_data, void* r
     app_port_reverse_byte(&cmd->time_end, sizeof(uint32_t));
     app_port_reverse_byte(&cmd->valid_num, sizeof(uint16_t));
     
+    APP_DEBUG_PRINTF("WR_BSC_OPEN_WITH_NOPWD_REMOTE_SETKEY: time_begin-%d, time_end-%d", cmd->time_begin, cmd->time_end);
     ret = app_port_kv_set(OPEN_WITH_NOPWD_REMOTE_KEY, cmd, sizeof(open_with_nopwd_remote_setkey_t));
     if(ret == APP_PORT_SUCCESS) {
         rsp->result = 0x00;
@@ -929,6 +943,7 @@ static uint32_t open_with_nopwd_remote_handler(void* cmd_dp_data, void* rsp_dp_d
             rsp->result = 0x00; //open success
         } else {
             rsp->result = 0x01; //open fail
+            APP_DEBUG_PRINTF("OPEN_WITH_NOPWD_REMOTE fail id: %d", rsp->result);
         }
     }
     
@@ -942,7 +957,8 @@ FN:
 */
 static uint32_t offline_pwd_set_T0_handler(void* cmd_dp_data, void* rsp_dp_data, uint8_t* rsp_dp_data_len)
 {
-    uint32_t T0_tmp = app_port_num_array_2_int(cmd_dp_data, 0, 8);
+    uint32_t T0_tmp = 0;
+    app_port_string_op_intstr2int(cmd_dp_data, 10, (void*)&T0_tmp);
     lock_offline_pwd_set_T0(T0_tmp);
     
     return APP_PORT_SUCCESS;

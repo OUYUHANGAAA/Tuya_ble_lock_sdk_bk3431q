@@ -142,6 +142,8 @@ uint32_t lock_hard_face_delete(uint8_t hardid)
 
 /*****************************************************   -simulate-   ******************************************************/
 
+volatile lock_hard_uart_simulate_auto_switch_t g_auto_switch = {0};
+
 /*********************************************************
 FN: 
 */
@@ -158,13 +160,32 @@ void lock_hard_uart_simulate(uint8_t cmd, uint8_t* data, uint16_t len)
 	switch(cmd)
 	{
 		case UART_SIMULATE_REG_PASSWORD: {
+            //auto reg switch
+            if(data[0] == 0x00)
+            {
+                g_auto_switch.creat_pw_flag = data[1];
+                APP_DEBUG_PRINTF("g_auto_switch.creat_pw_flag: %d", data[1]);
+            }
+            //reg complete
+            else if(data[0] == 0x01)
+            {
+                APP_DEBUG_PRINTF("OPEN_METH_PASSWORD creat complete");
+                lock_hard_creat_sub_report(OPEN_METH_PASSWORD, REG_STAGE_COMPLETE, lock_get_hardid(OPEN_METH_PASSWORD), REG_NOUSE_DEFAULT_VALUE, REG_NOUSE_DEFAULT_VALUE);
+                lock_hard_save_in_local_flash(OPEN_METH_PASSWORD);
+            }
+            //reg fail, data[1] = reg_stage_t, data[2] = reg_failed_reason_t
+            else if(data[0] == 0x02)
+            {
+                APP_DEBUG_PRINTF("OPEN_METH_PASSWORD creat fail");
+                lock_hard_creat_sub_report(OPEN_METH_PASSWORD, REG_STAGE_FAILED, lock_get_hardid(OPEN_METH_PASSWORD), data[1], data[2]);
+            }
         } break;
         
 		case UART_SIMULATE_REG_DOORCARD: {
             //reg complete
             if(data[0] == 0x01)
             {
-                APP_DEBUG_PRINTF("OPEN_METH_DOORCARD creat start");
+                APP_DEBUG_PRINTF("OPEN_METH_DOORCARD creat complete");
                 lock_hard_creat_sub_report(OPEN_METH_DOORCARD, REG_STAGE_COMPLETE, lock_get_hardid(OPEN_METH_DOORCARD), REG_NOUSE_DEFAULT_VALUE, REG_NOUSE_DEFAULT_VALUE);
                 lock_hard_save_in_local_flash(OPEN_METH_DOORCARD);
             }
@@ -194,7 +215,7 @@ void lock_hard_uart_simulate(uint8_t cmd, uint8_t* data, uint16_t len)
             //reg complete
             else if(data[0] == 0x01)
             {
-                APP_DEBUG_PRINTF("OPEN_METH_FINGER creat start");
+                APP_DEBUG_PRINTF("OPEN_METH_FINGER creat complete");
                 lock_hard_creat_sub_report(OPEN_METH_FINGER, REG_STAGE_COMPLETE, lock_get_hardid(OPEN_METH_FINGER), REG_NOUSE_DEFAULT_VALUE, REG_NOUSE_DEFAULT_VALUE);
                 lock_hard_save_in_local_flash(OPEN_METH_FINGER);
             }
@@ -210,7 +231,7 @@ void lock_hard_uart_simulate(uint8_t cmd, uint8_t* data, uint16_t len)
             //reg complete
             if(data[0] == 0x01)
             {
-                APP_DEBUG_PRINTF("OPEN_METH_FACE creat start");
+                APP_DEBUG_PRINTF("OPEN_METH_FACE creat complete");
                 lock_hard_creat_sub_report(OPEN_METH_FACE, REG_STAGE_COMPLETE, lock_get_hardid(OPEN_METH_FACE), REG_NOUSE_DEFAULT_VALUE, REG_NOUSE_DEFAULT_VALUE);
                 lock_hard_save_in_local_flash(OPEN_METH_FACE);
             }
@@ -305,7 +326,8 @@ void lock_hard_uart_simulate(uint8_t cmd, uint8_t* data, uint16_t len)
             //open with bt flag
             if(data[0] == 0x01)
             {
-                g_open_with_bt_flag = data[1];
+                g_auto_switch.open_with_bt_flag = data[1];
+                APP_DEBUG_PRINTF("g_auto_switch.open_with_bt_flag: %d", data[1]);
             }
             //
             else if(data[0] == 0x02)

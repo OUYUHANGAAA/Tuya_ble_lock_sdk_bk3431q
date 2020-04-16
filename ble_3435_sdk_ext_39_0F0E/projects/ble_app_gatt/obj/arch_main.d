@@ -75,6 +75,7 @@
 .\obj\arch_main.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_port.h
 .\obj\arch_main.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\hash\sha1.h
 .\obj\arch_main.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\hash\hmac-sha1.h
+.\obj\arch_main.o: ..\..\sdk\plactform\driver\wdt\wdt.h
 .\obj\arch_main.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_mem.h
 .\obj\arch_main.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_mutli_tsf_protocol.h
 .\obj\arch_main.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_main.h
@@ -118,4 +119,3 @@
 .\obj\arch_main.o: ..\..\sdk\plactform\driver\ir\ir.h
 .\obj\arch_main.o: ..\..\sdk\ble_stack\common\profiles\oad\api\oads.h
 .\obj\arch_main.o: ..\..\sdk\ble_stack\common\prf\prf.h
-.\obj\arch_main.o: ..\..\sdk\plactform\driver\wdt\wdt.h

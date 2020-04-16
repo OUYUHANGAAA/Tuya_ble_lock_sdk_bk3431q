@@ -657,8 +657,9 @@ uint32_t lock_flash_erease_all(bool is_delete_app_test_data)
 //        app_port_kv_del("s_data_crc");
 //        app_port_kv_del("s_file.md5");
 //    }
-    app_port_nv_erase(EF_START_ADDR, ENV_AREA_SIZE);
+//    app_port_nv_erase(EF_START_ADDR, ENV_AREA_SIZE);
     
+    app_port_nv_set_default();
     return 0;
 }
 

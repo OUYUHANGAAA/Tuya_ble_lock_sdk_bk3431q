@@ -30,6 +30,7 @@ extern "C"
 #include "elog.h"
 #include "sha1.h"
 #include "hmac-sha1.h"
+#include "wdt.h"
 //tuya_ble_sdk
 #include "tuya_ble_api.h"
 #include "tuya_ble_mem.h"
@@ -131,6 +132,7 @@ uint32_t app_port_kv_del(const char *key);
 uint32_t app_port_nv_write(uint32_t addr, const uint8_t* p_data, uint32_t size);
 uint32_t app_port_nv_read(uint32_t addr, uint8_t* p_data, uint32_t size);
 uint32_t app_port_nv_erase(uint32_t addr, uint32_t size);
+uint32_t app_port_nv_set_default(void);
 
 /*********************************************************  timer  *********************************************************/
 uint32_t app_port_timer_create(void** p_timer_id, uint32_t timeout_value_ms, tuya_ble_timer_mode mode, tuya_ble_timer_handler_t timeout_handler);
@@ -175,6 +177,7 @@ bool app_port_aes128_cbc_encrypt(uint8_t *key,uint8_t *iv,uint8_t *input,uint16_
 /*********************************************************  string  *********************************************************/
 uint8_t app_port_string_op_hexstr2hex(uint8_t *hexstr, int len, uint8_t* hex);
 uint8_t app_port_string_op_hex2hexstr(uint8_t *hex, int len, uint8_t* hexstr);
+uint8_t app_port_string_op_intstr2int(uint8_t *hex, int len, int* sum);
 
 
 #ifdef __cplusplus

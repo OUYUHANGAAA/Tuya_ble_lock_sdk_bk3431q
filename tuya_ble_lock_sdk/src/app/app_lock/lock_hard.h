@@ -61,10 +61,16 @@ typedef enum
 /*********************************************************************
  * STRUCT
  */
+typedef struct
+{
+    uint8_t open_with_bt_flag;
+    uint8_t creat_pw_flag;
+} lock_hard_uart_simulate_auto_switch_t;
 
 /*********************************************************************
  * EXTERNAL VARIABLES
  */
+extern volatile lock_hard_uart_simulate_auto_switch_t g_auto_switch;
 
 /*********************************************************************
  * EXTERNAL FUNCTIONS

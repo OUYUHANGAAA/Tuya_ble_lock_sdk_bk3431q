@@ -124,7 +124,7 @@ EfErrCode ef_port_write(uint32_t addr, const uint32_t *buf, size_t size) {
 void ef_port_env_lock(void) {
     
     /* You can add your code under here. */
-//    tuya_ble_device_enter_critical();
+    tuya_ble_device_enter_critical();
 }
 
 /**
@@ -133,7 +133,7 @@ void ef_port_env_lock(void) {
 void ef_port_env_unlock(void) {
     
     /* You can add your code under here. */
-//    tuya_ble_device_exit_critical();
+    tuya_ble_device_exit_critical();
 }
 
 

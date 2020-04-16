@@ -104,6 +104,7 @@
 .\obj\rwble.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_common\app_port.h
 .\obj\rwble.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\hash\sha1.h
 .\obj\rwble.o: ..\..\..\tuya_ble_lock_sdk\src\cpt\hash\hmac-sha1.h
+.\obj\rwble.o: ..\..\sdk\plactform\driver\wdt\wdt.h
 .\obj\rwble.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_mem.h
 .\obj\rwble.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_mutli_tsf_protocol.h
 .\obj\rwble.o: ..\..\..\tuya_ble_lock_sdk\src\tuya_ble_sdk\include\tuya_ble_main.h
@@ -125,5 +126,4 @@
 .\obj\rwble.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_dynamic_pwd.h
 .\obj\rwble.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_offline_pwd.h
 .\obj\rwble.o: ..\..\..\tuya_ble_lock_sdk\src\app\app_lock\lock_test.h
-.\obj\rwble.o: ..\..\sdk\plactform\driver\wdt\wdt.h
 .\obj\rwble.o: ..\..\sdk\plactform\reg\reg_ble_em_rx_desc.h
