@@ -15,8 +15,9 @@
 /*********************************************************************
  * LOCAL VARIABLES
  */
-static uint32_t T0 = 1584967011;
+static uint32_t T0 = 1587456469;
 static volatile bool is_T0_updated = true;
+static volatile uint32_t s_offline_pwd_count = 0;
 
 /*********************************************************************
  * LOCAL FUNCTION
@@ -39,6 +40,14 @@ static int32_t lock_offline_pwd_clear(enum_offline_pwd_type_t type, uint32_t pwd
 /*********************************************************
 FN: 
 */
+void lock_offline_pwd_cound_load(void)
+{
+    app_port_kv_get("s_offline_pwd_count", (void*)&s_offline_pwd_count, sizeof(uint32_t));
+}
+
+/*********************************************************
+FN: 
+*/
 static uint32_t lock_offline_pwd_save(int32_t pwdid, lock_offline_pwd_storage_t* pwd_storage)
 {
     if(pwdid >= OFFLINE_PWD_MAX_NUM) {
@@ -50,6 +59,9 @@ static uint32_t lock_offline_pwd_save(int32_t pwdid, lock_offline_pwd_storage_t*
     
 	uint32_t err_code = app_port_kv_set(key, pwd_storage, sizeof(lock_offline_pwd_storage_t));
 	if(err_code == APP_PORT_SUCCESS) {
+        s_offline_pwd_count++;
+        app_port_kv_set("s_offline_pwd_count", (void*)&s_offline_pwd_count, sizeof(uint32_t));
+        APP_DEBUG_PRINTF("s_offline_pwd_count-%d", s_offline_pwd_count);
         return APP_PORT_SUCCESS;
 	}
     return APP_PORT_ERROR_COMMON;
@@ -88,6 +100,9 @@ uint32_t lock_offline_pwd_delete(int32_t pwdid)
     
 	uint32_t err_code = app_port_kv_del(key);
 	if(err_code == APP_PORT_SUCCESS) {
+        s_offline_pwd_count--;
+        app_port_kv_set("s_offline_pwd_count", (void*)&s_offline_pwd_count, sizeof(uint32_t));
+        APP_DEBUG_PRINTF("s_offline_pwd_count-%d", s_offline_pwd_count);
         return APP_PORT_SUCCESS;
 	}
     return APP_PORT_ERROR_COMMON;
@@ -326,7 +341,7 @@ RT: >= 0 exist
 static int32_t is_offline_pwd_exist(enum_offline_pwd_type_t type, uint32_t pwd_int, lock_offline_pwd_storage_t *data)
 {
 	int32_t pwdid = -1;
-	for (int32_t idx=0; idx<OFFLINE_PWD_MAX_NUM; idx++)
+	for (int32_t idx=0; idx<s_offline_pwd_count; idx++)
     {
         APP_DEBUG_PRINTF("idx-%d", idx);
         wdt_feed(WATCH_DOG_COUNT);
@@ -352,7 +367,7 @@ static int32_t lock_offline_pwd_clear(enum_offline_pwd_type_t type, uint32_t pwd
 {
     if ((type != PWD_TYPE_CLEAR_SINGLE) && (type != PWD_TYPE_CLEAR_ALL)) {
         APP_DEBUG_PRINTF("Warning! clear offline pwd, but type err");
-        return -1;
+        return OFFLINE_PWD_ERR_PARAM;
     }
     
     for (int32_t idx=0; idx<OFFLINE_PWD_MAX_NUM; idx++)
@@ -363,20 +378,32 @@ static int32_t lock_offline_pwd_clear(enum_offline_pwd_type_t type, uint32_t pwd
         lock_offline_pwd_storage_t pwd_storage = {0};
         lock_offline_pwd_load(idx, &pwd_storage);
         
-		if (pwd_storage.status == PWD_STATUS_VALID)
+        //清除单条密码
+        if(type == PWD_TYPE_CLEAR_SINGLE && pwd_storage.pwd == pwd)
         {
-            //清除单条密码
-            if (type == PWD_TYPE_CLEAR_SINGLE && pwd_storage.pwd == pwd) {
+            if(pwd_storage.status == PWD_STATUS_VALID) {
                 pwd_storage.status = PWD_STATUS_INVALID;
+                lock_offline_pwd_save(idx, &pwd_storage);
+                
+                APP_DEBUG_PRINTF("OFFLINE_PWD_CLEAR_SINGLE_SUCCESS");
+                return OFFLINE_PWD_CLEAR_SINGLE_SUCCESS;
             }
-            //清除所有密码
-            else if (type == PWD_TYPE_CLEAR_ALL) {
+            else if (pwd_storage.status == PWD_STATUS_INVALID) {
+                APP_DEBUG_PRINTF("OFFLINE_PWD_ERR_INVALID");
+                return OFFLINE_PWD_ERR_INVALID;
+            }
+        }
+        //清除所有密码
+        else if (type == PWD_TYPE_CLEAR_ALL)
+        {
+            if(pwd_storage.status == PWD_STATUS_VALID) {
                 pwd_storage.status = PWD_STATUS_INVALID;
+                lock_offline_pwd_save(idx, &pwd_storage);
             }
-            lock_offline_pwd_save(idx, &pwd_storage);
-		}
+        }
 	}
-	return 0;
+    APP_DEBUG_PRINTF("OFFLINE_PWD_CLEAR_ALL_SUCCESS");
+	return OFFLINE_PWD_CLEAR_ALL_SUCCESS;
 }
 
 /*********************************************************
@@ -397,7 +424,7 @@ int32_t lock_offline_pwd_verify(uint8_t *key, uint8_t key_len,
 	uint8_t decrypt_pwd[OFFLINE_PWD_LEN] = {0};
     uint8_t decrypt_pwd_len;
     
-	uint32_t T2, T3, T_now = timestamp;
+	uint32_t T2, T3, T_now = timestamp - (timestamp % 3600);;
 	uint32_t active_period;
     
     //输入参数检查
@@ -448,7 +475,6 @@ int32_t lock_offline_pwd_verify(uint8_t *key, uint8_t key_len,
     //时效/单次密码
     if (pwd->type == PWD_TYPE_TIMELINESS || pwd->type == PWD_TYPE_SINGLE)
     {
-        APP_DEBUG_PRINTF("1");
         //时效密码
         if(pwd->type == PWD_TYPE_TIMELINESS) {
             if (T2 > T_now) {
@@ -473,14 +499,10 @@ int32_t lock_offline_pwd_verify(uint8_t *key, uint8_t key_len,
             }
             active_period = PWD_ACTIVE_PERIOD_SINGLE;
         }
-        
-        APP_DEBUG_PRINTF("2");
 
         int32_t exist_pwdid = 0;
         lock_offline_pwd_storage_t pwd_storage = {0};
-        APP_DEBUG_PRINTF("3");
         exist_pwdid = is_offline_pwd_exist((enum_offline_pwd_type_t)pwd->type, num_1_9, &pwd_storage);
-        APP_DEBUG_PRINTF("4");
         APP_DEBUG_PRINTF("is_offline_pwd_exist, pwdid-->[%d]", exist_pwdid);
         //离线密码已经存在
         if (exist_pwdid >= 0) {
@@ -518,24 +540,32 @@ int32_t lock_offline_pwd_verify(uint8_t *key, uint8_t key_len,
     //清除单条密码
     else if (pwd->type == PWD_TYPE_CLEAR_SINGLE)
     {
-        APP_DEBUG_PRINTF("clear single offline pwd");
-        lock_offline_pwd_clear(PWD_TYPE_CLEAR_SINGLE, num_1_9);
-        return OFFLINE_PWD_CLEAR_SINGLE_SUCCESS;
+        //检查时效性
+        if (T_now > T2) {
+            APP_DEBUG_PRINTF("OFFLINE_PWD_ERR_NO_EXIST");
+            return OFFLINE_PWD_ERR_NO_EXIST;
+        }
+        else if (T3 < T_now) {
+            APP_DEBUG_PRINTF("OFFLINE_PWD_ERR_OUTTIME");
+            return OFFLINE_PWD_ERR_OUTTIME;
+        }
+        
+        return lock_offline_pwd_clear(PWD_TYPE_CLEAR_SINGLE, num_1_9);
     }
     //清除所有密码
     else if (pwd->type == PWD_TYPE_CLEAR_ALL)
     {
         //检查时效性
         if ((T_now - T2) > PWD_ACTIVE_PERIOD_CLEAR_ALL) {
+            APP_DEBUG_PRINTF("OFFLINE_PWD_ERR_ACTIVE_TIME");
 			return OFFLINE_PWD_ERR_ACTIVE_TIME;
         }
 		else if (T3 > PWD_MAX_SN_PER_PERIOD) {
+            APP_DEBUG_PRINTF("OFFLINE_PWD_ERR_BSS_SN");
             return OFFLINE_PWD_ERR_BSS_SN;
         }
-        
-        APP_DEBUG_PRINTF("clear all offline pwd");
-		lock_offline_pwd_clear(PWD_TYPE_CLEAR_ALL, 0);
-		return OFFLINE_PWD_CLEAR_ALL_SUCCESS;
+		
+		return lock_offline_pwd_clear(PWD_TYPE_CLEAR_ALL, 0);
     }
     
     //Can't reach here

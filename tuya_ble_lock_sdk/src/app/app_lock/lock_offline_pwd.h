@@ -103,6 +103,7 @@ typedef struct
 /*********************************************************************
  * EXTERNAL FUNCTIONS
  */
+void lock_offline_pwd_cound_load(void);
 uint32_t lock_offline_pwd_delete(int32_t pwdid);
 uint32_t lock_offline_pwd_delete_all(void);
 void     lock_offline_pwd_set_T0(uint32_t T0_tmp);

@@ -276,7 +276,6 @@ void lock_hard_uart_simulate(uint8_t cmd, uint8_t* data, uint16_t len)
 		case UART_SIMULATE_OFFLINE_PWD: {
             uint8_t plain_pwd[OFFLINE_PWD_LEN+6] = {0};
             uint8_t plain_pwd_len = 0;
-            memset(plain_pwd, '0', sizeof(plain_pwd));
             
             uint8_t key[16];
             memset(key, '0', sizeof(key));
@@ -285,8 +284,11 @@ void lock_hard_uart_simulate(uint8_t cmd, uint8_t* data, uint16_t len)
             uint32_t timestamp = app_port_get_timestamp();
             uint32_t ret = lock_offline_pwd_verify(key, sizeof(key),
                                                     &data[0], OFFLINE_PWD_LEN, timestamp,
-                                                    plain_pwd, &plain_pwd_len);
+                                                    plain_pwd+6, &plain_pwd_len);
             
+            for(uint32_t idx=0; idx<OFFLINE_PWD_LEN+6; idx++) {
+                plain_pwd[idx] += 0x30;
+            }
             uint8_t encrypt_pwd[OFFLINE_PWD_LEN+6] = {0};
             uint8_t iv[16] = {0x00};
             app_port_aes128_cbc_encrypt(key, iv, plain_pwd, sizeof(plain_pwd), encrypt_pwd);
@@ -346,8 +348,9 @@ void lock_hard_uart_simulate(uint8_t cmd, uint8_t* data, uint16_t len)
         } break;
         
 		case UART_SIMULATE_DELETE_FLASH: {
-            app_port_nv_erase(EF_START_ADDR, ENV_AREA_SIZE);
-            APP_DEBUG_PRINTF("app_port_nv_erase EF_START_ADDR ENV_AREA_SIZE");
+//            app_port_nv_erase(EF_START_ADDR, ENV_AREA_SIZE);
+            app_port_nv_set_default();
+            APP_DEBUG_PRINTF("app_port_nv_set_default");
         } break;
         
 		default: {
