@@ -105,6 +105,7 @@ void bk_log_hexdump_for_tuya_ble_sdk(const char *name, uint8_t width, uint8_t *b
 void bk_log_hexdump_empty(const char *name, uint8_t width, uint8_t *buf, uint16_t size);
 
 void bk_system_reset(void);
+void bk_wdt_feed(void);
 void bk_enter_critical(void);
 void bk_exit_critical(void);
 

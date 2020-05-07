@@ -273,6 +273,16 @@ uint32_t lock_dp_parser_handler(void* dp_data)
             }
         } break;
         
+        case WR_SET_AWAYHOME_ARMING_SWITCH: {
+            if((g_cmd.dp_data_len == 1) && (g_cmd.dp_data[0] <= 0x01))
+            {
+                lock_settings.awayhome_arming = g_cmd.dp_data[0];
+                if(lock_settings_save() == APP_PORT_SUCCESS) {
+                    APP_DEBUG_PRINTF("WR_SET_AWAYHOME_ARMING_SWITCH SUCCESS");
+                }
+            }
+        } break;
+        
         case WR_BSC_TEMP_PW_CREAT: {
             temp_pw_creat_handler(g_cmd.dp_data, g_rsp.dp_data, &g_rsp.dp_data_len);
         } break;

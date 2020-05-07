@@ -88,7 +88,7 @@ extern "C"
 #define  OR_LOG_OPEN_WITH_TMP_PWD                 55  //开锁记录-临时密码
 #define  WR_SET_MOTOR_TORQUE                      56  //锁的设置-电机扭力
 #define  OR_LOG_OPEN_WITH_COMBINE                 57  //开锁记录-组合开锁
-#define  WR_SET_OPEN_WITH_REMOTE_PHONE            58  //锁的设置-离家布防
+#define  WR_SET_AWAYHOME_ARMING_SWITCH            58  //锁的设置-离家布防
 #define  WR_BSC_OPEN_WITH_NOPWD_REMOTE_SETKEY     60  //基础功能-免密远程开锁配置
 #define  WR_BSC_OPEN_WITH_NOPWD_REMOTE            61  //基础功能-免密远程开锁
 #define  OR_LOG_OPEN_WITH_REMOTE_PHONE            62  //开锁记录-远程手机开锁

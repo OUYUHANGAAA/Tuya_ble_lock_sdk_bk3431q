@@ -116,7 +116,7 @@ uint32_t lock_offline_pwd_delete_all(void)
     for (int32_t idx=0; idx<OFFLINE_PWD_MAX_NUM; idx++)
     {
         APP_DEBUG_PRINTF("idx-%d", idx);
-        wdt_feed(WATCH_DOG_COUNT);
+        bk_wdt_feed();
         
         lock_offline_pwd_delete(idx);
     }
@@ -253,7 +253,7 @@ static int32_t lock_offline_pwd_find(uint32_t T_now)
     for (int32_t idx=0; idx<OFFLINE_PWD_MAX_NUM; idx++)
     {
         APP_DEBUG_PRINTF("idx-%d", idx);
-        wdt_feed(WATCH_DOG_COUNT);
+        bk_wdt_feed();
         
 //        APP_DEBUG_PRINTF("find idx: %d", idx);
         lock_offline_pwd_storage_t pwd_storage = {0};
@@ -344,7 +344,7 @@ static int32_t is_offline_pwd_exist(enum_offline_pwd_type_t type, uint32_t pwd_i
 	for (int32_t idx=0; idx<s_offline_pwd_count; idx++)
     {
         APP_DEBUG_PRINTF("idx-%d", idx);
-        wdt_feed(WATCH_DOG_COUNT);
+        bk_wdt_feed();
         
         lock_offline_pwd_storage_t pwd_storage = {0};
         lock_offline_pwd_load(idx, &pwd_storage);
@@ -373,7 +373,7 @@ static int32_t lock_offline_pwd_clear(enum_offline_pwd_type_t type, uint32_t pwd
     for (int32_t idx=0; idx<OFFLINE_PWD_MAX_NUM; idx++)
     {
         APP_DEBUG_PRINTF("idx-%d", idx);
-        wdt_feed(WATCH_DOG_COUNT);
+        bk_wdt_feed();
         
         lock_offline_pwd_storage_t pwd_storage = {0};
         lock_offline_pwd_load(idx, &pwd_storage);
@@ -399,10 +399,10 @@ static int32_t lock_offline_pwd_clear(enum_offline_pwd_type_t type, uint32_t pwd
             if(pwd_storage.status == PWD_STATUS_VALID) {
                 pwd_storage.status = PWD_STATUS_INVALID;
                 lock_offline_pwd_save(idx, &pwd_storage);
+                APP_DEBUG_PRINTF("PWD_TYPE_CLEAR_ALL: %d", idx);
             }
         }
 	}
-    APP_DEBUG_PRINTF("OFFLINE_PWD_CLEAR_ALL_SUCCESS");
 	return OFFLINE_PWD_CLEAR_ALL_SUCCESS;
 }
 
@@ -415,6 +415,7 @@ PM: key - 16字节无符号整数，默认填充字符‘0’，在结尾填充“tuya_ble_current_para
     timestamp - 当前时间戳
     plain_pwd - 明文离线密码
     p_plain_pwd_len - 10字节
+注意：！！！！！！！！！！！！！！该版本中离线密码的存储效率偏低，用户仅可做演示/参考用，如需在项目上应用，请根据业务需要实现自己的存储逻辑！！！！！！！！！！！！
 */
 int32_t lock_offline_pwd_verify(uint8_t *key, uint8_t key_len,
                                     uint8_t *encrypt_pwd, uint8_t encrypt_pwd_len,
@@ -424,7 +425,7 @@ int32_t lock_offline_pwd_verify(uint8_t *key, uint8_t key_len,
 	uint8_t decrypt_pwd[OFFLINE_PWD_LEN] = {0};
     uint8_t decrypt_pwd_len;
     
-	uint32_t T2, T3, T_now = timestamp - (timestamp % 3600);;
+	uint32_t T2, T3, T_now = timestamp;
 	uint32_t active_period;
     
     //输入参数检查
@@ -541,7 +542,7 @@ int32_t lock_offline_pwd_verify(uint8_t *key, uint8_t key_len,
     else if (pwd->type == PWD_TYPE_CLEAR_SINGLE)
     {
         //检查时效性
-        if (T_now > T2) {
+        if (T2 > T_now) {
             APP_DEBUG_PRINTF("OFFLINE_PWD_ERR_NO_EXIST");
             return OFFLINE_PWD_ERR_NO_EXIST;
         }

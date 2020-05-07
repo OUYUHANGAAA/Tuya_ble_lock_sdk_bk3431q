@@ -466,7 +466,7 @@ FN: next/last event id
 */
 uint32_t lock_next_evtid(uint32_t index)
 {
-    return (index < EVTID_MAX) ? (index + 1) : 0;
+    return (index < (EVTID_MAX-1)) ? (index + 1) : 0;
 }
 uint32_t lock_last_evtid(uint32_t index)
 {
@@ -507,6 +507,7 @@ uint32_t lock_evt_save(uint32_t timestamp, uint8_t *data, uint32_t len)
         if(err_code == APP_PORT_SUCCESS)
         {
             s_evt_id = lock_next_evtid(s_evt_id);
+            APP_DEBUG_PRINTF("s_evt_id: %d", s_evt_id);
             lock_evtid_save(s_evt_id);
             return 0;
         }
@@ -672,6 +673,7 @@ uint32_t lock_flash_init(void)
     //init hardid_bitmap
 	for(uint32_t hardid=0; hardid<HARDID_MAX_TOTAL; hardid++)
 	{
+        APP_DEBUG_PRINTF("hardid: %d", hardid);
         lock_hard_t hard;
 		if(lock_hard_load(hardid, &hard) == APP_PORT_SUCCESS)
 		{

@@ -81,6 +81,14 @@ void bk_system_reset(void)
 /*********************************************************
 FN: 
 */
+void bk_wdt_feed(void)
+{
+    wdt_feed(WATCH_DOG_COUNT);
+}
+
+/*********************************************************
+FN: 
+*/
 void bk_enter_critical(void)
 {
     fiq_tmp = __disable_fiq();

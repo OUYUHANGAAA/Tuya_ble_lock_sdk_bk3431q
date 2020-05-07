@@ -30,11 +30,11 @@ extern "C"
  * CONSTANTS
  */
 //define different hard's max num, default value is 10, user can change it when needed
-#define HARDID_MAX_PASSWORD    30
-#define HARDID_MAX_DOORCARD    30
-#define HARDID_MAX_FINGER      30
-#define HARDID_MAX_FACE        30
-#define HARDID_MAX_TEMP_PW     30
+#define HARDID_MAX_PASSWORD    10
+#define HARDID_MAX_DOORCARD    10
+#define HARDID_MAX_FINGER      10
+#define HARDID_MAX_FACE        10
+#define HARDID_MAX_TEMP_PW     10
 #define HARDID_MAX_TOTAL       (HARDID_MAX_PASSWORD+HARDID_MAX_DOORCARD+HARDID_MAX_FINGER+HARDID_MAX_FACE+HARDID_MAX_TEMP_PW) //this value can not bigger then 255
 
 #define HARD_ID_INVALID        0xFFFFFFFF
@@ -82,6 +82,7 @@ typedef struct
     uint8_t  hand_lock;
     uint8_t  motor_direction;
     uint8_t  motor_torque;
+    uint8_t  awayhome_arming;
 } lock_settings_t;
 
 

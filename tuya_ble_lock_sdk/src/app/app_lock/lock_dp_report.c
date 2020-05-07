@@ -177,19 +177,26 @@ PM: dp_id - defined in "lock_dp_parser.h"
 */
 uint32_t lock_open_record_combine_report(uint8_t combine_enum, uint8_t size, uint8_t* hardid)
 {
-    if(size != 2) {
-        return APP_PORT_ERROR_COMMON;
-    }
+//    if(size != 2) {
+//        return APP_PORT_ERROR_COMMON;
+//    }
+//    
+//	uint32_t timestamp = app_port_get_timestamp();
+//    
+//    g_rsp.dp_id = OR_LOG_OPEN_WITH_COMBINE;
+//    g_rsp.dp_type = APP_PORT_DT_VALUE;
+//    g_rsp.dp_data_len = APP_PORT_DT_ENUM_LEN + size;
+//    g_rsp.dp_data[0] = combine_enum;
+//    for(uint8_t idx=0; idx<size; idx++) {
+//        g_rsp.dp_data[1+idx] = hardid[idx];
+//    }
     
 	uint32_t timestamp = app_port_get_timestamp();
     
     g_rsp.dp_id = OR_LOG_OPEN_WITH_COMBINE;
-    g_rsp.dp_type = APP_PORT_DT_VALUE;
-    g_rsp.dp_data_len = APP_PORT_DT_ENUM_LEN + size;
+    g_rsp.dp_type = APP_PORT_DT_ENUM;
+    g_rsp.dp_data_len = APP_PORT_DT_ENUM_LEN;
     g_rsp.dp_data[0] = combine_enum;
-    for(uint8_t idx=0; idx<size; idx++) {
-        g_rsp.dp_data[1+idx] = hardid[idx];
-    }
     
     lock_evt_save(timestamp, (void*)&g_rsp, (3 + g_rsp.dp_data_len));
     
@@ -243,6 +250,7 @@ void lock_offline_evt_report(uint8_t status)
     
     if(status == 0)
     {
+        APP_DEBUG_PRINTF("last_evt_id: %d", last_evt_id);
         if(lock_evt_delete(last_evt_id) == 0)
         {
             lock_evtid_save(last_evt_id);

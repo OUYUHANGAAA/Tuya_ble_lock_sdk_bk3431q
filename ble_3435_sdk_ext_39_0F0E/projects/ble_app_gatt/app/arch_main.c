@@ -227,7 +227,7 @@ void rw_app_enter(void)
             tuya_ble_main_tasks_exec();
             bk_ble_notify_handler();
         }
-        wdt_feed(WATCH_DOG_COUNT);
+        bk_wdt_feed();
         
 		// Checks for sleep have to be done with interrupt disabled
 		GLOBAL_INT_DISABLE();
