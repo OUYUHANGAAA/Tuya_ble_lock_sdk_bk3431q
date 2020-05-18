@@ -41,7 +41,7 @@
  * ENV version number defined by user.
  * Please change it when your firmware add a new ENV to default_env_set.
  */
-#define EF_ENV_VER_NUM            /* @note you must define it for a value, such as 0 */
+#define EF_ENV_VER_NUM            0/* @note you must define it for a value, such as 0 */
 #endif /* EF_USING_ENV */
 
 /* using IAP function */
@@ -85,7 +85,7 @@
 #define ENV_AREA_SIZE             (TUYA_NV_ERASE_MIN_SIZE*8)/* @note you must define it for a value if you used ENV */
 
 /* saved log area size */
-#define LOG_AREA_SIZE             /* @note you must define it for a value if you used log */
+#define LOG_AREA_SIZE             128/* @note you must define it for a value if you used log */
 
 /* print debug information of flash */
 //#define PRINT_DEBUG

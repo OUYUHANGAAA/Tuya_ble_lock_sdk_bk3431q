@@ -26,7 +26,7 @@ extern "C"
  */
 //cpt
 #include "cpt_string_op.h"
-#include "easyflash.h"
+#include "sf_port.h"
 #include "elog.h"
 #include "sha1.h"
 #include "hmac-sha1.h"
@@ -125,14 +125,14 @@ typedef enum {
 /*********************************************************  Storage  *********************************************************/
 void *app_port_malloc(uint32_t size);
 uint32_t app_port_free(void* buf);
-uint32_t app_port_kv_init(void);
-uint32_t app_port_kv_set(const char *key, const void *buf, size_t size);
-uint32_t app_port_kv_get(const char *key, void *buf, size_t size);
-uint32_t app_port_kv_del(const char *key);
+uint32_t app_port_nv_init(void);
+uint32_t app_port_nv_set(uint32_t area_id, uint16_t id, void *buf, uint8_t size);
+uint32_t app_port_nv_get(uint32_t area_id, uint16_t id, void *buf, uint8_t size);
+uint32_t app_port_nv_del(uint32_t area_id, uint16_t id);
+uint32_t app_port_nv_set_default(void);
 uint32_t app_port_nv_write(uint32_t addr, const uint8_t* p_data, uint32_t size);
 uint32_t app_port_nv_read(uint32_t addr, uint8_t* p_data, uint32_t size);
 uint32_t app_port_nv_erase(uint32_t addr, uint32_t size);
-uint32_t app_port_nv_set_default(void);
 
 /*********************************************************  timer  *********************************************************/
 uint32_t app_port_timer_create(void** p_timer_id, uint32_t timeout_value_ms, tuya_ble_timer_mode mode, tuya_ble_timer_handler_t timeout_handler);

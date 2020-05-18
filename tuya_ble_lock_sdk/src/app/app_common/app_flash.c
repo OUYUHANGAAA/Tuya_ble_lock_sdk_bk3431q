@@ -137,17 +137,12 @@ FN:
 uint32_t lock_hard_save(lock_hard_t* hard)
 {
     uint8_t hardid = hard->hard_id;
-    if(hardid >= HARDID_MAX_TOTAL)
-    {
+    if(hardid >= HARDID_MAX_TOTAL) {
         return 1; //error
     }
     
-	char key[15];
-	sprintf(key, "hardid_%03d", hardid);
-    
-	uint32_t err_code = app_port_kv_set(key, hard, sizeof(lock_hard_t));
-	if(err_code == APP_PORT_SUCCESS)
-    {
+	uint32_t err_code = app_port_nv_set(SF_AREA_1, hardid, hard, sizeof(lock_hard_t));
+	if(err_code == APP_PORT_SUCCESS) {
         SETBIT(hardid);
         return APP_PORT_SUCCESS;
 	}
@@ -159,20 +154,11 @@ FN:
 */
 uint32_t lock_hard_load(uint8_t hardid, lock_hard_t* hard)
 {
-    if(hardid >= HARDID_MAX_TOTAL)
-    {
+    if(hardid >= HARDID_MAX_TOTAL) {
         return APP_PORT_ERROR_COMMON;
     }
-    
-	char key[15];
-	sprintf(key, "hardid_%03d", hardid);
-    
-	uint32_t err_code = app_port_kv_get(key, hard, sizeof(lock_hard_t));
-	if(err_code == sizeof(lock_hard_t))
-    {
-        return APP_PORT_SUCCESS;
-    }
-	return APP_PORT_ERROR_COMMON;
+	
+	return app_port_nv_get(SF_AREA_1, hardid, hard, sizeof(lock_hard_t));
 }
 
 /*********************************************************
@@ -245,20 +231,16 @@ FN: delete lock hard in local flash
 */
 uint32_t lock_hard_delete(uint8_t hardid)
 {
-    if(hardid >= HARDID_MAX_TOTAL)
-    {
+    if(hardid >= HARDID_MAX_TOTAL) {
         return APP_PORT_ERROR_COMMON;
     }
     
-	char key[15];
-	sprintf(key, "hardid_%03d", hardid);
-    
-	uint32_t err_code = app_port_kv_del(key);
-	if(err_code == APP_PORT_SUCCESS)
-    {
+	uint32_t err_code = app_port_nv_del(SF_AREA_1, hardid);
+	if(err_code == APP_PORT_SUCCESS) {
         CLEARBIT(hardid);
         return APP_PORT_SUCCESS;
 	}
+    
     return APP_PORT_ERROR_COMMON;
 }
 
@@ -478,11 +460,11 @@ FN: save/load event id
 */
 uint32_t lock_evtid_save(uint32_t evt_id)
 {
-    return app_port_kv_set("s_evt_id", &evt_id, sizeof(evt_id));
+    return app_port_nv_set(SF_AREA_0, NV_ID_EVT_ID, &evt_id, sizeof(evt_id));
 }
 uint32_t lock_evtid_load(void)
 {
-    app_port_kv_get("s_evt_id", &s_evt_id, sizeof(s_evt_id));
+    app_port_nv_get(SF_AREA_0, NV_ID_EVT_ID, &s_evt_id, sizeof(s_evt_id));
     return s_evt_id;
 }
 
@@ -499,11 +481,7 @@ uint32_t lock_evt_save(uint32_t timestamp, uint8_t *data, uint32_t len)
         memcpy(buf+1, &timestamp, sizeof(uint32_t));
         memcpy(buf+5, data, len);
         
-        //´æ´¢
-        char key[15];
-        sprintf(key, "evt_id_%03d", s_evt_id);
-        
-        uint32_t err_code = app_port_kv_set(key, buf, len + 5);
+        uint32_t err_code = app_port_nv_set(SF_AREA_2, s_evt_id, buf, len + 5);
         if(err_code == APP_PORT_SUCCESS)
         {
             s_evt_id = lock_next_evtid(s_evt_id);
@@ -521,10 +499,7 @@ FN:
 */
 uint32_t lock_evt_load(uint32_t evt_id, uint8_t *data, uint32_t len)
 {
-	char key[15];
-	sprintf(key, "evt_id_%03d", evt_id);
-    
-	return app_port_kv_get(key, data, len);
+	return app_port_nv_get(SF_AREA_2, s_evt_id, data, len);
 }
 
 /*********************************************************
@@ -532,10 +507,7 @@ FN:
 */
 uint32_t lock_evt_delete(uint32_t evt_id)
 {
-	char key[15];
-	sprintf(key, "evt_id_%03d", evt_id);
-    
-	uint32_t err_code = app_port_kv_del(key);
+	uint32_t err_code = app_port_nv_del(SF_AREA_2, s_evt_id);
 	if(err_code == APP_PORT_SUCCESS)
     {
         return 0;
@@ -569,10 +541,7 @@ FN:
 */
 uint32_t lock_settings_save(void)
 {
-	char key[15];
-	sprintf(key, "lock_settings");
-    
-	return app_port_kv_set(key, &lock_settings, sizeof(lock_settings_t));
+	return app_port_nv_set(SF_AREA_0, NV_ID_LOCK_SETTING, &lock_settings, sizeof(lock_settings_t));
 }
 
 /*********************************************************
@@ -580,15 +549,7 @@ FN:
 */
 uint32_t lock_settings_load(void)
 {
-	char key[15];
-	sprintf(key, "lock_settings");
-    
-	uint32_t err_code = app_port_kv_get(key, &lock_settings, sizeof(lock_settings_t));
-	if(err_code == sizeof(lock_settings_t))
-    {
-        return 0;
-    }
-    return 1;
+    return app_port_nv_get(SF_AREA_0, NV_ID_LOCK_SETTING, &lock_settings, sizeof(lock_settings_t));
 }
 
 /*********************************************************
@@ -620,10 +581,7 @@ FN:
 */
 uint32_t lock_settings_delete_and_default(void)
 {
-	char key[15];
-	sprintf(key, "lock_settings");
-    
-	uint32_t err_code = app_port_kv_del(key);
+	uint32_t err_code = app_port_nv_del(SF_AREA_0, NV_ID_LOCK_SETTING);
 	if(err_code == APP_PORT_SUCCESS)
     {
         //set default settings
@@ -643,23 +601,6 @@ FN:
 */
 uint32_t lock_flash_erease_all(bool is_delete_app_test_data)
 {
-//	lock_hard_delete_all();
-//	lock_evt_delete_all();
-//	lock_settings_delete_and_default();
-//    lock_offline_pwd_delete_all();
-//    
-//    app_port_kv_del("s_evt_id");
-//    if(is_delete_app_test_data)
-//    {
-//        app_port_kv_del("mac_str");
-////        app_port_kv_del("hid_str");
-//        app_port_kv_del("NV_IF_AUTH");
-//        app_port_kv_del("s_data_len");
-//        app_port_kv_del("s_data_crc");
-//        app_port_kv_del("s_file.md5");
-//    }
-//    app_port_nv_erase(EF_START_ADDR, ENV_AREA_SIZE);
-    
     app_port_nv_set_default();
     return 0;
 }
@@ -673,7 +614,6 @@ uint32_t lock_flash_init(void)
     //init hardid_bitmap
 	for(uint32_t hardid=0; hardid<HARDID_MAX_TOTAL; hardid++)
 	{
-        APP_DEBUG_PRINTF("hardid: %d", hardid);
         lock_hard_t hard;
 		if(lock_hard_load(hardid, &hard) == APP_PORT_SUCCESS)
 		{

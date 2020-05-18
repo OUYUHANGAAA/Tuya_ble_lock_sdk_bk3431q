@@ -30,7 +30,7 @@ extern "C"
  * CONSTANTS1
  */
 #define OFFLINE_PWD_LEN			        (10)      //离线密码长度
-#define OFFLINE_PWD_MAX_NUM		        (20)      //离线密码最大数量
+#define OFFLINE_PWD_MAX_NUM		        (200)     //离线密码最大数量
 #define OFFLINE_PWD_TIME_ACCURACY	    (3600u)   //离线密码时间精度-小时
 
 //业务相关参数

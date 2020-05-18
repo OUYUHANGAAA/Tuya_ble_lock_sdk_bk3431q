@@ -15,7 +15,7 @@
 /*********************************************************************
  * LOCAL VARIABLES
  */
-static uint32_t T0 = 1587456469;
+static uint32_t T0 = 1589251799;
 static volatile bool is_T0_updated = true;
 static volatile uint32_t s_offline_pwd_count = 0;
 
@@ -42,7 +42,7 @@ FN:
 */
 void lock_offline_pwd_cound_load(void)
 {
-    app_port_kv_get("s_offline_pwd_count", (void*)&s_offline_pwd_count, sizeof(uint32_t));
+    app_port_nv_get(SF_AREA_0, NV_ID_OFFLINE_PWD_COUNT, (void*)&s_offline_pwd_count, sizeof(uint32_t));
 }
 
 /*********************************************************
@@ -54,13 +54,10 @@ static uint32_t lock_offline_pwd_save(int32_t pwdid, lock_offline_pwd_storage_t*
         return APP_PORT_ERROR_COMMON;
     }
     
-	char key[15];
-	sprintf(key, "op_%05d", pwdid);
-    
-	uint32_t err_code = app_port_kv_set(key, pwd_storage, sizeof(lock_offline_pwd_storage_t));
+	uint32_t err_code = app_port_nv_set(SF_AREA_3, pwdid, pwd_storage, sizeof(lock_offline_pwd_storage_t));
 	if(err_code == APP_PORT_SUCCESS) {
         s_offline_pwd_count++;
-        app_port_kv_set("s_offline_pwd_count", (void*)&s_offline_pwd_count, sizeof(uint32_t));
+        app_port_nv_set(SF_AREA_0, NV_ID_OFFLINE_PWD_COUNT, (void*)&s_offline_pwd_count, sizeof(uint32_t));
         APP_DEBUG_PRINTF("s_offline_pwd_count-%d", s_offline_pwd_count);
         return APP_PORT_SUCCESS;
 	}
@@ -76,10 +73,7 @@ static uint32_t lock_offline_pwd_load(int32_t pwdid, lock_offline_pwd_storage_t*
         return APP_PORT_ERROR_COMMON;
     }
     
-	char key[15];
-	sprintf(key, "op_%05d", pwdid);
-    
-	uint32_t err_code = app_port_kv_get(key, pwd_storage, sizeof(lock_offline_pwd_storage_t));
+	uint32_t err_code = app_port_nv_get(SF_AREA_3, pwdid, pwd_storage, sizeof(lock_offline_pwd_storage_t));
 	if(err_code == sizeof(lock_offline_pwd_storage_t)) {
         return APP_PORT_SUCCESS;
     }
@@ -95,13 +89,10 @@ uint32_t lock_offline_pwd_delete(int32_t pwdid)
         return APP_PORT_ERROR_COMMON;
     }
     
-	char key[15];
-	sprintf(key, "op_%05d", pwdid);
-    
-	uint32_t err_code = app_port_kv_del(key);
+	uint32_t err_code = app_port_nv_del(SF_AREA_3, pwdid);
 	if(err_code == APP_PORT_SUCCESS) {
         s_offline_pwd_count--;
-        app_port_kv_set("s_offline_pwd_count", (void*)&s_offline_pwd_count, sizeof(uint32_t));
+        app_port_nv_set(SF_AREA_0, NV_ID_OFFLINE_PWD_COUNT, (void*)&s_offline_pwd_count, sizeof(uint32_t));
         APP_DEBUG_PRINTF("s_offline_pwd_count-%d", s_offline_pwd_count);
         return APP_PORT_SUCCESS;
 	}
@@ -115,9 +106,6 @@ uint32_t lock_offline_pwd_delete_all(void)
 {
     for (int32_t idx=0; idx<OFFLINE_PWD_MAX_NUM; idx++)
     {
-        APP_DEBUG_PRINTF("idx-%d", idx);
-        bk_wdt_feed();
-        
         lock_offline_pwd_delete(idx);
     }
     return APP_PORT_SUCCESS;
@@ -134,7 +122,7 @@ void lock_offline_pwd_set_T0(uint32_t T0_tmp)
     }
     
 	T0 = T0_tmp;
-    app_port_kv_set("T0_storage", &T0, sizeof(uint32_t));
+    app_port_nv_set(SF_AREA_0, NV_ID_T0_STORAGE, &T0, sizeof(uint32_t));
     APP_DEBUG_PRINTF("set T0->[%d]", T0);
     
     is_T0_updated = true;
@@ -146,7 +134,7 @@ FN:
 uint32_t lock_offline_pwd_get_T0(void)
 {
     if (is_T0_updated) {
-        app_port_kv_get("T0_storage", &T0, sizeof(uint32_t));
+        app_port_nv_get(SF_AREA_0, NV_ID_T0_STORAGE, &T0, sizeof(uint32_t));
         APP_DEBUG_PRINTF("get T0->[%d]", T0);
         is_T0_updated = false;
     }
@@ -252,10 +240,6 @@ static int32_t lock_offline_pwd_find(uint32_t T_now)
     
     for (int32_t idx=0; idx<OFFLINE_PWD_MAX_NUM; idx++)
     {
-        APP_DEBUG_PRINTF("idx-%d", idx);
-        bk_wdt_feed();
-        
-//        APP_DEBUG_PRINTF("find idx: %d", idx);
         lock_offline_pwd_storage_t pwd_storage = {0};
         lock_offline_pwd_load(idx, &pwd_storage);
         
@@ -343,9 +327,6 @@ static int32_t is_offline_pwd_exist(enum_offline_pwd_type_t type, uint32_t pwd_i
 	int32_t pwdid = -1;
 	for (int32_t idx=0; idx<s_offline_pwd_count; idx++)
     {
-        APP_DEBUG_PRINTF("idx-%d", idx);
-        bk_wdt_feed();
-        
         lock_offline_pwd_storage_t pwd_storage = {0};
         lock_offline_pwd_load(idx, &pwd_storage);
         
@@ -372,9 +353,6 @@ static int32_t lock_offline_pwd_clear(enum_offline_pwd_type_t type, uint32_t pwd
     
     for (int32_t idx=0; idx<OFFLINE_PWD_MAX_NUM; idx++)
     {
-        APP_DEBUG_PRINTF("idx-%d", idx);
-        bk_wdt_feed();
-        
         lock_offline_pwd_storage_t pwd_storage = {0};
         lock_offline_pwd_load(idx, &pwd_storage);
         

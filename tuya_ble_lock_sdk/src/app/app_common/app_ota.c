@@ -299,8 +299,8 @@ static uint32_t app_ota_file_info_handler(uint8_t* cmd, uint16_t cmd_size, tuya_
             s_ota_state = TUYA_BLE_OTA_FILE_OFFSET_REQ;
         }
         
-        app_port_kv_get("s_data_len", &s_old_file.len, sizeof(uint32_t));
-        app_port_kv_get("s_data_crc", &s_old_file.crc32, sizeof(uint32_t));
+        app_port_nv_get(SF_AREA_0, NV_ID_OTA_DATA_LEN, &s_old_file.len, sizeof(uint32_t));
+        app_port_nv_get(SF_AREA_0, NV_ID_OTA_DATA_CRC, &s_old_file.crc32, sizeof(uint32_t));
         file_info_rsp.old_file_len = s_old_file.len;
         app_port_reverse_byte(&file_info_rsp.old_file_len, sizeof(uint32_t));
         file_info_rsp.old_crc32 = s_old_file.crc32;
@@ -351,9 +351,9 @@ static uint32_t app_ota_file_offset_handler(uint8_t* cmd, uint16_t cmd_size, tuy
             if(file_offset->offset > 0)
             {
                 uint8_t md5[APP_OTA_FILE_MD5_LEN];
-                app_port_kv_get("s_data_len", &s_data_len, sizeof(uint32_t));
-                app_port_kv_get("s_data_crc", &s_data_crc, sizeof(uint32_t));
-                app_port_kv_get("s_file.md5", md5, APP_OTA_FILE_MD5_LEN);
+                app_port_nv_get(SF_AREA_0, NV_ID_OTA_DATA_LEN, &s_old_file.len, sizeof(uint32_t));
+                app_port_nv_get(SF_AREA_0, NV_ID_OTA_DATA_CRC, &s_old_file.crc32, sizeof(uint32_t));
+                app_port_nv_get(SF_AREA_0, NV_ID_OTA_FILE_MD5, md5, APP_OTA_FILE_MD5_LEN);
                 if((memcmp(md5, s_file.md5, APP_OTA_FILE_MD5_LEN) == 0) && (app_ota_get_crc32_in_flash(s_data_len) == s_data_crc) && (file_offset->offset >= s_data_len)) {
                     file_offset_rsp.offset = s_data_len;
 //                    s_pkg_id = s_data_len/APP_OTA_PKG_LEN;//every time from zero
@@ -363,7 +363,7 @@ static uint32_t app_ota_file_offset_handler(uint8_t* cmd, uint16_t cmd_size, tuy
                     s_data_crc = 0;
                 }
             }
-            app_port_kv_set("s_file.md5", &s_file.md5, APP_OTA_FILE_MD5_LEN);
+            app_port_nv_set(SF_AREA_0, NV_ID_OTA_FILE_MD5, &s_file.md5, APP_OTA_FILE_MD5_LEN);
         }
         app_port_reverse_byte(&file_offset_rsp.offset, sizeof(uint32_t));
         
@@ -473,8 +473,8 @@ static uint32_t app_ota_data_handler(uint8_t* cmd, uint16_t cmd_size, tuya_ble_o
                 s_data_crc = app_port_crc32_compute(ota_data->data, ota_data->len, &s_data_crc);
 //                if(flag_4k)
 //                {
-//                    app_port_kv_set("s_data_len", &s_data_len, sizeof(uint32_t));
-//                    app_port_kv_set("s_data_crc", &s_data_crc, sizeof(uint32_t));
+//                    app_port_nv_set(SF_AREA_0, NV_ID_OTA_DATA_LEN, &s_data_len, sizeof(uint32_t));
+//                    app_port_nv_set(SF_AREA_0, NV_ID_OTA_DATA_CRC, &s_data_crc, sizeof(uint32_t));
 //                }
             }
         }
@@ -522,9 +522,9 @@ static uint32_t app_ota_end_handler(uint8_t* cmd, uint16_t cmd_size, tuya_ble_ot
     }
     
     {
-        app_port_kv_del("s_data_len");
-        app_port_kv_del("s_data_crc");
-        app_port_kv_del("s_file.md5");
+        app_port_nv_del(SF_AREA_0, NV_ID_OTA_DATA_LEN);
+        app_port_nv_del(SF_AREA_0, NV_ID_OTA_DATA_CRC);
+        app_port_nv_del(SF_AREA_0, NV_ID_OTA_FILE_MD5);
         
         //rsp
         app_ota_end_rsp_t end_rsp;

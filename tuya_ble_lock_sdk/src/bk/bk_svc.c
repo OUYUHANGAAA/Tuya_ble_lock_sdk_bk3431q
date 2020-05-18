@@ -53,6 +53,7 @@ FN:
 void bk_svc_receive_data(uint8_t* buf, uint16_t size)
 {
     tuya_ble_gatt_receive_data(buf, size);
+//    bk_svc_send_data(buf, size);
 //    BK_HEXDUMP("Svc rx", buf, size);
 }
 

@@ -47,6 +47,20 @@ extern "C"
 #define HARD_HARD_SN_MAX_LEN         20
 #define HARD_WELCOME_WORDS_MAX_LEN   50
 
+enum {
+    NV_ID_LOCK_SETTING = 0,
+    NV_ID_EVT_ID,
+    NV_ID_OFFLINE_PWD_COUNT,
+    NV_ID_T0_STORAGE,
+    NV_ID_OPEN_WITH_NOPWD_REMOTE,
+    NV_ID_APP_TEST_HID_STR,
+    NV_ID_APP_TEST_MAC_STR,
+    NV_ID_APP_TEST_NV_IF_AUTH,
+    NV_ID_OTA_FILE_MD5,
+    NV_ID_OTA_DATA_LEN,
+    NV_ID_OTA_DATA_CRC,
+};
+
 /*********************************************************************
  * STRUCT
  */

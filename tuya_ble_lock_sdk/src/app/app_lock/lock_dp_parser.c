@@ -893,7 +893,7 @@ static uint32_t open_with_nopwd_remote_setkey_handler(void* cmd_dp_data, void* r
     app_port_reverse_byte(&cmd->valid_num, sizeof(uint16_t));
     
     APP_DEBUG_PRINTF("WR_BSC_OPEN_WITH_NOPWD_REMOTE_SETKEY: time_begin-%d, time_end-%d", cmd->time_begin, cmd->time_end);
-    ret = app_port_kv_set(OPEN_WITH_NOPWD_REMOTE_KEY, cmd, sizeof(open_with_nopwd_remote_setkey_t));
+    ret = app_port_nv_set(SF_AREA_0, NV_ID_OPEN_WITH_NOPWD_REMOTE, cmd, sizeof(open_with_nopwd_remote_setkey_t));
     if(ret == APP_PORT_SUCCESS) {
         rsp->result = 0x00;
     } else {
@@ -919,7 +919,7 @@ static uint32_t open_with_nopwd_remote_handler(void* cmd_dp_data, void* rsp_dp_d
     uint32_t timestamp = app_port_get_timestamp();
     
     open_with_nopwd_remote_setkey_t set_cmd;
-    app_port_kv_get(OPEN_WITH_NOPWD_REMOTE_KEY, &set_cmd, sizeof(open_with_nopwd_remote_setkey_t));
+    app_port_nv_get(SF_AREA_0, NV_ID_OPEN_WITH_NOPWD_REMOTE, &set_cmd, sizeof(open_with_nopwd_remote_setkey_t));
     
     if(!set_cmd.valid) {
         rsp->result = 0x02;
@@ -948,7 +948,7 @@ static uint32_t open_with_nopwd_remote_handler(void* cmd_dp_data, void* rsp_dp_d
             APP_DEBUG_PRINTF("OPEN_WITH_NOPWD_REMOTE success");
             
             set_cmd.valid_num--;
-            app_port_kv_set(OPEN_WITH_NOPWD_REMOTE_KEY, &set_cmd, sizeof(open_with_nopwd_remote_setkey_t));
+            app_port_nv_set(SF_AREA_0, NV_ID_OPEN_WITH_NOPWD_REMOTE, cmd, sizeof(open_with_nopwd_remote_setkey_t));
             
             rsp->result = 0x00; //open success
         } else {

@@ -47,34 +47,50 @@ uint32_t app_port_free(void* buf)
 /*********************************************************
 FN: 
 */
-uint32_t app_port_kv_init(void)
+uint32_t app_port_nv_init(void)
 {
     bk_flash_init();
-    return easyflash_init();
+    sf_nv_init(SF_AREA_0);
+    sf_nv_init(SF_AREA_1);
+    sf_nv_init(SF_AREA_2);
+    sf_nv_init(SF_AREA_3);
+    return APP_PORT_SUCCESS;
 }
 
 /*********************************************************
 FN: 
 */
-uint32_t app_port_kv_set(const char *key, const void *buf, size_t size)
+uint32_t app_port_nv_set(uint32_t area_id, uint16_t id, void *buf, uint8_t size)
 {
-    return ef_set_env_blob(key, buf, size);
+    return sf_nv_write(area_id, id, buf, size);
 }
 
 /*********************************************************
 FN: 
 */
-uint32_t app_port_kv_get(const char *key, void *buf, size_t size)
+uint32_t app_port_nv_get(uint32_t area_id, uint16_t id, void *buf, uint8_t size)
 {
-    return ef_get_env_blob(key, buf, size, NULL);
+    return sf_nv_read(area_id, id, buf, size);
 }
 
 /*********************************************************
 FN: 
 */
-uint32_t app_port_kv_del(const char *key)
+uint32_t app_port_nv_del(uint32_t area_id, uint16_t id)
 {
-    return ef_del_env(key);
+    return sf_nv_delete(area_id, id);
+}
+
+/*********************************************************
+FN: 
+*/
+uint32_t app_port_nv_set_default(void)
+{
+    app_port_nv_erase(SF_AREA0_BASE, 2);
+    app_port_nv_erase(SF_AREA1_BASE, 2);
+    app_port_nv_erase(SF_AREA2_BASE, 2);
+    app_port_nv_erase(SF_AREA3_BASE, 2);
+    return APP_PORT_SUCCESS;
 }
 
 /*********************************************************
@@ -99,14 +115,6 @@ FN:
 uint32_t app_port_nv_erase(uint32_t addr, uint32_t size)
 {
     return tuya_ble_nv_erase(addr, size);
-}
-
-/*********************************************************
-FN: 
-*/
-uint32_t app_port_nv_set_default(void)
-{
-    return ef_env_set_default();
 }
 
 

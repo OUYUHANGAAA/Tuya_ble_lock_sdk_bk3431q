@@ -31,7 +31,7 @@ FN:
 */
 void lock_common_init(void)
 {
-    app_port_kv_init();
+    app_port_nv_init();
     
     app_port_local_clock_start();
     
