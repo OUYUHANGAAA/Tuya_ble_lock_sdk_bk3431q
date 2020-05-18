@@ -499,7 +499,7 @@ FN:
 */
 uint32_t lock_evt_load(uint32_t evt_id, uint8_t *data, uint32_t len)
 {
-	return app_port_nv_get(SF_AREA_2, s_evt_id, data, len);
+	return app_port_nv_get(SF_AREA_2, evt_id, data, len);
 }
 
 /*********************************************************
@@ -507,7 +507,7 @@ FN:
 */
 uint32_t lock_evt_delete(uint32_t evt_id)
 {
-	uint32_t err_code = app_port_nv_del(SF_AREA_2, s_evt_id);
+	uint32_t err_code = app_port_nv_del(SF_AREA_2, evt_id);
 	if(err_code == APP_PORT_SUCCESS)
     {
         return 0;

@@ -380,6 +380,7 @@ u32 sf_nv_read(u32 area_id, u16 id, void *buf, u8 size)
     for(addr=S_START_ADDR(area_id)+AREA_HDR_SIZE; addr!=S_START_ADDR_SHADOW(area_id); )
     {
         nv_read(addr, &hdr, UNIT_HDR_SIZE);
+        
         if(hdr.id==id && !hdr.unuse && hdr.valid && hdr.len==size)
         {
             pBuf = sf_malloc(size);

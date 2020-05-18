@@ -127,6 +127,7 @@ PM: dp_id - defined in "lock_dp_parser.h"
            - if dp_id=OR_LOG_OPEN_INSIDE,  then hardid=0x00
            - if dp_id=OR_LOG_DOOR_STATE,   then hardid=0x00-close,0x01-open
 */
+#define OFFLINE_RECORD_LEN 19
 uint32_t lock_open_record_report(uint8_t dp_id, uint32_t hardid)
 {
 	uint32_t timestamp = app_port_get_timestamp();
@@ -151,7 +152,8 @@ uint32_t lock_open_record_report(uint8_t dp_id, uint32_t hardid)
         } break;
     }
     
-    lock_evt_save(timestamp, (void*)&g_rsp, (3 + g_rsp.dp_data_len));
+//    lock_evt_save(timestamp, (void*)&g_rsp, (3 + g_rsp.dp_data_len));
+    lock_evt_save(timestamp, (void*)&g_rsp, (OFFLINE_RECORD_LEN));
     
     return app_port_dp_data_with_time_report(timestamp, (void*)&g_rsp, (3 + g_rsp.dp_data_len));
 }
@@ -198,7 +200,8 @@ uint32_t lock_open_record_combine_report(uint8_t combine_enum, uint8_t size, uin
     g_rsp.dp_data_len = APP_PORT_DT_ENUM_LEN;
     g_rsp.dp_data[0] = combine_enum;
     
-    lock_evt_save(timestamp, (void*)&g_rsp, (3 + g_rsp.dp_data_len));
+//    lock_evt_save(timestamp, (void*)&g_rsp, (3 + g_rsp.dp_data_len));
+    lock_evt_save(timestamp, (void*)&g_rsp, (OFFLINE_RECORD_LEN));
     
     return app_port_dp_data_with_time_report(timestamp, (void*)&g_rsp, (3 + g_rsp.dp_data_len));
 }
@@ -215,7 +218,8 @@ uint32_t lock_open_record_report_offline_pwd(uint8_t dp_id, uint8_t* pwd)
     g_rsp.dp_data_len = OFFLINE_PWD_LEN+6;
     memcpy(&g_rsp.dp_data[0], pwd, OFFLINE_PWD_MAX_NUM);
     
-    lock_evt_save(timestamp, (void*)&g_rsp, (3 + g_rsp.dp_data_len));
+//    lock_evt_save(timestamp, (void*)&g_rsp, (3 + g_rsp.dp_data_len));
+    lock_evt_save(timestamp, (void*)&g_rsp, (OFFLINE_RECORD_LEN));
     
     return app_port_dp_data_with_time_report(timestamp, (void*)&g_rsp, (3 + g_rsp.dp_data_len));
 }
@@ -232,7 +236,8 @@ uint32_t lock_alarm_record_report(uint8_t alarm_reason)
     g_rsp.dp_data_len = APP_PORT_DT_ENUM_LEN;
     g_rsp.dp_data[0] = alarm_reason;
     
-    lock_evt_save(timestamp, (void*)&g_rsp, (3 + g_rsp.dp_data_len));
+//    lock_evt_save(timestamp, (void*)&g_rsp, (3 + g_rsp.dp_data_len));
+    lock_evt_save(timestamp, (void*)&g_rsp, (OFFLINE_RECORD_LEN));
     
     return app_port_dp_data_with_time_report(timestamp, (void*)&g_rsp, (3 + g_rsp.dp_data_len));
 }
@@ -259,8 +264,7 @@ void lock_offline_evt_report(uint8_t status)
     
     uint32_t evt_id = lock_evtid_load();
     static uint8_t buf[256];
-    uint32_t len = lock_evt_load(lock_last_evtid(evt_id), buf, 256);
-    if(len > 0)
+    if(lock_evt_load(lock_last_evtid(evt_id), buf, OFFLINE_RECORD_LEN+5) == 0)
     {
         uint32_t timestamp;
         
@@ -269,7 +273,7 @@ void lock_offline_evt_report(uint8_t status)
         {
             timestamp = app_port_get_old_timestamp(timestamp);
         }
-        memcpy(&g_rsp, buf+5, len);
+        memcpy(&g_rsp, buf+5, OFFLINE_RECORD_LEN);
         app_port_dp_data_with_time_report(timestamp, (void*)&g_rsp, (3 + g_rsp.dp_data_len));
     }
     last_evt_id = lock_last_evtid(evt_id);

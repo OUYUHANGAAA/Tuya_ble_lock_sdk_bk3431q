@@ -252,8 +252,8 @@ static int gapm_cmp_evt_handler(ke_msg_id_t const msgid,
                 //½øÈë¾ÍÐ÷×´Ì¬
                 ke_state_set(TASK_APP, APPM_READY); // main_road 6
 
-                bk_test();
                 lock_common_init();
+                bk_test();
 				bk_adv_start();
             }
         } break;

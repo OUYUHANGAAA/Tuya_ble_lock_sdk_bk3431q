@@ -86,10 +86,11 @@ FN:
 */
 uint32_t app_port_nv_set_default(void)
 {
-    app_port_nv_erase(SF_AREA0_BASE, 2);
-    app_port_nv_erase(SF_AREA1_BASE, 2);
-    app_port_nv_erase(SF_AREA2_BASE, 2);
-    app_port_nv_erase(SF_AREA3_BASE, 2);
+    sf_port_flash_erase(SF_AREA0_BASE, 2);
+    sf_port_flash_erase(SF_AREA1_BASE, 2);
+    sf_port_flash_erase(SF_AREA2_BASE, 2);
+    sf_port_flash_erase(SF_AREA3_BASE, 2);
+//    sf_port_flash_erase(SF_AREA4_BASE, 2);
     return APP_PORT_SUCCESS;
 }
 

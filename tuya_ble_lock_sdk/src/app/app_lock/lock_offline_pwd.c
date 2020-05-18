@@ -74,7 +74,7 @@ static uint32_t lock_offline_pwd_load(int32_t pwdid, lock_offline_pwd_storage_t*
     }
     
 	uint32_t err_code = app_port_nv_get(SF_AREA_3, pwdid, pwd_storage, sizeof(lock_offline_pwd_storage_t));
-	if(err_code == sizeof(lock_offline_pwd_storage_t)) {
+	if(err_code == APP_PORT_SUCCESS) {
         return APP_PORT_SUCCESS;
     }
 	return APP_PORT_ERROR_COMMON;
