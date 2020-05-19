@@ -56,7 +56,6 @@ void app_common_init(void)
     app_port_ble_callback_queue_register(app_common_tuya_ble_sdk_callback);
     
     app_test_init();
-    app_ota_init();
 }
 
 /*********************************************************

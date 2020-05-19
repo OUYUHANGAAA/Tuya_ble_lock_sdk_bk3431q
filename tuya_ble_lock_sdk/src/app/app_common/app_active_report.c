@@ -44,14 +44,14 @@ FN:
 void app_active_report_start(void)
 {
     if (ke_state_get(TASK_APP) == APPM_ADVERTISING) {
-        //改变标志位
-        g_scan_rsp[8] |= 0x01;
-        bk_adv_update_advDataAndScanRsp();
-        
         //改变广播间隔
         g_adv_param.adv_interval_min = APP_ACTIVE_REPORT_ADV_INTERVAL;
         g_adv_param.adv_interval_max = APP_ACTIVE_REPORT_ADV_INTERVAL;
         bk_adv_param_set();
+        
+        //改变标志位
+        g_scan_rsp[8] |= 0x01;
+        bk_adv_update_advDataAndScanRsp();
         
         //启动定时器
         lock_timer_start(LOCK_TIMER_ACTIVE_REPORT);
@@ -111,14 +111,14 @@ FN:
 void app_active_report_finished_and_disconnect_handler(void)
 {
     if(s_active_report_running_flag && s_active_report_bonding_flag) {
-        //恢复标志位
-        g_scan_rsp[8] &= 0xFE;
-        bk_adv_update_advDataAndScanRsp();
-        
         //恢复广播间隔
         g_adv_param.adv_interval_min = APP_PORT_ADV_INTERVAL;
         g_adv_param.adv_interval_max = APP_PORT_ADV_INTERVAL;
         bk_adv_param_set();
+        
+        //恢复标志位
+        g_scan_rsp[8] &= 0xFE;
+        bk_adv_update_advDataAndScanRsp();
         
         s_active_report_running_flag = false;
         s_active_report_bonding_flag = false;

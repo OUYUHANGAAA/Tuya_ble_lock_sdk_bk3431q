@@ -255,7 +255,10 @@ void lock_offline_evt_report(uint8_t status)
     
     if(status == 0)
     {
-        APP_DEBUG_PRINTF("last_evt_id: %d", last_evt_id);
+        if(last_evt_id != 63) {
+            APP_DEBUG_PRINTF("last_evt_id: %d", last_evt_id);
+        }
+        
         if(lock_evt_delete(last_evt_id) == 0)
         {
             lock_evtid_save(last_evt_id);
