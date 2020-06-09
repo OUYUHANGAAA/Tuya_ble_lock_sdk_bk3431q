@@ -541,14 +541,21 @@ static uint32_t app_ota_end_handler(uint8_t* cmd, uint16_t cmd_size, tuya_ble_ot
         else
         {
             {
-                uint16_t image_len; //该值在bk的固件中标识固件长度（单位：4k），在这里做检查，防止越界
+                uint16_t image_len; //该值在bk的固件中标识固件长度（单位：4字节），在这里做检查，防止越界
                 app_port_nv_read(APP_OTA_START_ADDR+6, (void*)&image_len, sizeof(uint16_t));
-                APP_DEBUG_PRINTF("image_len: %dk", image_len*4);
-                if(image_len > (APP_OTA_FILE_MAX_LEN/TUYA_NV_ERASE_MIN_SIZE))
+                APP_DEBUG_PRINTF("image_len: %dbyte", image_len*4);
+                if(image_len > (APP_OTA_FILE_MAX_LEN/4))
                 {
                     tuya_ble_device_enter_critical();
                     app_port_nv_erase(APP_OTA_START_ADDR, APP_OTA_FILE_MAX_LEN);
                     tuya_ble_device_exit_critical();
+                    end_rsp.state = 0x01;
+                }
+                else
+                {
+                    end_rsp.state = 0x00;
+                    s_ota_success = true;
+                    APP_DEBUG_PRINTF("ota success");
                 }
             }
             

@@ -65,7 +65,7 @@ void bk_log_hexdump_for_tuya_ble_sdk(const char *name, uint8_t width, uint8_t *b
 /*********************************************************
 FN: 
 */
-void bk_log_hexdump_empty(const char *name, uint8_t width, uint8_t *buf, uint16_t size)
+void bk_log_hexdump_empty(const char *name, uint8_t *buf, uint16_t size)
 {
     //empty
 }
