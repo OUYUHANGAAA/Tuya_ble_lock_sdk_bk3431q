@@ -281,6 +281,7 @@ FN: 启动本地时间戳
 void bk_rtc_handler(void)
 {
     s_local_timestamp++;
+//    APP_DEBUG_PRINTF("s_local_timestamp: %d", s_local_timestamp);
 }
 
 /*********************************************************

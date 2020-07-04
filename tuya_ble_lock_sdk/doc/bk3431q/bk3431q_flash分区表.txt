@@ -1,10 +1,8 @@
              _________ 
 0x00080000 -|         |
-            |    A    |-- 4k, bt addr
+            |    9    |-- 4k, bt addr
 0x0007F000 -|---------|
-            |    9    |-- 60k, unused
-0x00070000 -|---------|
-            |    8    |-- 32k, easyflash
+            |    8    |-- 92k, unused（default simpleflash from 0x00068000 to 0x00072000, 40k）
 0x00068000 -|---------|
             |    7    |-- 16k, tuya_ble_sdk info
 0x00064000 -|---------|
