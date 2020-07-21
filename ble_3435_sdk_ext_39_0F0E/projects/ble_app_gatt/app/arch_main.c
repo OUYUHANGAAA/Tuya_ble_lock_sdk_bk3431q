@@ -219,6 +219,11 @@ void rw_app_enter(void)
 	uint8_t sleep_type = 0;
 #endif
 
+    //Æô¶¯¿´ÃÅ¹·
+    //0x3FFF*250us = 4 095 750us = 4s
+    //0x7FFF*250us = 8 191 750us = 8s
+    wdt_enable(WATCH_DOG_COUNT);
+    
 	while(1)
 	{
 		//schedule all pending events

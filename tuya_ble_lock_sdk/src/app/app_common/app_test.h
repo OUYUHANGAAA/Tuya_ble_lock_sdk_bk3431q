@@ -85,13 +85,13 @@ typedef struct
 /*********************************************************************
  * EXTERNAL VARIABLES
  */
-extern volatile bool s_app_test_mode_enter_outtime_flag;
 
 /*********************************************************************
  * EXTERNAL FUNCTIONS
  */
 void app_test_init(void);
 void app_test_pre_process(uint8_t cmd_id, uint8_t* buf, uint16_t size);
+void app_test_outtime_handler(void);
 
 /*********************************************************  factory_test cmd distribution  *********************************************************/
 void factory_test_process(uint8_t* p_in_data, uint16_t in_len, uint8_t* p_out_data, uint16_t* out_len);

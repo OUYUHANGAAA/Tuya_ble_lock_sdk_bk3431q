@@ -17,7 +17,7 @@
  * LOCAL VARIABLES
  */
 static volatile bool s_app_test_mode = false;
-volatile bool s_app_test_mode_enter_outtime_flag = false;
+static volatile bool s_app_test_mode_enter_outtime_flag = false;
 //record last cmd
 static volatile int16_t s_app_test_last_cmd;
 
@@ -162,6 +162,19 @@ static void app_test_process(uint8_t cmd, uint8_t* buf, uint16_t size)
         
 		default: {
         } break;
+    }
+}
+
+/*********************************************************
+FN: 
+*/
+void app_test_outtime_handler(void)
+{
+//    APP_DEBUG_PRINTF("app_test_outtime_handler");
+    s_app_test_mode_enter_outtime_flag = true;
+    
+    if(!is_app_test_mode()) {
+//        g_system_sleep = true;
     }
 }
 
